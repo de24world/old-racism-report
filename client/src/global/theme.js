@@ -17,17 +17,13 @@ const theme = createMuiTheme({
       default: "#fff",
     },
   },
-  breakpoints: {
-    values: {
-      smallPhone: 320,
-      phone: 375,
-      phoneLarge: 414,
-      tablet: 768,
-      tabletLandscape: 1024,
-      content: 1260,
-      desktop: 1440,
-    },
-  },
 });
+
+// default breakpoints
+// xs, extra-small: 0px
+// sm, small: 600px
+// md, medium: 960px
+// lg, large: 1280px
+// xl, extra-large: 1920px
 
 export default theme;

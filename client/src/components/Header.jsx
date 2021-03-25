@@ -13,9 +13,15 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
   },
   title: {
     flexGrow: 1,
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
   navigation: {
     flexGrow: 1,
@@ -30,6 +36,7 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton
+            // display={{ desktop: "none" }}
             edge="start"
             className={classes.menuButton}
             color="inherit"
