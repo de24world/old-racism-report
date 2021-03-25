@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -24,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   navigation: {
-    flexGrow: 1,
+    // flexGrow: 4,
   },
 }));
 
@@ -48,10 +50,18 @@ const Header = () => {
             인종차별 보고서 앱
           </Typography>
           <div className={classes.navigation}>
-            <Button color="inherit">홈</Button>
-            <Button color="inherit">리스트</Button>
-            <Button color="inherit">통계</Button>
-            <Button color="inherit">제보하기</Button>
+            <Link href="/">
+              <Button color="inherit">홈</Button>
+            </Link>
+            <Link href="/list">
+              <Button color="inherit">리스트</Button>
+            </Link>
+            <Link href="/statistics">
+              <Button color="inherit">통계</Button>
+            </Link>
+            <Link href="/report">
+              <Button color="inherit">제보하기</Button>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
