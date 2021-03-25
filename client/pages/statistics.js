@@ -1,6 +1,6 @@
 import Layout from "../src/components/common/Layout";
 
-const Statistics = () => {
+const StatisticsPage = () => {
   return (
     <div>
       <Layout>
@@ -10,4 +10,4 @@ const Statistics = () => {
   );
 };
 
-export default Statistics;
+export default StatisticsPage;

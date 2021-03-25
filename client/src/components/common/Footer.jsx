@@ -5,7 +5,7 @@ import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    width: "100%",
   },
 }));
 
@@ -18,10 +18,10 @@ const Footer = () => {
         position="static"
         elevation={0}
         component="footer"
-        color="default"
+        color="secondary"
       >
         <Toolbar style={{ justifyContent: "center" }}>
-          <Typography variant="caption">©2020 </Typography>
+          <Typography variant="caption">©2020</Typography>
         </Toolbar>
       </AppBar>
     </div>
