@@ -5,9 +5,9 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/utils/theme";
 
-import MenuAppBar from "../src/components/MenuAppBar";
-import Footer from "../src/components/Footer";
-import Layout from "../src/components/Layout";
+import MenuAppBar from "../src/components/common/MenuAppBar";
+import Footer from "../src/components/common/Footer";
+import Layout from "../src/components/common/Layout";
 
 const MyApp = (props) => {
   const { Component, pageProps } = props;
