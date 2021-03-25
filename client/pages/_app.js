@@ -7,8 +7,9 @@ import theme from "../src/utils/theme";
 
 import MenuAppBar from "../src/components/MenuAppBar";
 import Footer from "../src/components/Footer";
+import Layout from "../src/components/Layout";
 
-export default function MyApp(props) {
+const MyApp = (props) => {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -32,14 +33,18 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <MenuAppBar />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
         <Footer />
       </ThemeProvider>
     </React.Fragment>
   );
-}
+};
 
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
 };
+
+export default MyApp;
