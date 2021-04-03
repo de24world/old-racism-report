@@ -9,6 +9,7 @@ const columns = [
   { field: "country", headerName: "Country", width: 130 },
   { field: "city", headerName: "City", width: 130 },
   { field: "evidence", headerName: "Evidence", width: 260 },
+  { field: "level", headerName: "Level", width: 260 },
 ];
 
 export default function List() {
