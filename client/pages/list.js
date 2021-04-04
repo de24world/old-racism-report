@@ -5,8 +5,7 @@ import ItemList from "../src/components/ItemList";
 
 const ListPage = () => {
   const [dataList, setDataList] = useState([]);
-  const API_URL =
-    "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+  const API_URL = "http://localhost:3001/lists";
 
   const getData = () => {
     Axios.get(API_URL).then((res) => {

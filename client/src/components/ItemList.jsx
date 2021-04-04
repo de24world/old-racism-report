@@ -5,18 +5,18 @@ import { DataGrid } from "@material-ui/data-grid";
 
 const columns = [
   { field: "id", headerName: "ID", width: 80 },
-  { field: "brand", headerName: "Offender", width: 130 },
-  { field: "product_type", headerName: "Victim", width: 130 },
-  { field: "created_at", headerName: "When", width: 130 },
-  { field: "name", headerName: "Country", width: 130 },
-  { field: "price", headerName: "City", width: 130 },
+  { field: "offender", headerName: "Offender", width: 130 },
+  { field: "victim", headerName: "Victim", width: 130 },
+  { field: "time", headerName: "Time", width: 130 },
+  { field: "country", headerName: "Country", width: 130 },
+  { field: "city", headerName: "City", width: 130 },
   {
-    field: "website_link",
+    field: "evidence",
     headerName: "Evidence",
     width: 260,
     sortable: false,
   },
-  { field: "rating", headerName: "Level(What, 언어 폭행)", width: 260 },
+  { field: "level", headerName: "Level(What, 언어 폭행)", width: 260 },
 ];
 
 const ItemList = ({ dataList }) => {
