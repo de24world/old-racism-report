@@ -14,9 +14,7 @@ const Post = (props) => {
 
   const [item, setItem] = useState({});
 
-  console.log(id);
-
-  const API_URL = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
+  const API_URL = `http://localhost:3001/lists/${id}`;
 
   const getData = () => {
     Axios.get(API_URL).then((res) => {
