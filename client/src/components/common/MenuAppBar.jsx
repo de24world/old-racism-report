@@ -59,7 +59,7 @@ const Header = () => {
             <Link href="/statistics">
               <Button color="inherit">통계</Button>
             </Link>
-            <Link href="/report">
+            <Link href="/contact">
               <Button color="inherit">제보하기</Button>
             </Link>
           </div>

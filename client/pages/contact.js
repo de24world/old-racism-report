@@ -1,15 +1,15 @@
 import Layout from "../src/components/common/Layout";
-import Report from "../src/components/Report";
+import Contact from "../src/components/Contact";
 
-const ReportPage = () => {
+const ContactPage = () => {
   return (
     <div>
       <Layout>
         <p>This is report.js Page</p>
-        <Report />
+        <Contact />
       </Layout>
     </div>
   );
 };
 
-export default ReportPage;
+export default ContactPage;

@@ -10,25 +10,28 @@ const columns = [
   { field: "created_at", headerName: "When", width: 130 },
   { field: "name", headerName: "Country", width: 130 },
   { field: "price", headerName: "City", width: 130 },
-  { field: "website_link", headerName: "Evidence", width: 260 },
+  {
+    field: "website_link",
+    headerName: "Evidence",
+    width: 260,
+    sortable: false,
+  },
   { field: "rating", headerName: "Level(What, 언어 폭행)", width: 260 },
 ];
 
-const ListItem = ({ list }) => {
+const ListItem = ({ dataList }) => {
   // console.log(dataJson);
+
+  const handleLink = () => {
+    // console.log({ list }, "onRowLick");
+    // return <Link href={`/list/${list.id}`}></Link>;
+  };
+
   return (
     <>
       {/* <Link href={`/list/${list.id}`}> */}
       <div style={{ height: 400, width: "100%" }}>
-        <DataGrid
-          rows={list}
-          columns={columns}
-          onRowClick={() => {
-            console.log("onRowLick");
-            // return <Link href="/"></Link>;
-            return <Link href={`/list/${list.id}`}></Link>;
-          }}
-        />
+        <DataGrid rows={dataList} columns={columns} onRowClick={handleLink} />
         {/* 인종 아이콘 switch 문 만들기 */}
       </div>
       {/* </Link> */}

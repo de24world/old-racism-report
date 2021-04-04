@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Report = () => {
+const ContactForm = () => {
   const classes = useStyles();
 
   return (
@@ -170,4 +170,4 @@ const Report = () => {
   );
 };
 
-export default Report;
+export default ContactForm;
