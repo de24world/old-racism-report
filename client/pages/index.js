@@ -1,6 +1,7 @@
 // import Head from "next/head";
 // import styles from "../styles/Home.module.css";
 import Layout from "../src/components/common/Layout";
+import Weekly from "../src/components/Weekly";
 
 const Home = () => {
   return (
@@ -13,6 +14,8 @@ const Home = () => {
       */}
       <Layout>
         <p>This is index.js Page</p>
+        <h2>Weekly Reacism Video</h2>
+        <Weekly />
       </Layout>
     </div>
   );
