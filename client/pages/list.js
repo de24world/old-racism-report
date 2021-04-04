@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import Layout from "../src/components/common/Layout";
-import ListItem from "../src/components/ListItem";
+import ItemList from "../src/components/ItemList";
 
 const ListPage = () => {
   const [dataList, setDataList] = useState([]);
@@ -23,7 +23,7 @@ const ListPage = () => {
     <div>
       <Layout>
         <p>This is list.js Page</p>
-        <ListItem dataList={dataList} />
+        <ItemList dataList={dataList} />
       </Layout>
     </div>
   );
