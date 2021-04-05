@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import ReactPlayer from "react-player";
 
 const Item = ({ item }) => {
+  const { id, offender, victim, time, country, city, evidence, level } = item;
+
   return (
     <>
-      <ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
+      <ReactPlayer url={evidence} />
     </>
   );
 };

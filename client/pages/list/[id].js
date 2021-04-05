@@ -8,7 +8,7 @@ import Item from "../../src/components/Item";
 
 // import dataJson from "../../data/listdata.json";
 
-const Post = (props) => {
+const Post = () => {
   const router = useRouter();
   const { id } = router.query;
 
@@ -19,6 +19,7 @@ const Post = (props) => {
   const getData = () => {
     Axios.get(API_URL).then((res) => {
       console.log(res.data);
+      setItem(res.data);
     });
   };
 
