@@ -30,10 +30,10 @@ const ItemList = ({ dataList }) => {
   // const history = useHistory();
   // const handleLink = useCallback(() => history.push("/list/1"), [history]);
 
-  // const handleLink = () => {
-  //   console.log({ dataList }, "onRowLick");
-  //   // return <Link href={`/list/${dataList.id}`}></Link>;
-  // };
+  const handleLink = () => {
+    console.log({ dataList }, "onRowLick");
+    // return <Link href={`/list/${dataList.id}`}></Link>;
+  };
 
   return (
     <>
