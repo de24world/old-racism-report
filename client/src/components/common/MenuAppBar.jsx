@@ -56,6 +56,9 @@ const Header = () => {
             <Link href="/list">
               <Button color="inherit">리스트</Button>
             </Link>
+            <Link href="/video">
+              <Button color="inherit">비디오</Button>
+            </Link>
             <Link href="/statistics">
               <Button color="inherit">통계</Button>
             </Link>
