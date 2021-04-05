@@ -1,6 +1,11 @@
-import * as React from "react";
-import Link from "next/link";
+import React, { useCallback } from "react";
+// import { useHistory } from "react-router-dom";
+// import Link from "next/link";
+import Link from "@material-ui/core/Link";
+// import Button from "@material-ui/core/Button";
 import { DataGrid } from "@material-ui/data-grid";
+import { makeStyles } from "@material-ui/core/styles";
+
 // import dataJson from "../../data/listdata.json";
 
 const columns = [
@@ -22,16 +27,22 @@ const columns = [
 const ItemList = ({ dataList }) => {
   // console.log(dataJson);
 
-  const handleLink = () => {
-    console.log({ dataList }, "onRowLick");
-    // return <Link href={`/list/${dataList.id}`}></Link>;
-  };
+  // const history = useHistory();
+  // const handleLink = useCallback(() => history.push("/list/1"), [history]);
+
+  // const handleLink = () => {
+  //   console.log({ dataList }, "onRowLick");
+  //   // return <Link href={`/list/${dataList.id}`}></Link>;
+  // };
 
   return (
     <>
+      <Link href={`/list/1`}>
+        Link Test 'list/1'
+        {/* <Button component="a">// other component ...</Button> */}
+      </Link>
       {/* <p> This is {dataList} datalistid in Listitem</p> */}
-
-      {/* <Link href={`/list/${list.id}`}> */}
+      {/* <Link href={`/list/${dataList.id}`}> */}
       <div style={{ height: 600, width: "100%" }}>
         <DataGrid
           rows={dataList}
@@ -42,7 +53,6 @@ const ItemList = ({ dataList }) => {
           onRowClick={handleLink}
           // onRowSelected={handleLink}
         />
-        {/* 인종 아이콘 switch 문 만들기 */}
       </div>
       {/* </Link> */}
     </>

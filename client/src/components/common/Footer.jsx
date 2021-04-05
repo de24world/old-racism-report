@@ -6,6 +6,7 @@ import { AppBar, Toolbar, Typography } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    paddingTop: 50,
   },
 }));
 
