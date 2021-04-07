@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 import Layout from "../src/components/common/Layout";
 import VideoList from "../src/components/Video/VideoList";
+import VideoFilter from "../src/components/Video/VideoFilter";
 
 const ListPage = () => {
   const [dataList, setDataList] = useState([]);
@@ -22,6 +23,7 @@ const ListPage = () => {
     <div>
       <Layout>
         <p>This is video.js Page</p>
+        <VideoFilter dataList={dataList} />
         <VideoList dataList={dataList} />
       </Layout>
     </div>
