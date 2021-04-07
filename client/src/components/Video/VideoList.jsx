@@ -39,10 +39,11 @@ const VideoItem = ({ dataList }) => {
   const theme = useTheme();
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesLg = useMediaQuery(theme.breakpoints.down("md"));
+  // https://codesandbox.io/s/usemediaquery-3-options-pm88p?fontsize=14&hidenavigation=1&theme=dark&file=/src/App.js:27-80
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={matchesLg ? 1 : 3}>
+      <GridList className={classes.gridList} cols={matchesLg ? 1 : 4}>
         {/* <GridListTile key="Subheader" cols={3}>
           <ListSubheader component="div">VideoList</ListSubheader>
         </GridListTile> */}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import Layout from "../src/components/common/Layout";
-import VideoList from "../src/components/VideoList";
+import VideoList from "../src/components/Video/VideoList";
 
 const ListPage = () => {
   const [dataList, setDataList] = useState([]);

@@ -12,10 +12,13 @@
     },
     {
       "id": 2,
-      "victim": "💁🏻",
-      "offender": "👨🏿‍🦲Black Guy",
+      "offender": "👩🏿‍🦱black women",
+      "victim": "👩🏻Asian women",
+      "time": "2020-Jan",
       "country": " 🇺🇸USA",
-      "city": "newyork"
+      "city": "Atlanta",
+      "evidence": "https://youtu.be/dWehG6U2JOo",
+      "level": "1"
     },
     {
       "id": 3,
@@ -29,17 +32,23 @@
     },
     {
       "id": 4,
-      "victim": "Stark",
-      "offender": "Arya",
-      "country": "France",
-      "city": "Paris"
+      "offender": "👩🏿‍🦱black women",
+      "victim": "👩🏻Asian women",
+      "time": "2020-Jan",
+      "country": " 🇺🇸USA",
+      "city": "Atlanta",
+      "evidence": "https://youtu.be/dWehG6U2JOo",
+      "level": "1"
     },
     {
       "id": 5,
-      "victim": "Targaryen",
-      "offender": "Daenerys",
-      "country": "Germany",
-      "city": "Leipzig"
+      "offender": "👩🏿‍🦱black women",
+      "victim": "👩🏻Asian women",
+      "time": "2020-Jan",
+      "country": " 🇺🇸USA",
+      "city": "Atlanta",
+      "evidence": "https://youtu.be/dWehG6U2JOo",
+      "level": "1"
     }
   ]
 }
