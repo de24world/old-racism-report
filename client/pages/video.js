@@ -18,7 +18,11 @@ const VideoPage = () => {
   }, []);
 
   function search(rows) {
-    return rows.filter((row) => row.country.toLowerCase().indexOf(q) > -1);
+    return rows.filter(
+      (row) =>
+        row.country.toLowerCase().indexOf(q) > -1 ||
+        row.city.toLowerCase().indexOf(q) > -1
+    );
   }
 
   return (
