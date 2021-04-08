@@ -10,10 +10,11 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
 const VideoPage = () => {
+  const API_URL = "http://localhost:3001/lists";
+
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
-  const [searchColumns, setSearchColumns] = useState(["country", "city"]);
-  const API_URL = "http://localhost:3001/lists";
+  const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
 
   useEffect(() => {
     Axios.get(API_URL).then((res) => {
@@ -22,16 +23,21 @@ const VideoPage = () => {
     });
   }, []);
 
-  function search(rows) {
-    return rows.filter((row) =>
-      searchColumns.some(
-        (column) =>
-          row[column].toString().toLowerCase().indexOf(query.toLowerCase()) > -1
+  function search(dataValues) {
+    return dataValues.filter((dataValue) =>
+      searchDataKeys.some(
+        (dataKey) =>
+          dataValue[dataKey]
+            .toString()
+            .toLowerCase()
+            .indexOf(query.toLowerCase()) > -1
       )
     );
   }
 
-  const columns = data[0] && Object.keys(data[0]);
+  const dataKeys = data[0] && Object.keys(data[0]);
+
+  // console.log(dataKeys, "this is dataKeys");
 
   return (
     <div>
@@ -46,25 +52,25 @@ const VideoPage = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        {columns &&
-          columns.map((column) => (
+        {dataKeys &&
+          dataKeys.map((dataKey) => (
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={searchColumns.includes(column)}
+                  checked={searchDataKeys.includes(dataKey)}
                   onChange={(e) => {
-                    const checked = searchColumns.includes(column);
-                    setSearchColumns((prev) =>
+                    const checked = searchDataKeys.includes(dataKey);
+                    setSearchDataKeys((prev) =>
                       checked
-                        ? prev.filter((sc) => sc !== column)
-                        : [...prev, column]
+                        ? prev.filter((sc) => sc !== dataKey)
+                        : [...prev, dataKey]
                     );
                   }}
                   name="checkedB"
                   color="primary"
                 />
               }
-              label={column}
+              label={dataKey}
             />
           ))}
         <VideoFilter data={data} />
