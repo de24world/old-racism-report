@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VideoFilter = ({ dataList }) => {
+const VideoFilter = ({ data }) => {
   const classes = useStyles();
 
   const [state, setState] = useState({

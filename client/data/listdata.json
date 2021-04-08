@@ -12,8 +12,8 @@
     },
     {
       "id": 2,
-      "offender": "👩🏿‍🦱black women",
-      "victim": "👩🏻Asian women",
+      "offender": "black women👩🏿‍🦱",
+      "victim": "Asian women👩🏻",
       "time": "2020-Jan",
       "country": " 🇺🇸USA",
       "city": "Atlanta",
@@ -22,17 +22,17 @@
     },
     {
       "id": 3,
-      "offender": "white guy",
-      "victim": "👩🏻Asian women",
+      "offender": "white",
+      "victim": "Asian ",
       "time": "2020-Jan",
-      "country": " 🇺Germany",
+      "country": "Germany",
       "city": "Leipzig",
       "evidence": "https://youtu.be/IeEaSoaDTLU",
       "level": "1"
     },
     {
       "id": 4,
-      "offender": "👩🏿‍🦱black women",
+      "offender": "black",
       "victim": "👩🏻Asian women",
       "time": "2020-Jan",
       "country": " 🇺🇸USA",
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "offender": "👩🏿‍🦱black women",
-      "victim": "👩🏻Asian women",
+      "victim": "Asian",
       "time": "2020-Jan",
       "country": " 🇺🇸USA",
       "city": "Frankfurt",

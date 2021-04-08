@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VideoItem = ({ dataList }) => {
+const VideoItem = ({ data }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
@@ -47,28 +47,28 @@ const VideoItem = ({ dataList }) => {
         {/* <GridListTile key="Subheader" cols={3}>
           <ListSubheader component="div">VideoList</ListSubheader>
         </GridListTile> */}
-        {dataList.map((dataList) => (
-          <GridListTile key={dataList.id} className={classes.gridListTile}>
-            <ReactPlayer url={dataList.evidence} width="100%" height="100%" />
+        {data.map((data) => (
+          <GridListTile key={data.id} className={classes.gridListTile}>
+            <ReactPlayer url={data.evidence} width="100%" height="100%" />
 
             <GridListTileBar
               className={classes.girdListTileBar}
               title={
                 <span>
-                  {dataList.country} {dataList.city}
+                  {data.country} {data.city}
                 </span>
               }
               subtitle={
                 <p>
-                  offender: {dataList.offender}
-                  victim: {dataList.victim}
-                  time: {dataList.time}
-                  level: {dataList.level}
+                  offender: {data.offender}
+                  victim: {data.victim}
+                  time: {data.time}
+                  level: {data.level}
                 </p>
               }
               actionIcon={
                 <IconButton
-                  aria-label={`info about ${dataList.title}`}
+                  aria-label={`info about ${data.title}`}
                   className={classes.icon}
                 >
                   <InfoIcon />
