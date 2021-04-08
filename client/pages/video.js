@@ -73,7 +73,9 @@ const VideoPage = () => {
               label={dataKey}
             />
           ))}
-        <VideoFilter data={data} />
+        {/* 검색필터 분리할까? 
+        <VideoFilter data={data} />  
+        */}
         <VideoList data={search(data)} />
       </Layout>
     </div>
