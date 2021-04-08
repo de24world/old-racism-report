@@ -18,17 +18,6 @@ const VideoPage = () => {
     });
   }, []);
 
-  // old version / delete columns too
-  // https://youtu.be/d1r0aK5awWk
-  // function search(rows) {
-  //   return rows.filter(
-  //     (row) =>
-  //       row.country.toLowerCase().indexOf(q) > -1 ||
-  //       row.city.toLowerCase().indexOf(q) > -1 ||
-  //       row.offender.toLowerCase().indexOf(q) > -1
-  //   );
-  // }
-
   function search(rows) {
     return rows.filter((row) =>
       searchColumns.some(
@@ -64,7 +53,6 @@ const VideoPage = () => {
               {column}
             </label>
           ))}
-        {/* https://youtu.be/d1r0aK5awWk */}
         <VideoFilter data={data} />
         <VideoList data={search(data)} />
       </Layout>
