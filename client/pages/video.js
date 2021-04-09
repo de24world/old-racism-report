@@ -3,7 +3,6 @@ import Axios from "axios";
 
 import Layout from "../src/components/common/Layout";
 import VideoList from "../src/components/Video/VideoList";
-import VideoFilter from "../src/components/Video/VideoFilter";
 
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
