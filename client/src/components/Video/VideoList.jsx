@@ -1,6 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
+import Link from "@material-ui/core/Link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
@@ -67,12 +68,14 @@ const VideoItem = ({ data }) => {
                 </p>
               }
               actionIcon={
-                <IconButton
-                  aria-label={`info about ${data.title}`}
-                  className={classes.icon}
-                >
-                  <InfoIcon />
-                </IconButton>
+                <Link href={`/video/${data.id}`}>
+                  <IconButton
+                    aria-label={`info about ${data.title}`}
+                    className={classes.icon}
+                  >
+                    <InfoIcon />
+                  </IconButton>
+                </Link>
               }
             />
           </GridListTile>
