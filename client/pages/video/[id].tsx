@@ -37,8 +37,8 @@ const Post = () => {
     <>
       <Layout>
         <p>Post : {id} </p>
-        {isLoading && <CircularProgress />}
         {!isLoading && <Item item={item} />}
+        {isLoading && <CircularProgress />}
       </Layout>
     </>
   );

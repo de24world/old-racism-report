@@ -42,8 +42,6 @@ const VideoPage = () => {
 
   return (
     <div>
-      {isLoading && <CircularProgress />}
-
       <Layout>
         <p>This is video.js Page</p>
         <TextField
@@ -76,7 +74,9 @@ const VideoPage = () => {
               label={dataKey}
             />
           ))}
+
         {!isLoading && <VideoList data={search(data)} />}
+        {isLoading && <CircularProgress />}
       </Layout>
     </div>
   );
