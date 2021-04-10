@@ -14,7 +14,7 @@ const Post = () => {
 
   const [item, setItem] = useState({});
 
-  const API_URL = `http://localhost:3001/lists/${id}`;
+  const API_URL = `http://localhost:3001/api/${id}`;
 
   const getData = () => {
     Axios.get(API_URL).then((res) => {

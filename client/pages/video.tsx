@@ -9,7 +9,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
 const VideoPage = () => {
-  const API_URL = "http://localhost:3001/lists";
+  const API_URL = "http://localhost:3001/api";
 
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
