@@ -7,10 +7,11 @@ import VideoList from "../src/components/Video/VideoList";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const VideoPage = () => {
   const API_URL = "http://localhost:3001/api";
-
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
@@ -19,6 +20,7 @@ const VideoPage = () => {
     Axios.get(API_URL).then((res) => {
       // console.log(res.data);
       setData(res.data);
+      setIsLoading(false);
     });
   }, []);
 
@@ -40,6 +42,8 @@ const VideoPage = () => {
 
   return (
     <div>
+      {isLoading && <CircularProgress />}
+
       <Layout>
         <p>This is video.js Page</p>
         <TextField
@@ -72,10 +76,7 @@ const VideoPage = () => {
               label={dataKey}
             />
           ))}
-        {/* 검색필터 분리할까? 
-        <VideoFilter data={data} />  
-        */}
-        <VideoList data={search(data)} />
+        {!isLoading && <VideoList data={search(data)} />}
       </Layout>
     </div>
   );

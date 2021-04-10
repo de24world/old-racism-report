@@ -6,6 +6,8 @@ import Axios from "axios";
 import Layout from "../../src/components/common/Layout";
 import Item from "../../src/components/Item";
 
+import CircularProgress from "@material-ui/core/CircularProgress";
+
 // import dataJson from "../../data/listdata.json";
 
 const Post = () => {
@@ -13,6 +15,7 @@ const Post = () => {
   const { id } = router.query;
 
   const [item, setItem] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const API_URL = `http://localhost:3001/api/${id}`;
 
@@ -20,6 +23,7 @@ const Post = () => {
     Axios.get(API_URL).then((res) => {
       console.log(res.data);
       setItem(res.data);
+      setIsLoading(false);
     });
   };
 
@@ -33,7 +37,8 @@ const Post = () => {
     <>
       <Layout>
         <p>Post : {id} </p>
-        <Item item={item} />
+        {isLoading && <CircularProgress />}
+        {!isLoading && <Item item={item} />}
       </Layout>
     </>
   );
