@@ -72,6 +72,7 @@ const VideoItem = ({ data }) => {
                   <IconButton
                     aria-label={`info about ${data.title}`}
                     className={classes.icon}
+                    title="Detail Video"
                   >
                     <InfoIcon />
                   </IconButton>
