@@ -54,8 +54,9 @@ const VideoPage = () => {
           onChange={(e) => setQuery(e.target.value)}
         />
         {dataKeys &&
-          dataKeys.map((dataKey) => (
+          dataKeys.map((dataKey, index) => (
             <FormControlLabel
+              key={index}
               control={
                 <Checkbox
                   checked={searchDataKeys.includes(dataKey)}
