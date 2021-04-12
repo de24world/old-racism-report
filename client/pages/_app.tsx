@@ -2,14 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/utils/theme";
-import { wrapper } from "../src/redux/store";
-
 import MenuAppBar from "../src/components/common/MenuAppBar";
 import Footer from "../src/components/common/Footer";
 import Layout from "../src/components/common/Layout";
+
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const MyApp = (props) => {
   const { Component, pageProps } = props;
@@ -49,4 +48,4 @@ MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired,
 };
 
-export default wrapper.withRedux(MyApp);
+export default MyApp;
