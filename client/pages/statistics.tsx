@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from "react";
-import * as d3 from "d3";
+import React, { useState, useEffect, useRef } from "react";
+
 import Layout from "../src/components/common/Layout";
-import Chart from "../src/components/Chart";
+// import Chart from "../src/components/Chart";
 
 const StatisticsPage = () => {
   const [data, setData] = useState([]);
-  // const [loading, setLoading] = React.useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    d3.json("http://localhost:3001/api").then((data) => {
-      setData(data);
-      // setLoading(false);
-    });
-    return () => undefined;
-  }, []);
+  // useEffect(() => {
+  //   d3.json("http://localhost:3001/api").then((data) => {
+  //     setData(data);
+  //     console.log(data);
+  //     setLoading(false);
+  //   });
+  //   return () => undefined;
+  // }, []);
 
-  console
   return (
     <div>
       <Layout>
         <p>This is statistics.js Page</p>
         {/* {loading && <div>loading</div>}
         {!loading &&  ... */}
-        <Chart data={data} />
+        {/* <Chart data={data} /> */}
       </Layout>
     </div>
   );
