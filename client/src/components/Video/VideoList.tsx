@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import ReactCountryFlag from "react-country-flag";
 
 import Link from "@material-ui/core/Link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -51,11 +52,11 @@ const VideoItem = ({ data }) => {
         {data.map((data) => (
           <GridListTile key={data.id} className={classes.gridListTile}>
             <ReactPlayer url={data.evidence} width="100%" height="100%" />
-
             <GridListTileBar
               className={classes.girdListTileBar}
               title={
                 <span>
+                  <ReactCountryFlag countryCode={data.countryCode} />
                   {data.country} {data.city}
                 </span>
               }

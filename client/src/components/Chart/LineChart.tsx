@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import * as d3 from "d3";
 import { select } from "d3";
 
-const d3 = (props) => {
+const LineChart = (props) => {
   const [data, setData] = useState([25, 30, 45, 60, 20]);
   const svgRef = useRef();
 
@@ -45,6 +45,4 @@ const d3 = (props) => {
   );
 };
 
-d3.propTypes = {};
-
-export default d3;
+export default LineChart;

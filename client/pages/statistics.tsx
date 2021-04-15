@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import Layout from "../src/components/common/Layout";
-// import Chart from "../src/components/Chart";
+import LineChart from "../src/components/Chart/LineChart";
 
 const StatisticsPage = () => {
   const [data, setData] = useState([]);
@@ -22,7 +22,7 @@ const StatisticsPage = () => {
         <p>This is statistics.js Page</p>
         {/* {loading && <div>loading</div>}
         {!loading &&  ... */}
-        {/* <Chart data={data} /> */}
+        <LineChart />
       </Layout>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ReactPlayer from "react-player";
+import ReactCountryFlag from "react-country-flag";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -25,7 +26,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Item = ({ item }) => {
-  const { id, offender, victim, time, country, city, evidence, level } = item;
+  const {
+    id,
+    offender,
+    victim,
+    time,
+    country,
+    countryCode,
+    city,
+    evidence,
+    level,
+  } = item;
   const classes = useStyles();
 
   return (
@@ -50,6 +61,7 @@ const Item = ({ item }) => {
                   <WorkIcon />
                 </Avatar>
               </ListItemAvatar>
+              <ReactCountryFlag countryCode={countryCode} />
               <ListItemText primary="Country" secondary={country} />
             </ListItem>
             <ListItem>
