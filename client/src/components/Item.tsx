@@ -4,12 +4,12 @@ import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
 
 import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
-
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -21,7 +21,18 @@ import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: "100%",
+    // width: "100%",
+  },
+  wrapper: {
+    position: "relative",
+    paddingTop: "56.25%",
+  },
+  player: {
+    position: "absolute",
+    top: "0",
+    left: "0",
+    width: "100%",
+    height: "100%",
   },
 }));
 
@@ -42,11 +53,21 @@ const Item = ({ item }) => {
   return (
     <>
       <Card className={classes.root}>
-        <ReactPlayer url={evidence} />
         <CardContent>
           <List
             sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
           >
+            <Container maxWidth="md">
+              <div className={classes.wrapper}>
+                <ReactPlayer
+                  className={classes.player}
+                  url={evidence}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+            </Container>
+
             <ListItem>
               <ListItemAvatar>
                 <Avatar>
