@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import Axios from "axios";
 import Layout from "../../src/components/common/Layout";
-import Item from "../../src/components/Item";
+import VideoDetail from "../../src/components/Video/VideoDetail";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 
@@ -37,7 +37,7 @@ const Post = () => {
     <>
       <Layout>
         <p>Post : {id} </p>
-        {!isLoading && <Item item={item} />}
+        {!isLoading && <VideoDetail item={item} />}
         {isLoading && <CircularProgress />}
       </Layout>
     </>

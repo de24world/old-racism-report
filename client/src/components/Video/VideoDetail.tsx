@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
 
@@ -16,10 +15,15 @@ import {
   ListItem,
   ListItemAvatar,
   Avatar,
+  Tooltip,
 } from "@material-ui/core";
-import ImageIcon from "@material-ui/icons/Image";
-import WorkIcon from "@material-ui/icons/Work";
-import BeachAccessIcon from "@material-ui/icons/BeachAccess";
+import FlagIcon from "@material-ui/icons/Flag";
+import LocationCityIcon from "@material-ui/icons/LocationCity";
+import DateRangeIcon from "@material-ui/icons/DateRange";
+import SportsMmaIcon from "@material-ui/icons/SportsMma";
+import PregnantWomanIcon from "@material-ui/icons/PregnantWoman";
+import ReportIcon from "@material-ui/icons/Report";
+import HelpIcon from "@material-ui/icons/Help";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Item = ({ item }) => {
+const VideoDetail = ({ item }) => {
   const {
     id,
     offender,
@@ -57,7 +61,7 @@ const Item = ({ item }) => {
       <Card className={classes.root}>
         <CardContent>
           <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
           >
             <Container maxWidth="md">
               <div className={classes.wrapper}>
@@ -73,15 +77,7 @@ const Item = ({ item }) => {
             <ListItem>
               <ListItemAvatar>
                 <Avatar>
-                  <ImageIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Time" secondary={time} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <WorkIcon />
+                  <FlagIcon />
                 </Avatar>
               </ListItemAvatar>
               <ReactCountryFlag countryCode={countryCode} />
@@ -90,13 +86,49 @@ const Item = ({ item }) => {
             <ListItem>
               <ListItemAvatar>
                 <Avatar>
-                  <BeachAccessIcon />
+                  <LocationCityIcon />
                 </Avatar>
               </ListItemAvatar>
               <ListItemText primary="City" secondary={city} />
             </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <DateRangeIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Time" secondary={time} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <SportsMmaIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Offender" secondary={offender} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <PregnantWomanIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Victim" secondary={victim} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <ReportIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Level" secondary={level} />
+              <Tooltip title="레벨1은 언어 폭력 / 레벨2는 폭행 / 레벨3은 살인, 강간 등 강력범죄">
+                <HelpIcon />
+              </Tooltip>
+            </ListItem>
           </List>
         </CardContent>
+
         <CardActions>
           <Button size="small" color="primary">
             Share
@@ -110,6 +142,4 @@ const Item = ({ item }) => {
   );
 };
 
-Item.propTypes = {};
-
-export default Item;
+export default VideoDetail;

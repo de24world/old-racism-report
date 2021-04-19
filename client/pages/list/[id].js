@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import Axios from "axios";
 import Layout from "../../src/components/common/Layout";
-import Item from "../../src/components/Item";
+import VideoDetail from "../../src/components/Video/VideoDetail";
 
 // import dataJson from "../../data/listdata.json";
 
@@ -33,7 +33,7 @@ const Post = () => {
     <>
       <Layout>
         <p>Post : {id} </p>
-        <Item item={item} />
+        <VideoDetail item={item} />
       </Layout>
     </>
   );
