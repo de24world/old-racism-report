@@ -4,10 +4,15 @@ import Axios from "axios";
 import Layout from "../src/components/common/Layout";
 import VideoList from "../src/components/Video/VideoList";
 
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import {
+  Box,
+  Container,
+  Grid,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  CircularProgress,
+} from "@material-ui/core/";
 
 const VideoPage = () => {
   const API_URL = "http://localhost:3001/api";
@@ -44,40 +49,51 @@ const VideoPage = () => {
     <div>
       <Layout>
         <p>This is video.js Page</p>
-        <TextField
-          id="outlined-secondary"
-          type="text"
-          label="Outlined secondary"
-          variant="outlined"
-          color="secondary"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        {dataKeys &&
-          dataKeys.map((dataKey, index) => (
-            <FormControlLabel
-              key={index}
-              control={
-                <Checkbox
-                  checked={searchDataKeys.includes(dataKey)}
-                  onChange={(e) => {
-                    const checked = searchDataKeys.includes(dataKey);
-                    setSearchDataKeys((prev) =>
-                      checked
-                        ? prev.filter((sc) => sc !== dataKey)
-                        : [...prev, dataKey]
-                    );
-                  }}
-                  name="checkedB"
-                  color="primary"
-                />
-              }
-              label={dataKey}
+        <Grid container spacing={2}>
+          <Grid item lg={3}>
+            <TextField
+              id="outlined-secondary"
+              type="text"
+              label="Outlined secondary"
+              variant="outlined"
+              color="secondary"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
             />
-          ))}
+          </Grid>
 
-        {!isLoading && <VideoList data={search(data)} />}
-        {isLoading && <CircularProgress />}
+          <Grid item lg={9}>
+            {dataKeys &&
+              dataKeys.map((dataKey, index) => (
+                <FormControlLabel
+                  key={index}
+                  control={
+                    <Checkbox
+                      checked={searchDataKeys.includes(dataKey)}
+                      onChange={(e) => {
+                        const checked = searchDataKeys.includes(dataKey);
+                        setSearchDataKeys((prev) =>
+                          checked
+                            ? prev.filter((sc) => sc !== dataKey)
+                            : [...prev, dataKey]
+                        );
+                      }}
+                      name="checkedB"
+                      color="primary"
+                    />
+                  }
+                  label={dataKey}
+                />
+              ))}
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={2}>
+          <Grid item>
+            {!isLoading && <VideoList data={search(data)} />}
+            {isLoading && <CircularProgress />}
+          </Grid>
+        </Grid>
       </Layout>
     </div>
   );
