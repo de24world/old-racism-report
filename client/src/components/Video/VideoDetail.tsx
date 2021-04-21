@@ -63,16 +63,14 @@ const VideoDetail = ({ item }) => {
           <List
           // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
           >
-            <Container maxWidth="md">
-              <div className={classes.wrapper}>
-                <ReactPlayer
-                  className={classes.player}
-                  url={evidence}
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-            </Container>
+            <div className={classes.wrapper}>
+              <ReactPlayer
+                className={classes.player}
+                url={evidence}
+                width="100%"
+                height="100%"
+              />
+            </div>
 
             <ListItem>
               <ListItemAvatar>

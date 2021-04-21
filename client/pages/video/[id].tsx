@@ -6,11 +6,18 @@ import Axios from "axios";
 import Layout from "../../src/components/common/Layout";
 import VideoDetail from "../../src/components/Video/VideoDetail";
 
+import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 // import dataJson from "../../data/listdata.json";
 
+const useStyles = makeStyles((theme) => ({
+  root: {},
+}));
+
 const Post = () => {
+  const classes = useStyles();
+
   const router = useRouter();
   const { id } = router.query;
 
@@ -21,7 +28,7 @@ const Post = () => {
 
   const getData = () => {
     Axios.get(API_URL).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setItem(res.data);
       setIsLoading(false);
     });
