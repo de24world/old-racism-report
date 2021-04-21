@@ -4,10 +4,8 @@ import ReactCountryFlag from "react-country-flag";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  Container,
   Card,
   CardContent,
-  Typography,
   CardActions,
   Button,
   List,
@@ -17,8 +15,7 @@ import {
   Avatar,
   Tooltip,
 } from "@material-ui/core";
-import FlagIcon from "@material-ui/icons/Flag";
-import LocationCityIcon from "@material-ui/icons/LocationCity";
+import MyLocationIcon from "@material-ui/icons/MyLocation";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import SportsMmaIcon from "@material-ui/icons/SportsMma";
 import PregnantWomanIcon from "@material-ui/icons/PregnantWoman";
@@ -39,6 +36,14 @@ const useStyles = makeStyles((theme) => ({
     left: "0",
     width: "100%",
     height: "100%",
+  },
+  flagIcon: {
+    position: "relative",
+  },
+  tooltipIcon: {
+    position: "absolute",
+    left: "7rem",
+    top: "1rem",
   },
 }));
 
@@ -75,16 +80,18 @@ const VideoDetail = ({ item }) => {
             <ListItem>
               <ListItemAvatar>
                 <Avatar>
-                  <FlagIcon />
+                  <ReactCountryFlag
+                    countryCode={countryCode}
+                    className={classes.flagIcon}
+                  />
                 </Avatar>
               </ListItemAvatar>
-              <ReactCountryFlag countryCode={countryCode} />
               <ListItemText primary="Country" secondary={country} />
             </ListItem>
             <ListItem>
               <ListItemAvatar>
                 <Avatar>
-                  <LocationCityIcon />
+                  <MyLocationIcon />
                 </Avatar>
               </ListItemAvatar>
               <ListItemText primary="City" secondary={city} />
@@ -121,7 +128,7 @@ const VideoDetail = ({ item }) => {
               </ListItemAvatar>
               <ListItemText primary="Level" secondary={level} />
               <Tooltip title="레벨1은 언어 폭력 / 레벨2는 폭행 / 레벨3은 살인, 강간 등 강력범죄">
-                <HelpIcon />
+                <HelpIcon className={classes.tooltipIcon} />
               </Tooltip>
             </ListItem>
           </List>

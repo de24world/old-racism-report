@@ -31,8 +31,8 @@ const useStyles = makeStyles((theme) => ({
   girdListTileBar: {
     height: "auto",
   },
-  icon: {
-    color: "rgba(255, 255, 255, 0.54)",
+  iconButton: {
+    color: "white",
   },
 }));
 
@@ -72,8 +72,8 @@ const VideoItem = ({ data }) => {
                 <Link href={`/video/${data.id}`}>
                   <IconButton
                     aria-label={`info about ${data.title}`}
-                    className={classes.icon}
-                    title="Detail Video"
+                    className={classes.iconButton}
+                    title="더보기"
                   >
                     <InfoIcon />
                   </IconButton>
