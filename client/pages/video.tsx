@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 
-import Layout from "../src/components/common/Layout";
+import Layout from "../src/components/Common/Layout";
 import VideoList from "../src/components/Video/VideoList";
 
 import {

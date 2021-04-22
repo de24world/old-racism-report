@@ -1,6 +1,6 @@
 // import Head from "next/head";
 // import styles from "../styles/Home.module.css";
-import Layout from "../src/components/common/Layout";
+import Layout from "../src/components/Common/Layout";
 import Weekly from "../src/components/Weekly";
 
 const Home = () => {

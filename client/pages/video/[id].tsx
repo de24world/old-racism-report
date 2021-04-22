@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
 import Axios from "axios";
-import Layout from "../../src/components/common/Layout";
+import Layout from "../../src/components/Common/Layout";
 import VideoDetail from "../../src/components/Video/VideoDetail";
 
 import { makeStyles } from "@material-ui/core/styles";

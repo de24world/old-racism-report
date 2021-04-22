@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
-import Layout from "../src/components/common/Layout";
+import Layout from "../src/components/Common/Layout";
 import LineChart from "../src/components/Chart/LineChart";
 import BarChart from "../src/components/Chart/BarChart";
 

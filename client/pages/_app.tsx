@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 
 import theme from "../src/utils/theme";
-import MenuAppBar from "../src/components/common/MenuAppBar";
-import Footer from "../src/components/common/Footer";
-import Layout from "../src/components/common/Layout";
+import MenuAppBar from "../src/components/Common/MenuAppBar";
+import Footer from "../src/components/Common/Footer";
+import Layout from "../src/components/Common/Layout";
 
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
