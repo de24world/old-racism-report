@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
@@ -9,6 +9,10 @@ import {
   Typography,
   Button,
   IconButton,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@material-ui/core/";
 
 import MenuIcon from "@material-ui/icons/Menu";
@@ -41,6 +45,14 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const { t } = useTranslation("common");
+  const [selectLang, setSelectLang] = useState("");
+
+  const changeLanguage = (e) => {
+    const newLanguage = e.target.value;
+    if (selectLang !== newLanguage) {
+      setSelectLang(newLanguage);
+    }
+  };
 
   return (
     <div className={classes.root}>
@@ -82,19 +94,15 @@ const Header = () => {
               <button>{t("Korean")}</button>
             </Link>
 
-            <FormControl className={classes.formControl}>
-              <InputLabel id="demo-simple-select-label">Age</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={age}
-                onChange={handleChange}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+            {/* <FormControl className={classes.formControl}>
+              <InputLabel id="demo-simple-select-label">
+                Select Langauge
+              </InputLabel>
+              <Select value={selectLang} onChange={changeLanguage}>
+                <MenuItem value="en">{t("English")}</MenuItem>
+                <MenuItem value="ko">{t("Korean")}</MenuItem>
               </Select>
-            </FormControl>
+            </FormControl> */}
           </div>
         </Toolbar>
       </AppBar>
