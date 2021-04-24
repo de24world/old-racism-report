@@ -4,7 +4,7 @@ import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 
 import theme from "../src/utils/theme";
-import MenuAppBar from "../src/components/Common/MenuAppBar";
+import Header from "../src/components/Common/Header";
 import Footer from "../src/components/Common/Footer";
 import Layout from "../src/components/Common/Layout";
 
@@ -34,7 +34,7 @@ const MyApp = (props) => {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <MenuAppBar />
+        <Header />
         <Layout>
           <Component {...pageProps} />
         </Layout>

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import * as d3 from "d3";
 import Layout from "../src/components/Common/Layout";
 import LineChart from "../src/components/Chart/LineChart";
@@ -29,5 +31,11 @@ const StatisticsPage = () => {
     </div>
   );
 };
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
+});
 
 export default StatisticsPage;

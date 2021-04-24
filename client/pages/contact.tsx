@@ -1,3 +1,5 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import Layout from "../src/components/Common/Layout";
 import Contact from "../src/components/Contact";
 import Process from "../src/components/Contact/Process";
@@ -13,5 +15,11 @@ const ContactPage = () => {
     </div>
   );
 };
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
+});
 
 export default ContactPage;

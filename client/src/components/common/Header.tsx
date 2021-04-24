@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
   navigation: {
     // flexGrow: 4,
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
 }));
 
 const Header = () => {
@@ -71,12 +75,26 @@ const Header = () => {
               <Button color="inherit">{t("Report")}</Button>
             </Link>
 
-            <Link href="/" locale="en">
+            <Link href="" locale="en">
               <button>{t("English")}</button>
             </Link>
-            <Link href="/" locale="ko">
+            <Link href="" locale="ko">
               <button>{t("Korean")}</button>
             </Link>
+
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                onChange={handleChange}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
           </div>
         </Toolbar>
       </AppBar>
