@@ -1,12 +1,16 @@
 import React from "react";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+} from "@material-ui/core/";
+
 import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
@@ -32,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+  const { t } = useTranslation("common");
 
   return (
     <div className={classes.root}>
@@ -47,23 +52,30 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            인종차별 보고서 앱
+            {t("Racism Report App")}
           </Typography>
           <div className={classes.navigation}>
             <Link href="/">
-              <Button color="inherit">홈</Button>
+              <Button color="inherit">{t("Home")}</Button>
             </Link>
             <Link href="/list">
-              <Button color="inherit">리스트</Button>
+              <Button color="inherit">{t("List")}</Button>
             </Link>
             <Link href="/video">
-              <Button color="inherit">비디오</Button>
+              <Button color="inherit">{t("Video")}</Button>
             </Link>
             <Link href="/statistics">
-              <Button color="inherit">통계</Button>
+              <Button color="inherit">{t("Static")}</Button>
             </Link>
             <Link href="/contact">
-              <Button color="inherit">제보하기</Button>
+              <Button color="inherit">{t("Report")}</Button>
+            </Link>
+
+            <Link href="/" locale="en">
+              <button>{t("English")}</button>
+            </Link>
+            <Link href="/" locale="ko">
+              <button>{t("Korean")}</button>
             </Link>
           </div>
         </Toolbar>

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
+import { appWithTranslation } from "next-i18next";
 
 import theme from "../src/utils/theme";
 import MenuAppBar from "../src/components/Common/MenuAppBar";
@@ -48,4 +49,4 @@ MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired,
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);

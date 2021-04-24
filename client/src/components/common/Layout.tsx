@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Container } from "@material-ui/core/";
 
@@ -18,7 +17,5 @@ const Layout = (props) => {
     </div>
   );
 };
-
-Layout.propTypes = {};
 
 export default Layout;

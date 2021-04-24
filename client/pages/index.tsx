@@ -1,5 +1,7 @@
 // import Head from "next/head";
 // import styles from "../styles/Home.module.css";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import Layout from "../src/components/Common/Layout";
 import Weekly from "../src/components/Weekly";
 
@@ -20,5 +22,11 @@ const Home = () => {
     </div>
   );
 };
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
+});
 
 export default Home;
