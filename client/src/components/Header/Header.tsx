@@ -10,14 +10,12 @@ import {
   Button,
   IconButton,
 } from "@material-ui/core/";
-
 import MenuIcon from "@material-ui/icons/Menu";
-import TranslateIcon from "@material-ui/icons/Translate";
+
+import LanguageSwitch from "./LanguageSwitch";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
+  root: {},
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.up("sm")]: {
@@ -30,13 +28,7 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  navigation: {
-    // flexGrow: 4,
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
+  navigation: {},
 }));
 
 const Header = () => {
@@ -75,15 +67,8 @@ const Header = () => {
             <Link href="/contact">
               <Button color="inherit">{t("Report")}</Button>
             </Link>
-
-            <TranslateIcon />
-            <Link href="" locale="en">
-              <button>{t("English")}</button>
-            </Link>
-            <Link href="" locale="ko">
-              <button>{t("Korean")}</button>
-            </Link>
           </div>
+          <LanguageSwitch />
         </Toolbar>
       </AppBar>
     </div>

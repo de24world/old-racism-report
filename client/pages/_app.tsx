@@ -4,7 +4,7 @@ import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 
 import theme from "../src/utils/theme";
-import Header from "../src/components/Common/Header";
+import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Common/Footer";
 import Layout from "../src/components/Common/Layout";
 
@@ -42,11 +42,6 @@ const MyApp = (props) => {
       </ThemeProvider>
     </React.Fragment>
   );
-};
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
 };
 
 export default appWithTranslation(MyApp);
