@@ -9,13 +9,10 @@ import {
   Typography,
   Button,
   IconButton,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
 } from "@material-ui/core/";
 
 import MenuIcon from "@material-ui/icons/Menu";
+import TranslateIcon from "@material-ui/icons/Translate";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,14 +42,6 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const { t } = useTranslation("common");
-  const [selectLang, setSelectLang] = useState("");
-
-  const changeLanguage = (e) => {
-    const newLanguage = e.target.value;
-    if (selectLang !== newLanguage) {
-      setSelectLang(newLanguage);
-    }
-  };
 
   return (
     <div className={classes.root}>
@@ -87,22 +76,13 @@ const Header = () => {
               <Button color="inherit">{t("Report")}</Button>
             </Link>
 
+            <TranslateIcon />
             <Link href="" locale="en">
               <button>{t("English")}</button>
             </Link>
             <Link href="" locale="ko">
               <button>{t("Korean")}</button>
             </Link>
-
-            {/* <FormControl className={classes.formControl}>
-              <InputLabel id="demo-simple-select-label">
-                Select Langauge
-              </InputLabel>
-              <Select value={selectLang} onChange={changeLanguage}>
-                <MenuItem value="en">{t("English")}</MenuItem>
-                <MenuItem value="ko">{t("Korean")}</MenuItem>
-              </Select>
-            </FormControl> */}
           </div>
         </Toolbar>
       </AppBar>
