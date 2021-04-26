@@ -74,3 +74,5 @@ export default BarChart;
 
 // 리액트 d3 설명 잘된 영어 블로그
 // https://observablehq.com/@d3/bar-chart
+
+// https://youtu.be/D17-8tEImFU

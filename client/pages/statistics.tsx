@@ -5,6 +5,7 @@ import * as d3 from "d3";
 import Layout from "../src/components/Common/Layout";
 import LineChart from "../src/components/Chart/LineChart";
 import BarChart from "../src/components/Chart/BarChart";
+import HorizontalBarChart from "../src/components/Chart/HorizontalBarChart";
 
 const StatisticsPage = () => {
   const [data, setData] = useState([]);
@@ -27,6 +28,7 @@ const StatisticsPage = () => {
         {!loading &&  ... */}
         <LineChart />
         <BarChart data={data} />
+        <HorizontalBarChart />
       </Layout>
     </div>
   );
