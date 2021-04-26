@@ -1,4 +1,6 @@
 import React from "react";
+import { useRouter } from "next/router";
+import ReactCountryFlag from "react-country-flag";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -17,10 +19,14 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     paddingTop: 50,
   },
+  emojiFlag: {
+    cursor: "pointer",
+  },
 }));
 
 const Footer = () => {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <div className={classes.root}>
@@ -66,6 +72,24 @@ const Footer = () => {
               <Typography variant="caption"> &copy;HoSoo Lee </Typography>
             </Grid>
           </Grid>
+          <Typography> de24world@gmail.com </Typography>
+
+          <ReactCountryFlag
+            className={classes.emojiFlag}
+            countryCode="GB"
+            title="영어"
+            onClick={() => {
+              router.push("", "", { locale: "en" });
+            }}
+          />
+          <ReactCountryFlag
+            className={classes.emojiFlag}
+            countryCode="KR"
+            title="한국어"
+            onClick={() => {
+              router.push("", "", { locale: "ko" });
+            }}
+          />
         </Toolbar>
       </AppBar>
     </div>

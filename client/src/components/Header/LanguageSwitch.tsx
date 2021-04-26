@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
-import { TextField, MenuItem, Link } from "@material-ui/core/";
+import {
+  TextField,
+  MenuItem,
+  Link,
+  FormControl,
+  Select,
+} from "@material-ui/core/";
 
 import TranslateIcon from "@material-ui/icons/Translate";
 
@@ -12,63 +18,52 @@ const LanguageSwitch = (props: Props) => {
   const { t } = useTranslation("common");
   const router = useRouter();
 
-  const languages = [
-    {
-      value: "en",
-      label: "English",
-    },
-    {
-      value: "ko",
-      label: "Korean",
-    },
-  ];
+  const [selected, setSelected] = useState("");
 
-  const [language, setLanguage] = useState();
-
-  const languageChange = (event) => {
-    setLanguage(event.target.value);
+  const languageChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setSelected(event.target.value as string);
   };
 
   return (
     <div>
       <TranslateIcon />
+
       <div
         onClick={() => {
-          router.push("/", "/", { locale: "ko" });
+          router.push("", "", { locale: "ko" });
         }}
       >
-        to /ko/
+        {t("Korean")}
       </div>
       <div
         onClick={() => {
-          router.push("/", "/", { locale: "en" });
+          router.push("", "", { locale: "en" });
         }}
       >
-        to /en/
+        {t("English")}
       </div>
-
-      {/* <Link href="" locale="en">
-        <button>{t("English")}</button>
-      </Link>
-      <Link href="" locale="ko">
-        <button>{t("Korean")}</button>
-      </Link> */}
-
-      {/* <TextField
-        select
-        label="Select"
-        className="languageField"
-        value={language}
-        onChange={languageChange}
-      >
-        {languages.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
-            <Link href="" locale={option.value}>
-              {option.label}
-            </Link>
+      {/* <FormControl>
+        <Select value={selected} onChange={languageChange}>
+          <MenuItem
+            value="ko"
+            onClick={() => {
+              router.push("/", "/", { locale: "ko" });
+            }}
+          >
+            {t("Korean")}
           </MenuItem>
-        ))}
-      </TextField> */}
+          ;
+          <MenuItem
+            value="en"
+            onClick={() => {
+              router.push("/", "/", { locale: "en" });
+            }}
+          >
+            {t("English")}
+          </MenuItem>
+          ;
+        </Select>
+      </FormControl> */}
     </div>
   );
 };

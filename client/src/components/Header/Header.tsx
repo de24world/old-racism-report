@@ -49,8 +49,10 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            {t("Racism Report App")}
+            <Link href="/">{t("Racism Report App")}</Link>
           </Typography>
+
+          <LanguageSwitch />
           <div className={classes.navigation}>
             <Link href="/">
               <Button color="inherit">{t("Home")}</Button>
@@ -68,7 +70,6 @@ const Header = () => {
               <Button color="inherit">{t("Report")}</Button>
             </Link>
           </div>
-          <LanguageSwitch />
         </Toolbar>
       </AppBar>
     </div>

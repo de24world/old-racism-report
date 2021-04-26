@@ -1,11 +1,14 @@
 // import Head from "next/head";
 // import styles from "../styles/Home.module.css";
+import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Layout from "../src/components/Common/Layout";
 import Weekly from "../src/components/Weekly";
 
 const Home = () => {
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
   return (
     <div>
       {/* 
@@ -15,8 +18,10 @@ const Home = () => {
       </Head> 
       */}
       <Layout>
-        <p>This is index.js Page</p>
-        <h2>Weekly Reacism Video</h2>
+        <h1>Index page</h1>
+        <p>Current locale: {locale}</p>
+        <p>Default locale: {defaultLocale}</p>
+        <p>Configured locales: {JSON.stringify(locales)}</p>
         <Weekly />
       </Layout>
     </div>
