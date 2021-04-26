@@ -14,20 +14,24 @@ const StatisticsPage = ({ item }) => {
 
   // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    d3.json("http://localhost:3001/api").then((data) => {
-      setData(data);
-      // console.log(data, "this is data in statics");
-      // setLoading(false);
-    });
-    return () => undefined;
-  }, []);
+  // useEffect(() => {
+  //   d3.json("http://localhost:3001/api").then((data) => {
+  //     setData(data);
+  //     // console.log(data, "this is data in statics");
+  //     // setLoading(false);
+  //   });
+  //   return () => undefined;
+  // }, []);
 
   useEffect(() => {
-    Axios.get(API_URL).then((res) => {
-      // console.log(res.data);
-      setData(res.data);
-    });
+    Axios.get(API_URL)
+      .then((res) => {
+        // console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
@@ -38,7 +42,7 @@ const StatisticsPage = ({ item }) => {
         {!loading &&  ... */}
         <LineChart />
         <BarChart data={data} />
-        <HorizontalBarChart item={data} />
+        <HorizontalBarChart items={data} />
       </Layout>
     </div>
   );
