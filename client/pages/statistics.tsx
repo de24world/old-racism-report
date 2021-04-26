@@ -2,13 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import * as d3 from "d3";
+import Axios from "axios";
 import Layout from "../src/components/Common/Layout";
 import LineChart from "../src/components/Chart/LineChart";
 import BarChart from "../src/components/Chart/BarChart";
 import HorizontalBarChart from "../src/components/Chart/HorizontalBarChart";
 
-const StatisticsPage = () => {
+const StatisticsPage = ({ item }) => {
+  const API_URL = "http://localhost:3001/api";
   const [data, setData] = useState([]);
+
   // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +23,13 @@ const StatisticsPage = () => {
     return () => undefined;
   }, []);
 
+  useEffect(() => {
+    Axios.get(API_URL).then((res) => {
+      // console.log(res.data);
+      setData(res.data);
+    });
+  }, []);
+
   return (
     <div>
       <Layout>
@@ -28,7 +38,7 @@ const StatisticsPage = () => {
         {!loading &&  ... */}
         <LineChart />
         <BarChart data={data} />
-        <HorizontalBarChart />
+        <HorizontalBarChart item={data} />
       </Layout>
     </div>
   );

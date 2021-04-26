@@ -46,7 +46,7 @@ const BarChart = (props: Props) => {
       .attr("height", (value) => 150 - yScale(value));
   }, [data]);
 
-  console.log(data, "data in Barchart");
+  // console.log(data, "data in Barchart");
 
   return (
     <div>

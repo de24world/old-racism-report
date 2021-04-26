@@ -1,9 +1,11 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 
-interface Props {}
+interface Props {
+  item: string;
+}
 
-const data = {
+const BarData = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
     {
@@ -51,10 +53,11 @@ const options = {
   },
 };
 
-const HorizontalBarChart = (props: Props) => {
+const HorizontalBarChart = ({ item }: Props) => {
+  console.log(item, "item in HorizontalBarchart");
   return (
     <div>
-      <Bar data={data} options={options} />
+      <Bar data={BarData} options={options} />
     </div>
   );
 };
