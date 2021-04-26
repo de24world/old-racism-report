@@ -11,6 +11,7 @@ import {
   IconButton,
 } from "@material-ui/core/";
 import MenuIcon from "@material-ui/icons/Menu";
+import AssessmentIcon from "@material-ui/icons/Assessment";
 
 import LanguageSwitch from "./LanguageSwitch";
 
@@ -40,7 +41,6 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            // display={{ desktop: "none" }}
             edge="start"
             className={classes.menuButton}
             color="inherit"
@@ -48,8 +48,12 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
+
+          <AssessmentIcon />
           <Typography variant="h6" className={classes.title}>
-            <Link href="/">{t("Racism Report App")}</Link>
+            <Link href="/">
+              <Button color="inherit">{t("Racism Report App")}</Button>
+            </Link>
           </Typography>
 
           <LanguageSwitch />

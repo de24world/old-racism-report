@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Layout from "../src/components/Common/Layout";
-import Weekly from "../src/components/Weekly";
+import Weekly from "../src/components/Home/Weekly";
+import Main from "../src/components/Home/Main";
 
 const Home = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const Home = () => {
         <p>Current locale: {locale}</p>
         <p>Default locale: {defaultLocale}</p>
         <p>Configured locales: {JSON.stringify(locales)}</p>
+        <Main />
         <Weekly />
       </Layout>
     </div>

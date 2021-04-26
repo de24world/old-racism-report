@@ -1,5 +1,3 @@
-import { StayCurrentLandscape } from "@material-ui/icons";
-import { access } from "node:fs";
 import React, { useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 
@@ -11,15 +9,18 @@ const HorizontalBarChart = ({ items }: Props) => {
   const countrys = items
     .map((item) => item.country)
     .filter((value, index, self) => self.indexOf(value) === index);
+  // console.log(countrys, "this is unique country");
 
-  console.log(countrys, "this is unique country");
+  const usa = items.filter((obj) => obj.country === "USA").length;
+  const germany = items.filter((obj) => obj.country === "Germany").length;
+  // console.log(count, "this is count of countrys");
 
   const BarData = {
     labels: countrys,
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
+        label: "# Number of occurrences",
+        data: [usa, germany],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -57,7 +58,7 @@ const HorizontalBarChart = ({ items }: Props) => {
       },
       title: {
         display: true,
-        text: "City Racism Report",
+        text: "Country Racism Report",
       },
     },
   };
