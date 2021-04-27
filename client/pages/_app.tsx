@@ -5,8 +5,8 @@ import { appWithTranslation } from "next-i18next";
 
 import theme from "../src/utils/theme";
 import Header from "../src/components/Header/Header";
-import Footer from "../src/components/Common/Footer";
-import Layout from "../src/components/Common/Layout";
+import Footer from "../src/components/Footer";
+import Layout from "../src/components/Layout";
 
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";

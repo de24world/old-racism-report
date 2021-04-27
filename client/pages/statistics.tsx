@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import * as d3 from "d3";
 import Axios from "axios";
-import Layout from "../src/components/Common/Layout";
+import Layout from "../src/components/Layout";
 import LineChart from "../src/components/Chart/LineChart";
 import BarChart from "../src/components/Chart/BarChart";
 import HorizontalBarChart from "../src/components/Chart/HorizontalBarChart";

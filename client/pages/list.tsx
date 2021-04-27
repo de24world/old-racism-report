@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import Layout from "../src/components/Common/Layout";
+import Layout from "../src/components/Layout";
 import ItemList from "../src/components/ItemList";
 
 const ListPage = () => {

@@ -13,7 +13,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 
-import LanguageSwitch from "./LanguageSwitch";
+import LanguageSwitch from "../LanguageSwitch";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
