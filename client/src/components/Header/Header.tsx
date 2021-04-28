@@ -1,33 +1,22 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-
-import { makeStyles } from "@material-ui/core/styles";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-} from "@material-ui/core/";
-import MenuIcon from "@material-ui/icons/Menu";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core/";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 
 import LanguageSwitch from "../LanguageSwitch";
+import MobileHeader from "./MobileHeader";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
   title: {
     flexGrow: 1,
-    [theme.breakpoints.down("xs")]: {
-      display: "none",
-    },
+    wordBreak: "keep-all",
+    // [theme.breakpoints.down("xs")]: {
+    //   display: "none",
+    // },
   },
   navigation: {},
 }));
@@ -35,20 +24,13 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const { t } = useTranslation("common");
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-
           <AssessmentIcon />
           <Typography variant="h6" className={classes.title}>
             <Link href="/">
@@ -57,23 +39,27 @@ const Header = () => {
           </Typography>
 
           <LanguageSwitch />
-          <div className={classes.navigation}>
-            <Link href="/">
-              <Button color="inherit">{t("Home")}</Button>
-            </Link>
-            <Link href="/list">
-              <Button color="inherit">{t("List")}</Button>
-            </Link>
-            <Link href="/video">
-              <Button color="inherit">{t("Video")}</Button>
-            </Link>
-            <Link href="/statistics">
-              <Button color="inherit">{t("Static")}</Button>
-            </Link>
-            <Link href="/contact">
-              <Button color="inherit">{t("Report")}</Button>
-            </Link>
-          </div>
+          {isMobile ? (
+            <MobileHeader />
+          ) : (
+            <div className={classes.navigation}>
+              <Link href="/">
+                <Button color="inherit">{t("Home")}</Button>
+              </Link>
+              <Link href="/list">
+                <Button color="inherit">{t("List")}</Button>
+              </Link>
+              <Link href="/video">
+                <Button color="inherit">{t("Video")}</Button>
+              </Link>
+              <Link href="/statistics">
+                <Button color="inherit">{t("Static")}</Button>
+              </Link>
+              <Link href="/contact">
+                <Button color="inherit">{t("Report")}</Button>
+              </Link>
+            </div>
+          )}
         </Toolbar>
       </AppBar>
     </div>

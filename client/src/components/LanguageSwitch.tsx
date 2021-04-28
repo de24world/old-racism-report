@@ -47,7 +47,7 @@ const LanguageSwitch = (props: Props) => {
             router.push("", "", { locale: "" });
           }}
         >
-          Change Language
+          Language
         </option>
         <option
           value="ko"
