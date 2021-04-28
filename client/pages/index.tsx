@@ -6,7 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Layout from "../src/components/Layout";
 import Weekly from "../src/components/Home/Weekly";
 import Main from "../src/components/Home/Main";
-import About from "../src/components/Home/About";
+import FaQ from "../src/components/Home/FaQ";
 
 const Home = () => {
   const router = useRouter();
@@ -25,8 +25,8 @@ const Home = () => {
         <p>Default locale: {defaultLocale}</p>
         <p>Configured locales: {JSON.stringify(locales)}</p>
         <Main />
-        <About />
         <Weekly />
+        <FaQ />
       </Layout>
     </div>
   );
