@@ -1,9 +1,5 @@
-import { useState, useEffect } from "react";
-import Axios from "axios";
+import { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-import Layout from "../src/components/Layout";
-import VideoList from "../src/components/Video/VideoList";
 
 import {
   Box,
@@ -15,20 +11,14 @@ import {
   CircularProgress,
 } from "@material-ui/core/";
 
+import Layout from "../src/components/Layout";
+import VideoList from "../src/components/Video/VideoList";
+import useFetch from "../src/hooks/useFetch";
+
 const VideoPage = () => {
-  const API_URL = "http://localhost:3001/api";
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [data, isLoading] = useFetch("http://localhost:3001/api");
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
-
-  useEffect(() => {
-    Axios.get(API_URL).then((res) => {
-      // console.log(res.data);
-      setData(res.data);
-      setIsLoading(false);
-    });
-  }, []);
 
   function search(dataValues) {
     return dataValues.filter((dataValue) =>
@@ -43,8 +33,6 @@ const VideoPage = () => {
   }
 
   const dataKeys = data[0] && Object.keys(data[0]);
-
-  // console.log(dataKeys, "this is dataKeys");
 
   return (
     <div>
