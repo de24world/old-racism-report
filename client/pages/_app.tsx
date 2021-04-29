@@ -7,7 +7,7 @@ import theme from "../src/utils/theme";
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer";
 import Layout from "../src/components/Layout";
-
+import "../styles/globals.css";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 

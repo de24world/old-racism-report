@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.progressbar {
+  position: absolute;
+  top: calc(50%);
+  left: calc(50%);
+  text-align: center;
+}

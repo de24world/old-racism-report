@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
 
 const LanguageSwitch = (props: Props) => {
   const classes = useStyles();
-  const { t } = useTranslation("common");
   const router = useRouter();
+  const { t } = useTranslation("common");
 
   return (
     <div>

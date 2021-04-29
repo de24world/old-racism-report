@@ -10,12 +10,19 @@ import {
   Checkbox,
   CircularProgress,
 } from "@material-ui/core/";
+import { makeStyles } from "@material-ui/core/styles";
 
 import Layout from "../src/components/Layout";
 import VideoList from "../src/components/Video/VideoList";
 import useFetch from "../src/hooks/useFetch";
 
+const useStyles = makeStyles((theme) => ({
+  root: {},
+}));
+
 const VideoPage = () => {
+  const classes = useStyles();
+
   const [data, isLoading] = useFetch("http://localhost:3001/api");
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
@@ -79,8 +86,11 @@ const VideoPage = () => {
 
         <Grid container spacing={2}>
           <Grid item>
-            {!isLoading && <VideoList data={search(data)} />}
-            {isLoading && <CircularProgress />}
+            {isLoading ? (
+              <CircularProgress className="progressbar" />
+            ) : (
+              <VideoList data={search(data)} />
+            )}
           </Grid>
         </Grid>
       </Layout>
