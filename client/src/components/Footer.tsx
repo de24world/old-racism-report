@@ -78,7 +78,24 @@ const Footer = () => {
       <Typography component="footer" className={classes.root}>
         <Container className={classes.container}>
           <Grid container spacing={5}>
-            <Grid item xs={6} sm={4} md={3}>
+            <Grid item xs={6} md={4}>
+              {/* <Typography variant="h6">Language</Typography> */}
+              <LanguageSwitch />
+            </Grid>
+
+            <Grid item xs={6} md={4}>
+              <Typography variant="h6">메뉴</Typography>
+              <ul className={classes.list}>
+                <li className={classes.listItem}>
+                  <Link href="/premium-themes/onepirate/terms/">통계</Link>
+                </li>
+                <li className={classes.listItem}>
+                  <Link href="/premium-themes/onepirate/privacy/">신고</Link>
+                </li>
+              </ul>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
               <Grid
                 container
                 direction="column"
@@ -100,55 +117,11 @@ const Footer = () => {
                 <Grid item>
                   {"© "}
                   <Link color="inherit" href="https://material-ui.com/">
-                    HoSoo Lee
+                    de24world@gmail.com
                   </Link>{" "}
                   {new Date().getFullYear()}
                 </Grid>
               </Grid>
-            </Grid>
-            <Grid item xs={6} sm={4} md={2}>
-              <Typography variant="h6">Legal</Typography>
-              <ul className={classes.list}>
-                <li className={classes.listItem}>
-                  <Link href="/premium-themes/onepirate/terms/">Terms</Link>
-                </li>
-                <li className={classes.listItem}>
-                  <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
-                </li>
-              </ul>
-            </Grid>
-            <Grid item xs={6} sm={8} md={4}>
-              {/* <Typography variant="h6">Language</Typography> */}
-              <LanguageSwitch />
-            </Grid>
-            <Grid item>
-              <Typography variant="caption">
-                {"Icons made by "}
-                <Link
-                  href="https://www.freepik.com"
-                  rel="sponsored"
-                  title="Freepik"
-                >
-                  Freepik
-                </Link>
-                {" from "}
-                <Link
-                  href="https://www.flaticon.com"
-                  rel="sponsored"
-                  title="Flaticon"
-                >
-                  www.flaticon.com
-                </Link>
-                {" is licensed by "}
-                <Link
-                  href="https://creativecommons.org/licenses/by/3.0/"
-                  title="Creative Commons BY 3.0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CC 3.0 BY
-                </Link>
-              </Typography>
             </Grid>
           </Grid>
         </Container>

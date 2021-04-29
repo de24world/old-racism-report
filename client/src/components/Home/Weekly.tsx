@@ -39,8 +39,10 @@ const Weekly = () => {
 
   return (
     <>
-      <Container className={classes.cardGrid} maxWidth="md">
-        Weekly Videos
+      <Container className={classes.cardGrid}>
+        <Typography variant="h4" color="primary" gutterBottom>
+          Weekly Videos
+        </Typography>
         <Grid container spacing={4}>
           {cards.map((card) => (
             <Grid item key={card} xs={12} sm={6} md={4}>

@@ -4,6 +4,7 @@ import ReactCountryFlag from "react-country-flag";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
+  Container,
   Card,
   CardContent,
   CardActions,
@@ -63,86 +64,88 @@ const VideoDetail = ({ item }) => {
 
   return (
     <>
-      <Card className={classes.root}>
-        <CardContent>
-          <List
-          // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-          >
-            <div className={classes.wrapper}>
-              <ReactPlayer
-                className={classes.player}
-                url={evidence}
-                width="100%"
-                height="100%"
-              />
-            </div>
+      <Container maxWidth="md">
+        <Card className={classes.root}>
+          <CardContent>
+            <List
+            // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+            >
+              <div className={classes.wrapper}>
+                <ReactPlayer
+                  className={classes.player}
+                  url={evidence}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
 
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <ReactCountryFlag
-                    countryCode={countryCode}
-                    className={classes.flagIcon}
-                  />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Country" secondary={country} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <MyLocationIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="City" secondary={city} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <DateRangeIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Time" secondary={time} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <SportsMmaIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Offender" secondary={offender} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <PregnantWomanIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Victim" secondary={victim} />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
-                  <ReportIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Level" secondary={level} />
-              <Tooltip title="레벨1은 언어 폭력 / 레벨2는 폭행 / 레벨3은 살인, 강간 등 강력범죄">
-                <HelpIcon className={classes.tooltipIcon} />
-              </Tooltip>
-            </ListItem>
-          </List>
-        </CardContent>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <ReactCountryFlag
+                      countryCode={countryCode}
+                      className={classes.flagIcon}
+                    />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Country" secondary={country} />
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <MyLocationIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="City" secondary={city} />
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <DateRangeIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Time" secondary={time} />
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <SportsMmaIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Offender" secondary={offender} />
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <PregnantWomanIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Victim" secondary={victim} />
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <ReportIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Level" secondary={level} />
+                <Tooltip title="레벨1은 언어 폭력 / 레벨2는 폭행 / 레벨3은 살인, 강간 등 강력범죄">
+                  <HelpIcon className={classes.tooltipIcon} />
+                </Tooltip>
+              </ListItem>
+            </List>
+          </CardContent>
 
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
+          <CardActions>
+            <Button size="small" color="primary">
+              Share
+            </Button>
+            <Button size="small" color="primary">
+              Learn More
+            </Button>
+          </CardActions>
+        </Card>
+      </Container>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
+  Container,
   Typography,
   Accordion,
   AccordionSummary,
@@ -40,26 +41,28 @@ const FaQ = (props: Props) => {
 
   return (
     <>
-      <Typography variant="h4" color="primary" gutterBottom>
-        FaQ
-      </Typography>
-      {accordionData.map((accordion, i) => {
-        const { headings, details } = accordion;
-        return (
-          <Accordion key={i}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className={classes.heading}>{headings}</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>{details}</Typography>
-            </AccordionDetails>
-          </Accordion>
-        );
-      })}
+      <Container maxWidth="md">
+        <Typography variant="h4" color="primary" gutterBottom>
+          FaQ
+        </Typography>
+        {accordionData.map((accordion, i) => {
+          const { headings, details } = accordion;
+          return (
+            <Accordion key={i}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography className={classes.heading}>{headings}</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>{details}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          );
+        })}
+      </Container>
     </>
   );
 };
