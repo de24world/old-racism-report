@@ -18,7 +18,7 @@ import LanguageSwitch from "./LanguageSwitch";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.warning.light,
     marginTop: theme.spacing(3),
   },
   container: {
