@@ -1,7 +1,7 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Layout from "../src/components/Layout";
-import Contact from "../src/components/Contact/Contact";
+import Form from "../src/components/Contact/Form";
 import Process from "../src/components/Contact/Process";
 
 const ContactPage = () => {
@@ -10,7 +10,7 @@ const ContactPage = () => {
       <Layout>
         <p>This is report.js Page</p>
         <Process />
-        <Contact />
+        <Form />
       </Layout>
     </div>
   );

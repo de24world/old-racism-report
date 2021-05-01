@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-const Post = ({ item }) => {
+const Video = ({ item }) => {
   const classes = useStyles();
 
   return (
@@ -26,7 +26,7 @@ const Post = ({ item }) => {
   );
 };
 
-export default Post;
+export default Video;
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
