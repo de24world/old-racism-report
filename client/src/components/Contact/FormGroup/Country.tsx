@@ -41,7 +41,7 @@ const Country = (props: Props) => {
       <Autocomplete
         id="country-select-demo"
         style={{ width: 300 }}
-        // options={countries as CountryType[]}
+        options={countries as CountryType[]}
         classes={{
           option: classes.option,
         }}
