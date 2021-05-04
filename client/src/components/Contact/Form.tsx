@@ -19,7 +19,7 @@ import Alert from "@material-ui/lab/Alert";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import Country from "./FormGroup/Country";
+import Countries from "./FormGroup/Countries";
 import DataForm from "./FormGroup/DateForm";
 
 type FormValues = {
@@ -68,9 +68,12 @@ const Form = () => {
 
   return (
     <>
-      {/* <Country /> */}
       대량 데이터는 이메일로 보내주세요
       <form onSubmit={handleSubmit(onSubmit)}>
+        <section>
+          <Countries control={control} />
+        </section>
+
         <section>
           <FormControl variant="outlined" className={classes.formControl}>
             <InputLabel>Offender</InputLabel>
