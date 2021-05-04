@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import {
+  Grid,
   TextField,
   FormControl,
   FormLabel,
@@ -45,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   formControl: {
-    margin: theme.spacing(1),
     minWidth: 120,
   },
 }));
@@ -70,48 +70,55 @@ const Form = () => {
     <>
       대량 데이터는 이메일로 보내주세요
       <form onSubmit={handleSubmit(onSubmit)}>
-        <section>
-          <Countries control={control} />
-        </section>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <Countries control={control} />
+          </Grid>
 
-        <section>
-          <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel>Offender</InputLabel>
+          <Grid item xs={12} sm={6}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel>Offender</InputLabel>
+              <Controller
+                name="offender"
+                control={control}
+                defaultValue=""
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select label="Offender" {...field}>
+                    <MenuItem value="black women">Black women</MenuItem>
+                    <MenuItem value="black guy">Black guy</MenuItem>
+                    <MenuItem value="white guy">White guy</MenuItem>
+                  </Select>
+                )}
+              />
+            </FormControl>
+            {errors.offender && (
+              <Alert severity="error">This is required</Alert>
+            )}
+          </Grid>
+
+          <Grid item xs={12}>
             <Controller
-              name="offender"
+              name="evidence"
               control={control}
               defaultValue=""
               rules={{ required: true }}
               render={({ field }) => (
-                <Select label="Offender" {...field}>
-                  <MenuItem value="black women">Black women</MenuItem>
-                  <MenuItem value="black guy">Black guy</MenuItem>
-                  <MenuItem value="white guy">White guy</MenuItem>
-                </Select>
+                <TextField
+                  {...field}
+                  label="Youtube URL"
+                  variant="outlined"
+                  fullWidth
+                />
               )}
             />
-          </FormControl>
-          {errors.offender && <Alert severity="error">This is required</Alert>}
-        </section>
+            {errors.evidence && (
+              <Alert severity="error">This is required</Alert>
+            )}
+          </Grid>
 
-        <Controller
-          name="evidence"
-          control={control}
-          defaultValue=""
-          rules={{ required: true }}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Youtube URL"
-              variant="outlined"
-              fullWidth
-            />
-          )}
-        />
-        {errors.evidence && <Alert severity="error">This is required</Alert>}
-
-        {/* <DataForm /> */}
-        {/* <Controller
+          {/* <DataForm /> */}
+          {/* <Controller
           control={control}
           name="Datepicker"
           render={({ field }) => (
@@ -126,27 +133,28 @@ const Form = () => {
           )}
         /> */}
 
-        <section>
-          <label>Level</label>
-          <Controller
-            name="level"
-            control={control}
-            defaultValue=""
-            rules={{ required: true }}
-            render={({ field }) => (
-              <RadioGroup {...field}>
-                <FormControlLabel value="1" control={<Radio />} label="1" />
-                <FormControlLabel value="2" control={<Radio />} label="2" />
-                <FormControlLabel value="3" control={<Radio />} label="3" />
-              </RadioGroup>
-            )}
-          />
-          {errors.level && <Alert severity="error">This is required</Alert>}
-        </section>
+          <Grid item xs={12}>
+            <label>Level</label>
+            <Controller
+              name="level"
+              control={control}
+              defaultValue=""
+              rules={{ required: true }}
+              render={({ field }) => (
+                <RadioGroup {...field}>
+                  <FormControlLabel value="1" control={<Radio />} label="1" />
+                  <FormControlLabel value="2" control={<Radio />} label="2" />
+                  <FormControlLabel value="3" control={<Radio />} label="3" />
+                </RadioGroup>
+              )}
+            />
+            {errors.level && <Alert severity="error">This is required</Alert>}
+          </Grid>
 
-        <Button type="submit" variant="contained" color="primary">
-          Submit
-        </Button>
+          <Button type="submit" variant="contained" color="primary">
+            Submit
+          </Button>
+        </Grid>
       </form>
     </>
   );
