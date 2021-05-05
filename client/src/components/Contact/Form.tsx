@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import * as yup from "yup";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -23,21 +25,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import Countries from "./FormGroup/Countries";
 import DataForm from "./FormGroup/DateForm";
+import TextInput from "./FormGroup/TextInput";
 
 type FormValues = {
   // https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw?file=/src/index.tsx:1129-1496
-  // Native: string;
   TextField: string;
-  // Select: string;
-  // ReactSelect: NestedValue<{ value: string; label: string }>;
-  // Checkbox: boolean;
-  // switch: boolean;
-  // RadioGroup: string;
-  // MUI_Slider: string;
-  // Datepicker: Date;
-  // numberFormat: number;
-  // downShift: string;
-  // country: NestedValue<{ code: string; label: string; phone: string }>;
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -90,9 +82,7 @@ const Form = () => {
                 />
               )}
             />
-            {errors.evidence && (
-              <Alert severity="error">This is required</Alert>
-            )}
+            {errors.city && <Alert severity="error">This is required</Alert>}
           </Grid>
 
           <Grid item xs={12} sm={6}>
@@ -134,29 +124,11 @@ const Form = () => {
                 )}
               />
             </FormControl>
-            {errors.offender && (
-              <Alert severity="error">This is required</Alert>
-            )}
+            {errors.victim && <Alert severity="error">This is required</Alert>}
           </Grid>
 
           <Grid item xs={12}>
-            <Controller
-              name="evidence"
-              control={control}
-              defaultValue=""
-              rules={{ required: true }}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label="Youtube URL"
-                  variant="outlined"
-                  fullWidth
-                />
-              )}
-            />
-            {errors.evidence && (
-              <Alert severity="error">This is required</Alert>
-            )}
+            <TextInput control={control} errors={errors} />
           </Grid>
 
           {/* <DataForm /> */}

@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Countries = (props: Props) => {
+const Countries = ({ control }) => {
   const classes = useStyles();
 
   function countryToFlag(isoCode: string) {
