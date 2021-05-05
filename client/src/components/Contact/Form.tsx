@@ -15,6 +15,7 @@ import {
   Select,
   MenuItem,
   Button,
+  Typography,
 } from "@material-ui/core/";
 import Alert from "@material-ui/lab/Alert";
 
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   formControl: {
-    minWidth: 120,
+    width: "100%",
   },
 }));
 
@@ -60,7 +61,7 @@ const Form = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormValues>();
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
@@ -68,11 +69,30 @@ const Form = () => {
 
   return (
     <>
-      대량 데이터는 이메일로 보내주세요
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <Countries control={control} />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <Controller
+              name="city"
+              control={control}
+              defaultValue=""
+              rules={{ required: true }}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  label="City Name"
+                  variant="outlined"
+                  fullWidth
+                />
+              )}
+            />
+            {errors.evidence && (
+              <Alert severity="error">This is required</Alert>
+            )}
           </Grid>
 
           <Grid item xs={12} sm={6}>
@@ -85,6 +105,28 @@ const Form = () => {
                 rules={{ required: true }}
                 render={({ field }) => (
                   <Select label="Offender" {...field}>
+                    <MenuItem value="black women">Black women</MenuItem>
+                    <MenuItem value="black guy">Black guy</MenuItem>
+                    <MenuItem value="white guy">White guy</MenuItem>
+                  </Select>
+                )}
+              />
+            </FormControl>
+            {errors.offender && (
+              <Alert severity="error">This is required</Alert>
+            )}
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel>Victim</InputLabel>
+              <Controller
+                name="victim"
+                control={control}
+                defaultValue=""
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select label="Victim" {...field}>
                     <MenuItem value="black women">Black women</MenuItem>
                     <MenuItem value="black guy">Black guy</MenuItem>
                     <MenuItem value="white guy">White guy</MenuItem>
@@ -134,7 +176,6 @@ const Form = () => {
         /> */}
 
           <Grid item xs={12}>
-            <label>Level</label>
             <Controller
               name="level"
               control={control}
@@ -151,11 +192,14 @@ const Form = () => {
             {errors.level && <Alert severity="error">This is required</Alert>}
           </Grid>
 
-          <Button type="submit" variant="contained" color="primary">
-            Submit
-          </Button>
+          <Grid item>
+            <Button type="submit" variant="contained" color="primary">
+              Submit
+            </Button>
+          </Grid>
         </Grid>
       </form>
+      <Typography>대량 데이터는 이메일로 보내주세요</Typography>
     </>
   );
 };
