@@ -30,7 +30,7 @@ export default Video;
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  const apiUrl = `http://localhost:3001/api/${id}`;
+  const apiUrl = `http://localhost:3006/api/${id}`;
   const res = await Axios.get(apiUrl);
   const data = res.data;
 

@@ -8,7 +8,7 @@ const useFetch = (props: Props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api").then((res) => {
+    Axios.get("http://localhost:3006/api").then((res) => {
       // console.log(res.data);
       setData(res.data);
       setIsLoading(false);

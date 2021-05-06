@@ -7,7 +7,7 @@ import ItemList from "../src/components/ItemList";
 
 const ListPage = () => {
   const [dataList, setDataList] = useState([]);
-  const API_URL = "http://localhost:3001/api";
+  const API_URL = "http://localhost:3006/api";
 
   const getData = () => {
     Axios.get(API_URL).then((res) => {

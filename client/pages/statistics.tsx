@@ -9,7 +9,7 @@ import BarChart from "../src/components/Chart/BarChart";
 import HorizontalBarChart from "../src/components/Chart/HorizontalBarChart";
 
 const StatisticsPage = ({ item }) => {
-  const API_URL = "http://localhost:3001/api";
+  const API_URL = "http://localhost:3006/api";
   const [data, setData] = useState([]);
 
   // const [loading, setLoading] = useState(true);

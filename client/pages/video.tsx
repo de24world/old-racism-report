@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const VideoPage = () => {
   const classes = useStyles();
 
-  const [data, isLoading] = useFetch("http://localhost:3001/api");
+  const [data, isLoading] = useFetch("http://localhost:3006/api");
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
 
