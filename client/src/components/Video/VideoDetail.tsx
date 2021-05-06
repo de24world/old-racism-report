@@ -48,9 +48,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VideoDetail = ({ item }) => {
+interface ItemProps {
+  item: ItemDataProps;
+}
+
+interface ItemDataProps {
+  id: number;
+  offender: string;
+  victim: string;
+  time: any;
+  country: string;
+  countryCode: string;
+  city: string;
+  evidence: string;
+  level: number;
+}
+
+const VideoDetail = ({ item }: ItemProps) => {
+  const classes = useStyles();
+
   const {
-    id,
     offender,
     victim,
     time,
@@ -60,7 +77,6 @@ const VideoDetail = ({ item }) => {
     evidence,
     level,
   } = item;
-  const classes = useStyles();
 
   return (
     <>
