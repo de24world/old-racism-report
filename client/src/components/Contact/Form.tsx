@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+  radioGroup: {
+    flexDirection: "row",
+  },
   formControl: {
     width: "100%",
   },
@@ -63,28 +66,6 @@ const Form = () => {
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <Countries control={control} />
-          </Grid>
-
-          <Grid item xs={12} sm={6}>
-            <Controller
-              name="city"
-              control={control}
-              defaultValue=""
-              rules={{ required: true }}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  label="City Name"
-                  variant="outlined"
-                  fullWidth
-                />
-              )}
-            />
-            {errors.city && <Alert severity="error">This is required</Alert>}
-          </Grid>
-
           <Grid item xs={12} sm={6}>
             <FormControl variant="outlined" className={classes.formControl}>
               <InputLabel>Offender</InputLabel>
@@ -127,10 +108,6 @@ const Form = () => {
             {errors.victim && <Alert severity="error">This is required</Alert>}
           </Grid>
 
-          <Grid item xs={12}>
-            <TextInput control={control} errors={errors} />
-          </Grid>
-
           {/* <DataForm /> */}
           {/* <Controller
           control={control}
@@ -147,20 +124,49 @@ const Form = () => {
           )}
         /> */}
 
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6}>
+            <Countries control={control} />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
             <Controller
-              name="level"
+              name="city"
               control={control}
               defaultValue=""
               rules={{ required: true }}
               render={({ field }) => (
-                <RadioGroup {...field}>
-                  <FormControlLabel value="1" control={<Radio />} label="1" />
-                  <FormControlLabel value="2" control={<Radio />} label="2" />
-                  <FormControlLabel value="3" control={<Radio />} label="3" />
-                </RadioGroup>
+                <TextField
+                  {...field}
+                  label="City Name"
+                  variant="outlined"
+                  fullWidth
+                />
               )}
             />
+            {errors.city && <Alert severity="error">This is required</Alert>}
+          </Grid>
+
+          <Grid item xs={12}>
+            <TextInput control={control} errors={errors} />
+          </Grid>
+
+          <Grid item xs={12}>
+            <FormControl>
+              <FormLabel>Level</FormLabel>
+              <Controller
+                name="level"
+                control={control}
+                defaultValue=""
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <RadioGroup {...field} className={classes.radioGroup}>
+                    <FormControlLabel value="1" control={<Radio />} label="1" />
+                    <FormControlLabel value="2" control={<Radio />} label="2" />
+                    <FormControlLabel value="3" control={<Radio />} label="3" />
+                  </RadioGroup>
+                )}
+              />
+            </FormControl>
             {errors.level && <Alert severity="error">This is required</Alert>}
           </Grid>
 
