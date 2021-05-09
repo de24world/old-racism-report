@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import ReactCountryFlag from "react-country-flag";
+import { useTranslation } from "next-i18next";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -8,7 +9,9 @@ import {
   Grid,
   Container,
   Link,
-  TextField,
+  List,
+  ListItem,
+  Button,
 } from "@material-ui/core";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -24,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
   container: {
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
-    display: "flex",
   },
   iconsWrapper: {
     height: 120,
@@ -43,15 +45,6 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.warning.dark,
     },
   },
-  list: {
-    margin: 0,
-    listStyle: "none",
-    padding: 0,
-  },
-  listItem: {
-    paddingTop: theme.spacing(0.5),
-    paddingBottom: theme.spacing(0.5),
-  },
   language: {
     marginTop: theme.spacing(1),
     width: 150,
@@ -61,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles();
   const router = useRouter();
+  const { t } = useTranslation("common");
 
   const LANGUAGES = [
     {
@@ -77,22 +71,27 @@ const Footer = () => {
     <>
       <Typography component="footer" className={classes.root}>
         <Container className={classes.container}>
-          <Grid container spacing={5}>
-            <Grid item xs={6} md={4}>
-              {/* <Typography variant="h6">Language</Typography> */}
+          <Grid container>
+            <Grid item xs={6} md={2}>
               <LanguageSwitch />
             </Grid>
 
-            <Grid item xs={6} md={4}>
-              <Typography variant="h6">메뉴</Typography>
-              <ul className={classes.list}>
-                <li className={classes.listItem}>
-                  <Link href="/premium-themes/onepirate/terms/">통계</Link>
-                </li>
-                <li className={classes.listItem}>
-                  <Link href="/premium-themes/onepirate/privacy/">신고</Link>
-                </li>
-              </ul>
+            <Grid item xs={6} md={6}>
+              <Link href="/">
+                <Button>{t("Home")}</Button>
+              </Link>
+              <Link href="/list">
+                <Button>{t("List")}</Button>
+              </Link>
+              <Link href="/video">
+                <Button>{t("Video")}</Button>
+              </Link>
+              <Link href="/statistics">
+                <Button>{t("Static")}</Button>
+              </Link>
+              <Link href="/contact">
+                <Button>{t("Report")}</Button>
+              </Link>
             </Grid>
 
             <Grid item xs={12} md={4}>
