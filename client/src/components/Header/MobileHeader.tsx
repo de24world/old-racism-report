@@ -70,7 +70,7 @@ const MobileHeader = (props: Props) => {
           const { menuTitle, pageURL } = menuItem;
           return (
             <MenuItem key={i} onClick={meunClose}>
-              <Link href={pageURL}>{menuTitle}</Link>
+              <Link href={pageURL}>{t(menuTitle)}</Link>
             </MenuItem>
           );
         })}

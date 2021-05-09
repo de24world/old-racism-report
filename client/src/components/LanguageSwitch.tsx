@@ -17,7 +17,11 @@ import TranslateIcon from "@material-ui/icons/Translate";
 interface Props {}
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    "& .MuiInputBase-root": {
+      color: theme.palette.primary.light,
+    },
+  },
 
   language: {
     // marginTop: theme.spacing(1),
@@ -31,7 +35,7 @@ const LanguageSwitch = (props: Props) => {
   const { t } = useTranslation("common");
 
   return (
-    <div>
+    <div className={classes.root}>
       <TranslateIcon />
 
       <TextField
