@@ -6,13 +6,13 @@ import Process from "../src/components/Contact/Process";
 
 const ContactPage = () => {
   return (
-    <div>
+    <>
       <Layout>
-        <p>This is report.js Page</p>
+        <p>This is contact.js Page</p>
         <Process />
         <Form />
       </Layout>
-    </div>
+    </>
   );
 };
 

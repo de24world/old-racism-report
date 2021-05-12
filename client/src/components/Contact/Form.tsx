@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+// Material UI
 import {
   Grid,
   TextField,
@@ -20,23 +22,19 @@ import {
   Typography,
 } from "@material-ui/core/";
 import Alert from "@material-ui/lab/Alert";
-
 import { makeStyles } from "@material-ui/core/styles";
 
+// Source FormGroup Component
 import Countries from "./FormGroup/Countries";
 import DataForm from "./FormGroup/DateForm";
 import TextInput from "./FormGroup/TextInput";
 
-type FormValues = {
-  // https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw?file=/src/index.tsx:1129-1496
-  TextField: string;
-};
-
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-    },
+    margin: theme.spacing(1),
+    // "& .MuiTextField-root": {
+    //   margin: theme.spacing(1),
+    // },
   },
   radioGroup: {
     flexDirection: "row",
@@ -46,7 +44,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Form = () => {
+type FormValues = {
+  // https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw?file=/src/index.tsx:1129-1496
+  TextField: string;
+  name: string;
+};
+
+function Form() {
   const classes = useStyles();
 
   const {
@@ -63,7 +67,7 @@ const Form = () => {
   };
 
   return (
-    <>
+    <div className={classes.root}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
@@ -178,8 +182,8 @@ const Form = () => {
         </Grid>
       </form>
       <Typography>대량 데이터는 이메일로 보내주세요</Typography>
-    </>
+    </div>
   );
-};
+}
 
 export default Form;
