@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-around",
+    justifyContent: "space-around"
     // backgroundColor: theme.palette.background.paper,
   },
   gridList: {
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VideoItem = ({ data }) => {
+const VideoList = ({ data }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
@@ -88,4 +88,4 @@ const VideoItem = ({ data }) => {
   );
 };
 
-export default VideoItem;
+export default VideoList;

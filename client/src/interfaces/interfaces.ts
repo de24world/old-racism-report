@@ -2,10 +2,10 @@ export interface IDataProps {
   id: string,
   offender: string,
   victim: string,
-  time: any, 
+  time: any,
   // change later moment
   country: string,
-  contryCode: string,
+  countryCode: string,
   city: string,
   evidence: string,
   level: number

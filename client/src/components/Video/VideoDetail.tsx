@@ -1,7 +1,13 @@
 import React from "react";
+
+// Interface Typescript
+import { IDataProps } from "../../interfaces/interfaces";
+
+// React Libaray
 import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
 
+// Material UI
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -25,7 +31,7 @@ import HelpIcon from "@material-ui/icons/Help";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: "100%",
+    margin: theme.spacing(2),
   },
   wrapper: {
     position: "relative",
@@ -49,22 +55,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface ItemProps {
-  item: ItemDataProps;
+  item: IDataProps;
 }
 
-interface ItemDataProps {
-  id: number;
-  offender: string;
-  victim: string;
-  time: any;
-  country: string;
-  countryCode: string;
-  city: string;
-  evidence: string;
-  level: number;
-}
-
-const VideoDetail = ({ item }: ItemProps) => {
+function VideoDetail({ item }: ItemProps) {
   const classes = useStyles();
 
   const {
@@ -164,6 +158,6 @@ const VideoDetail = ({ item }: ItemProps) => {
       </Container>
     </>
   );
-};
+}
 
 export default VideoDetail;
