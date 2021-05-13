@@ -1,21 +1,29 @@
 import React from "react";
-import { useRouter } from "next/router";
+
+// Library
 import ReactCountryFlag from "react-country-flag";
+
+// Next Module
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
-import { makeStyles } from "@material-ui/core/styles";
+// Material UI
 import {
+  makeStyles,
   Typography,
   Grid,
   Container,
   Link,
-  List,
-  ListItem,
   Button,
+  Tooltip,
 } from "@material-ui/core";
+
+// Material Icons
 import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import EmailIcon from "@material-ui/icons/Email";
+
+// Source Component
 import LanguageSwitch from "./LanguageSwitch";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(8),
   },
   iconsWrapper: {
-    height: 120,
+    height: 0,
   },
   icons: {
     display: "flex",
@@ -86,8 +94,8 @@ const Footer = () => {
               <Link href="/video">
                 <Button>{t("Video")}</Button>
               </Link>
-              <Link href="/statistics">
-                <Button>{t("Static")}</Button>
+              <Link href="/chart">
+                <Button>{t("Chart")}</Button>
               </Link>
               <Link href="/contact">
                 <Button>{t("Report")}</Button>
@@ -98,7 +106,6 @@ const Footer = () => {
               <Grid
                 container
                 direction="column"
-                justify="flex-end"
                 className={classes.iconsWrapper}
                 spacing={2}
               >
@@ -106,20 +113,27 @@ const Footer = () => {
                   <a href="https://material-ui.com/" className={classes.icon}>
                     <FacebookIcon />
                   </a>
-                  <a
-                    href="https://twitter.com/MaterialUI"
-                    className={classes.icon}
-                  >
+
+                  <a href="" className={classes.icon}>
                     <InstagramIcon />
                   </a>
+
+                  <Tooltip title="de24world@gmail.com">
+                    <a
+                      href="mailto:de24world@gmail.com"
+                      className={classes.icon}
+                    >
+                      <EmailIcon />
+                    </a>
+                  </Tooltip>
                 </Grid>
-                <Grid item>
-                  {"© "}
+                {/* <Grid item>
+                  {"© "} Puscha
                   <Link color="inherit" href="https://material-ui.com/">
+                    <EmailIcon />
                     de24world@gmail.com
                   </Link>{" "}
-                  {new Date().getFullYear()}
-                </Grid>
+                </Grid> */}
               </Grid>
             </Grid>
           </Grid>

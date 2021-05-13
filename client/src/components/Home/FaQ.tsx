@@ -41,7 +41,7 @@ const FaQ = (props: Props) => {
 
   return (
     <>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography variant="h4" color="primary" gutterBottom>
           FaQ
         </Typography>

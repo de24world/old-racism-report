@@ -44,8 +44,8 @@ const MobileHeader = (props: Props) => {
       pageURL: "/video",
     },
     {
-      menuTitle: "Static",
-      pageURL: "/statistics",
+      menuTitle: "Chart",
+      pageURL: "/chart",
     },
     {
       menuTitle: "Report",

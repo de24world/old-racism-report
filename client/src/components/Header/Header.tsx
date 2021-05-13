@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+
+// material UI
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Typography, Button } from "@material-ui/core/";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 
+// Source Component
 import LanguageSwitch from "../LanguageSwitch";
 import MobileHeader from "./MobileHeader";
 
@@ -52,8 +55,8 @@ const Header = () => {
               <Link href="/video">
                 <Button color="inherit">{t("Video")}</Button>
               </Link>
-              <Link href="/statistics">
-                <Button color="inherit">{t("Static")}</Button>
+              <Link href="/chart">
+                <Button color="inherit">{t("Chart")}</Button>
               </Link>
               <Link href="/contact">
                 <Button color="inherit">{t("Report")}</Button>

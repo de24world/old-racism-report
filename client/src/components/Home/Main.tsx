@@ -1,6 +1,13 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Container, Grid, Typography, Button } from "@material-ui/core/";
+
+// Material UI
+import {
+  makeStyles,
+  Container,
+  Grid,
+  Typography,
+  Button,
+} from "@material-ui/core/";
 
 interface Props {}
 
@@ -33,12 +40,12 @@ const Main = (props: Props) => {
           <Grid container spacing={2} justify="center">
             <Grid item>
               <Button variant="contained" color="primary">
-                Go to Static
+                Go to List
               </Button>
             </Grid>
             <Grid item>
               <Button variant="outlined" color="primary">
-                Go to Report
+                Go to Chart
               </Button>
             </Grid>
           </Grid>
