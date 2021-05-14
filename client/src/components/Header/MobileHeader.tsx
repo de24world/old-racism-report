@@ -11,9 +11,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginLeft: theme.spacing(2),
-  },
 }));
 
 const MobileHeader = (props: Props) => {
@@ -56,7 +53,6 @@ const MobileHeader = (props: Props) => {
   return (
     <div>
       <IconButton
-        className={classes.menuButton}
         edge="start"
         color="inherit"
         aria-label="menu"

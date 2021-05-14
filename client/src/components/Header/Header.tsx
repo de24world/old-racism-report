@@ -13,7 +13,6 @@ import LanguageSwitch from "../LanguageSwitch";
 import MobileHeader from "./MobileHeader";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   title: {
     flexGrow: 1,
     wordBreak: "keep-all",
@@ -21,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     //   display: "none",
     // },
   },
-  navigation: {},
 }));
 
 const Header = () => {
@@ -31,13 +29,13 @@ const Header = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <div className={classes.root}>
+    <>
       <AppBar position="static">
         <Toolbar>
           <AssessmentIcon />
           <Typography variant="h6" className={classes.title}>
             <Link href="/">
-              <Button color="inherit">{t("Racism Report App")}</Button>
+              <Button color="inherit">{t("Racism Report")}</Button>
             </Link>
           </Typography>
 
@@ -45,7 +43,7 @@ const Header = () => {
           {isMobile ? (
             <MobileHeader />
           ) : (
-            <div className={classes.navigation}>
+            <div>
               <Link href="/">
                 <Button color="inherit">{t("Home")}</Button>
               </Link>
@@ -65,7 +63,7 @@ const Header = () => {
           )}
         </Toolbar>
       </AppBar>
-    </div>
+    </>
   );
 };
 

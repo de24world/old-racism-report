@@ -22,9 +22,11 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.light,
     },
   },
-
+  translateIcon: {
+    marginRight: theme.spacing(1),
+  },
   language: {
-    // marginTop: theme.spacing(1),
+    marginRight: theme.spacing(2),
     width: "auto",
   },
 }));
@@ -36,7 +38,7 @@ const LanguageSwitch = (props: Props) => {
 
   return (
     <div className={classes.root}>
-      <TranslateIcon />
+      <TranslateIcon className={classes.translateIcon} />
 
       <TextField
         select
