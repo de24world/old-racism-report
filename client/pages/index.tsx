@@ -3,21 +3,23 @@
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+// Source Components
 import Layout from "../src/components/Layout";
 import Weekly from "../src/components/Home/Weekly";
 import Main from "../src/components/Home/Main";
 import FaQ from "../src/components/Home/FaQ";
+import Total from "../src/components/Home/Total";
 
 const Home = () => {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   return (
     <div>
-      {/* 
+      {/*
       <Head>
         <title>Racism Report App</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head> 
+      </Head>
       */}
       <Layout>
         <h1>Index page</h1>
@@ -25,6 +27,7 @@ const Home = () => {
         <p>Default locale: {defaultLocale}</p>
         <p>Configured locales: {JSON.stringify(locales)}</p>
         <Main />
+        <Total />
         <Weekly />
         <FaQ />
       </Layout>

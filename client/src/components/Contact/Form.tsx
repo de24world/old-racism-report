@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
+// Libarary
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -50,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
 type FormValues = {
   // https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw?file=/src/index.tsx:1129-1496
   TextField: string;
-  name: string;
 };
 
 function Form() {
@@ -138,7 +137,7 @@ function Form() {
         /> */}
 
             <Grid item xs={12} sm={6}>
-              <Countries control={control} />
+              <Countries control={control} errors={errors} />
             </Grid>
 
             <Grid item xs={12} sm={6}>

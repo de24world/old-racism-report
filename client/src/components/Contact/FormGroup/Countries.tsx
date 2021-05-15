@@ -1,9 +1,11 @@
 import React from "react";
-import { Controller } from "react-hook-form";
 
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import { makeStyles } from "@material-ui/core/styles";
+// React Hook Form
+import { useForm, Controller } from "react-hook-form";
+
+// Material UI
+import { makeStyles, TextField } from "@material-ui/core";
+import { Autocomplete, Alert } from "@material-ui/lab";
 
 // import countries from "./Country.json";
 
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Countries = ({ control }) => {
+const Countries = ({ control, errors }) => {
   const classes = useStyles();
 
   function countryToFlag(isoCode: string) {
@@ -40,7 +42,7 @@ const Countries = ({ control }) => {
   }
 
   return (
-    <div>
+    <>
       <Autocomplete
         options={countries}
         autoHighlight
@@ -63,7 +65,8 @@ const Countries = ({ control }) => {
           />
         )}
       />
-    </div>
+      {/* {errors.country && <Alert severity="error">This is required</Alert>} */}
+    </>
   );
 };
 
