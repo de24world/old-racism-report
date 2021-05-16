@@ -13,6 +13,7 @@ import Layout from "../src/components/Layout";
 import LineChart from "../src/components/Chart/LineChart";
 import BarChart from "../src/components/Chart/BarChart";
 import HorizontalBarChart from "../src/components/Chart/HorizontalBarChart";
+import LevelStep from "../src/components/LevelStep";
 
 const useStyles = makeStyles((theme) => ({
   root: { margin: theme.spacing(2) },
@@ -56,6 +57,8 @@ const ChartPage = () => {
         <LineChart />
         <BarChart data={data} />
         <HorizontalBarChart items={data} />
+
+        <LevelStep />
       </Layout>
     </div>
   );

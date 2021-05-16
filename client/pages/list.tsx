@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
+
+// Libarary
 import Axios from "axios";
+
+// Next
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+// Source Components
 import Layout from "../src/components/Layout";
-import ItemList from "../src/components/ItemList";
+import ItemList from "../src/components/List/ItemList";
+import LevelStep from "../src/components/LevelStep";
 
 const ListPage = () => {
   const [dataList, setDataList] = useState([]);
@@ -25,6 +31,7 @@ const ListPage = () => {
       <Layout>
         <p>This is list.js Page</p>
         <ItemList dataList={dataList} />
+        <LevelStep />
       </Layout>
     </div>
   );
