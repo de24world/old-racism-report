@@ -1,7 +1,11 @@
 import { useState } from "react";
+
+// Next i18n
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+// Material UI
 import {
+  makeStyles,
   Box,
   Container,
   Grid,
@@ -10,11 +14,13 @@ import {
   Checkbox,
   CircularProgress,
 } from "@material-ui/core/";
-import { makeStyles } from "@material-ui/core/styles";
 
+// Hooks
+import useFetch from "../src/hooks/useFetch";
+
+// Source Component
 import Layout from "../src/components/Layout";
 import VideoList from "../src/components/Video/VideoList";
-import useFetch from "../src/hooks/useFetch";
 
 const useStyles = makeStyles((theme) => ({
   root: {},

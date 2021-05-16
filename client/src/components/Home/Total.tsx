@@ -1,5 +1,9 @@
 import React, { ReactElement } from "react";
 
+// interface
+import { IDataProps } from "../../interfaces/interfaces";
+
+// Material UI
 import {
   makeStyles,
   Container,
@@ -26,10 +30,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {}
+interface Props {
+  data: IDataProps;
+}
 
-function Total({}: Props): ReactElement {
+function Total({ data }: Props): ReactElement {
   const classes = useStyles();
+  const totalNumber = Object.keys(data).length;
+  // console.log(totalNumber, "totalNumber in Total");
 
   return (
     <>
@@ -41,10 +49,12 @@ function Total({}: Props): ReactElement {
 
         <Card>
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+            <Typography variant="h5" gutterBottom>
               총 사건 발생 수
             </Typography>
-            <Typography variant="h5" component="h2"></Typography>
+            <Typography variant="h6" component="h2">
+              {totalNumber}
+            </Typography>
             <Typography className={classes.pos} color="textSecondary">
               adjective
             </Typography>
