@@ -8,10 +8,8 @@ import {
   makeStyles,
   Container,
   Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Button,
+  Paper,
+  Grid,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,14 +17,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-
-  pos: {
-    marginBottom: 12,
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
   },
 }));
 
@@ -47,27 +40,30 @@ function Total({ data }: Props): ReactElement {
           Total Report
         </Typography>
 
-        <Card>
-          <CardContent>
-            <Typography variant="h5" gutterBottom>
+        <Paper className={classes.paper}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Typography variant="h5" color="primary" gutterBottom>
+                {totalNumber}
+              </Typography>
               총 사건 발생 수
-            </Typography>
-            <Typography variant="h6" component="h2">
-              {totalNumber}
-            </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              adjective
-            </Typography>
-            <Typography variant="body2" component="p">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+            </Grid>
+
+            <Grid item xs={6}>
+              <Typography variant="h5" gutterBottom>
+                sample 5
+              </Typography>
+              최대 발생 국가
+            </Grid>
+
+            <Grid item xs={6}>
+              <Typography variant="h5" gutterBottom>
+                sample 1
+              </Typography>
+              최대 도시 국가
+            </Grid>
+          </Grid>
+        </Paper>
       </Container>
     </>
   );
