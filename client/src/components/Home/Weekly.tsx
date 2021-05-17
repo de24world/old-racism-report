@@ -1,8 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+
+// Libarary
 import ReactPlayer from "react-player";
 
+// Material UI
 import {
+  makeStyles,
   Container,
   Grid,
   Card,
@@ -12,7 +15,8 @@ import {
   Button,
 } from "@material-ui/core/";
 
-interface Props {}
+// interface
+import { IDataProps } from "../../interfaces/interfaces";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -33,7 +37,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Weekly = () => {
+interface Props {
+  data: IDataProps;
+}
+
+function Weekly({ data }: Props) {
   const classes = useStyles();
   const cards = [1, 2, 3];
 
@@ -41,7 +49,7 @@ const Weekly = () => {
     <>
       <Container className={classes.cardGrid}>
         <Typography variant="h4" color="primary" gutterBottom>
-          Weekly Videos
+          Recently Updated Videos
         </Typography>
         <Grid container spacing={4}>
           {cards.map((card) => (
@@ -77,6 +85,6 @@ const Weekly = () => {
       </Container>
     </>
   );
-};
+}
 
 export default Weekly;

@@ -38,7 +38,7 @@ const Home = () => {
           <Total data={data} />
         )}
 
-        <Weekly />
+        <Weekly data={data} />
         <FaQ />
       </Layout>
     </div>
