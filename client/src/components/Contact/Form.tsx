@@ -86,9 +86,12 @@ function Form() {
                   rules={{ required: true }}
                   render={({ field }) => (
                     <Select label="Offender" {...field}>
-                      <MenuItem value="black women">Black women</MenuItem>
+                      <MenuItem value="asian guy">Asian guy</MenuItem>
+                      <MenuItem value="asian women">Asian women</MenuItem>
                       <MenuItem value="black guy">Black guy</MenuItem>
+                      <MenuItem value="black women">Black women</MenuItem>
                       <MenuItem value="white guy">White guy</MenuItem>
+                      <MenuItem value="white women">White women</MenuItem>
                     </Select>
                   )}
                 />
@@ -108,9 +111,12 @@ function Form() {
                   rules={{ required: true }}
                   render={({ field }) => (
                     <Select label="Victim" {...field}>
-                      <MenuItem value="black women">Black women</MenuItem>
+                      <MenuItem value="asian guy">Asian guy</MenuItem>
+                      <MenuItem value="asian women">Asian women</MenuItem>
                       <MenuItem value="black guy">Black guy</MenuItem>
+                      <MenuItem value="black women">Black women</MenuItem>
                       <MenuItem value="white guy">White guy</MenuItem>
+                      <MenuItem value="white women">White women</MenuItem>
                     </Select>
                   )}
                 />

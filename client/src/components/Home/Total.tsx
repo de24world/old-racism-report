@@ -29,8 +29,9 @@ interface Props {
 
 function Total({ data }: Props): ReactElement {
   const classes = useStyles();
-  const totalNumber = Object.keys(data).length;
-  // console.log(totalNumber, "totalNumber in Total");
+  const totalOccur = Object.keys(data).length;
+  const countryUSA = data.filter((item) => item.country === "USA").length;
+  console.log(countryUSA, "count USA");
 
   return (
     <>
@@ -44,7 +45,7 @@ function Total({ data }: Props): ReactElement {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Typography variant="h5" color="primary" gutterBottom>
-                {totalNumber}
+                {totalOccur}
               </Typography>
               총 사건 발생 수
             </Grid>
@@ -57,6 +58,34 @@ function Total({ data }: Props): ReactElement {
             </Grid>
 
             <Grid item xs={6}>
+              <Typography variant="h5" gutterBottom>
+                sample 1
+              </Typography>
+              최대 도시 국가
+            </Grid>
+
+            <Grid item xs={3}>
+              <Typography variant="h5" gutterBottom>
+                {countryUSA}
+              </Typography>
+              미국
+            </Grid>
+
+            <Grid item xs={3}>
+              <Typography variant="h5" gutterBottom>
+                sample 1
+              </Typography>
+              최대 도시 국가
+            </Grid>
+
+            <Grid item xs={3}>
+              <Typography variant="h5" gutterBottom>
+                sample 1
+              </Typography>
+              최대 도시 국가
+            </Grid>
+
+            <Grid item xs={3}>
               <Typography variant="h5" gutterBottom>
                 sample 1
               </Typography>
