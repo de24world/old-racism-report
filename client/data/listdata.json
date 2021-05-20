@@ -3,7 +3,7 @@
     {
       "id": 1,
       "offender": "👩🏿‍🦱black women",
-      "victim": "👩🏻Asian women",
+      "victim": "Asian women",
       "time": "2020-Jan",
       "country": "USA",
       "countryCode": "US",
@@ -13,8 +13,8 @@
     },
     {
       "id": 2,
-      "offender": "black women👩🏿‍🦱",
-      "victim": "Asian women👩🏻",
+      "offender": "black women",
+      "victim": "Asian women",
       "time": "2020-Jan",
       "country": "USA",
       "countryCode": "US",
@@ -36,7 +36,7 @@
     {
       "id": 4,
       "offender": "black",
-      "victim": "👩🏻Asian women",
+      "victim": "Asian women",
       "time": "2020-Jan",
       "country": "USA",
       "countryCode": "US",
@@ -46,7 +46,7 @@
     },
     {
       "id": 5,
-      "offender": "👩🏿‍🦱black women",
+      "offender": "black women",
       "victim": "Asian",
       "time": "2020-Jan",
       "country": "USA",
@@ -57,8 +57,8 @@
     },
     {
       "id": 6,
-      "offender": "👩🏿‍🦱black women",
-      "victim": "👩🏻Asian women",
+      "offender": "black women",
+      "victim": "Asian women",
       "time": "2020-Jan",
       "country": "USA",
       "countryCode": "US",
@@ -68,8 +68,8 @@
     },
     {
       "id": 7,
-      "offender": "black women👩🏿‍🦱",
-      "victim": "Asian women👩🏻",
+      "offender": "black women",
+      "victim": "Asian women",
       "time": "2020-Jan",
       "country": "USA",
       "countryCode": "US",
@@ -91,7 +91,7 @@
     {
       "id": 9,
       "offender": "black",
-      "victim": "👩🏻Asian women",
+      "victim": "Asian women",
       "time": "2020-Jan",
       "country": "USA",
       "countryCode": "US",
@@ -101,7 +101,7 @@
     },
     {
       "id": 10,
-      "offender": "👩🏿‍🦱black women",
+      "offender": "black women",
       "victim": "Asian",
       "time": "2020-Jan",
       "country": "USA",

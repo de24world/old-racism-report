@@ -24,14 +24,35 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  data: IDataProps;
+  data: IDataProps[];
 }
 
 function Total({ data }: Props): ReactElement {
   const classes = useStyles();
   const totalOccur = Object.keys(data).length;
   const countryUSA = data.filter((item) => item.country === "USA").length;
-  console.log(countryUSA, "count USA");
+
+  // 피해자 종류
+  const victimAsianGuy = data.filter(
+    (item) => item.victim === "Asian guy"
+  ).length;
+  const victimAsianWomen = data.filter(
+    (item) => item.victim === "Asian women"
+  ).length;
+  const victimBlackguy = data.filter(
+    (item) => item.victim === "Black guy"
+  ).length;
+  const victimBlackwomen = data.filter(
+    (item) => item.victim === "Black women"
+  ).length;
+  const victimWhiteguy = data.filter(
+    (item) => item.victim === "White guy"
+  ).length;
+  const victimWhitewomen = data.filter(
+    (item) => item.victim === "White women"
+  ).length;
+
+  // console.log(countryUSA, "count USA");
 
   return (
     <>
@@ -64,6 +85,7 @@ function Total({ data }: Props): ReactElement {
               최대 도시 국가
             </Grid>
 
+            {/* 도시 */}
             <Grid item xs={3}>
               <Typography variant="h5" gutterBottom>
                 {countryUSA}
@@ -90,6 +112,54 @@ function Total({ data }: Props): ReactElement {
                 sample 1
               </Typography>
               최대 도시 국가
+            </Grid>
+
+            {/* 인종 */}
+            <Grid item xs={12}>
+              <Typography variant="h5" gutterBottom>
+                피해자 인종
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <Typography variant="h5" gutterBottom>
+                {victimAsianGuy}
+              </Typography>
+              👦🏻Asian guy
+            </Grid>
+
+            <Grid item xs={2}>
+              <Typography variant="h5" gutterBottom>
+                {victimAsianWomen}
+              </Typography>
+              👩🏻Asian women
+            </Grid>
+
+            <Grid item xs={2}>
+              <Typography variant="h5" gutterBottom>
+                {victimBlackguy}
+              </Typography>
+              👦🏿Black guy
+            </Grid>
+
+            <Grid item xs={2}>
+              <Typography variant="h5" gutterBottom>
+                {victimBlackwomen}
+              </Typography>
+              👩🏿‍🦱Black women
+            </Grid>
+
+            <Grid item xs={2}>
+              <Typography variant="h5" gutterBottom>
+                {victimWhiteguy}
+              </Typography>
+              👦🏼White guy
+            </Grid>
+
+            <Grid item xs={2}>
+              <Typography variant="h5" gutterBottom>
+                {victimWhitewomen}
+              </Typography>
+              👩🏼White women
             </Grid>
           </Grid>
         </Paper>
