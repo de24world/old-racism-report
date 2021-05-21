@@ -1,5 +1,8 @@
 import React from "react";
 
+// Next Libarary
+import Link from "next/link";
+
 // Material UI
 import {
   makeStyles,
@@ -39,14 +42,18 @@ const Main = (props: Props) => {
         <div className={classes.heroButtons}>
           <Grid container spacing={2} justify="center">
             <Grid item>
-              <Button variant="contained" color="primary">
-                Go to List
-              </Button>
+              <Link href="/list">
+                <Button variant="contained" color="primary">
+                  Go to List
+                </Button>
+              </Link>
             </Grid>
             <Grid item>
-              <Button variant="outlined" color="primary">
-                Go to Chart
-              </Button>
+              <Link href="/chart">
+                <Button variant="outlined" color="primary">
+                  Go to Chart
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </div>
