@@ -50,6 +50,10 @@ const useStyles = makeStyles((theme) => ({
 type FormValues = {
   // https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw?file=/src/index.tsx:1129-1496
   TextField: string;
+  offender: string;
+  victim: string;
+  city: string;
+  level: number;
 };
 
 function Form() {

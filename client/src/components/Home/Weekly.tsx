@@ -37,11 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {
-  data: IDataProps;
-}
-
-function Weekly({ data }: Props) {
+function Weekly({ data }: IDataProps) {
   const classes = useStyles();
   const cards = [1, 2, 3];
 
