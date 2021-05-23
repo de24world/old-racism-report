@@ -1,11 +1,26 @@
 import React, { useEffect } from "react";
+
+// Libarary
 import { Bar } from "react-chartjs-2";
+
+// Material UI
+import { makeStyles, Container, Typography } from "@material-ui/core/";
+
+const useStyles = makeStyles((theme) => ({
+  root: {},
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+}));
 
 interface Props {
   items: any;
 }
 
-const HorizontalBarChart = ({ items }: Props) => {
+function HorizontalBarChart({ items }: Props) {
+  const classes = useStyles();
+
   const countrys = items
     .map((item) => item.country)
     .filter((value, index, self) => self.indexOf(value) === index);
@@ -65,9 +80,12 @@ const HorizontalBarChart = ({ items }: Props) => {
 
   return (
     <div>
-      <Bar data={BarData} options={options} />
+      <Container className={classes.cardGrid}>
+        <Typography>HorizontalBarChart</Typography>
+        <Bar data={BarData} options={options} />
+      </Container>
     </div>
   );
-};
+}
 
 export default HorizontalBarChart;
