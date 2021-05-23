@@ -37,9 +37,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Weekly({ data }: IDataProps) {
+interface Props {
+  data: IDataProps[];
+}
+
+function Weekly({ data }: Props) {
   const classes = useStyles();
   const cards = [1, 2, 3];
+
+  const lastObject = data[data.length - 1];
+  const secondLastObject = data[data.length - 2];
+  const thirdLastObject = data[data.length - 3];
+  const recenltlyObject = [lastObject, secondLastObject, thirdLastObject];
+
+  console.log(recenltlyObject, "recenltlyObject three in Weekly");
 
   return (
     <>
