@@ -56,13 +56,13 @@ function Weekly({ data, isLoading }: Props) {
 
   return (
     <>
-      {isLoading ? (
-        <CircularProgress className="progressbar" />
-      ) : (
-        <Container className={classes.cardGrid}>
-          <Typography variant="h4" color="primary" gutterBottom>
-            Recently Updated Videos
-          </Typography>
+      <Container className={classes.cardGrid}>
+        <Typography variant="h4" color="primary" gutterBottom>
+          Recently Updated Videos
+        </Typography>
+        {isLoading ? (
+          <CircularProgress className="progressbar" />
+        ) : (
           <Grid container spacing={4}>
             {recenltlyObject.map((three) => (
               <Grid item key={three.id} xs={12} sm={6} md={4}>
@@ -94,8 +94,8 @@ function Weekly({ data, isLoading }: Props) {
               </Grid>
             ))}
           </Grid>
-        </Container>
-      )}
+        )}
+      </Container>
     </>
   );
 }

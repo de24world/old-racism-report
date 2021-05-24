@@ -59,14 +59,15 @@ function Total({ data, isLoading }: Props): ReactElement {
   return (
     <>
       {/* https://coronaboard.kr/ */}
-      {isLoading ? (
-        <CircularProgress className="progressbar" />
-      ) : (
-        <Container maxWidth="lg" className={classes.root}>
-          <Typography variant="h4" color="primary" gutterBottom>
-            Total Report
-          </Typography>
 
+      <Container maxWidth="lg" className={classes.root}>
+        <Typography variant="h4" color="primary" gutterBottom>
+          Total Report
+        </Typography>
+
+        {isLoading ? (
+          <CircularProgress className="progressbar" />
+        ) : (
           <Paper className={classes.paper}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
@@ -168,8 +169,8 @@ function Total({ data, isLoading }: Props): ReactElement {
               </Grid>
             </Grid>
           </Paper>
-        </Container>
-      )}
+        )}
+      </Container>
     </>
   );
 }
