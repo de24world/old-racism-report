@@ -1,14 +1,23 @@
 import React from "react";
+
+// next
 import Head from "next/head";
+import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
 
+// Libarary
+import NProgress from "nprogress";
+
+// material UI
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
+// source
 import theme from "../src/utils/theme";
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer";
 import Layout from "../src/components/Layout";
 import "../styles/globals.css";
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
 
 const MyApp = (props) => {
   const { Component, pageProps } = props;

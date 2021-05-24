@@ -13,6 +13,7 @@ import {
   CardActions,
   Typography,
   Button,
+  CircularProgress,
 } from "@material-ui/core/";
 
 // interface
@@ -39,9 +40,10 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {
   data: IDataProps[];
+  isLoading: boolean;
 }
 
-function Weekly({ data }: Props) {
+function Weekly({ data, isLoading }: Props) {
   const classes = useStyles();
   const cards = [1, 2, 3];
 
@@ -50,42 +52,50 @@ function Weekly({ data }: Props) {
   const thirdLastObject = data[data.length - 3];
   const recenltlyObject = [lastObject, secondLastObject, thirdLastObject];
 
-  console.log(recenltlyObject, "recenltlyObject three in Weekly");
+  // console.log(recenltlyObject, "recenltlyObject three in Weekly");
 
   return (
     <>
-      <Container className={classes.cardGrid}>
-        <Typography variant="h4" color="primary" gutterBottom>
-          Recently Updated Videos
-        </Typography>
-        <Grid container spacing={4}>
-          {recenltlyObject.map((three) => (
-            <Grid item key={three.id} xs={12} sm={6} md={4}>
-              <Card className={classes.card}>
-                <ReactPlayer url={three.evidence} width="100%" height="100%" />
+      {isLoading ? (
+        <CircularProgress className="progressbar" />
+      ) : (
+        <Container className={classes.cardGrid}>
+          <Typography variant="h4" color="primary" gutterBottom>
+            Recently Updated Videos
+          </Typography>
+          <Grid container spacing={4}>
+            {recenltlyObject.map((three) => (
+              <Grid item key={three.id} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <ReactPlayer
+                    url={three.evidence}
+                    width="100%"
+                    height="100%"
+                  />
 
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {three.id}
-                  </Typography>
-                  <Typography>
-                    This is a media card. You can use this section to describe
-                    the content.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    Share
-                  </Button>
-                  <Button size="small" color="primary">
-                    Detail
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {three.id}
+                    </Typography>
+                    <Typography>
+                      This is a media card. You can use this section to describe
+                      the content.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Share
+                    </Button>
+                    <Button size="small" color="primary">
+                      Detail
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      )}
     </>
   );
 }

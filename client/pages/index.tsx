@@ -30,20 +30,16 @@ const Home = () => {
 
   return (
     <div>
-      {isLoading ? (
-        <CircularProgress className="progressbar" />
-      ) : (
-        <Layout>
-          <h1>Index page</h1>
-          <p>Current locale: {locale}</p>
-          <p>Default locale: {defaultLocale}</p>
-          <p>Configured locales: {JSON.stringify(locales)}</p>
-          <Main />
-          <Total data={data} />
-          <Weekly data={data} />
-          <FaQ />
-        </Layout>
-      )}
+      <Layout>
+        <h1>Index page</h1>
+        <p>Current locale: {locale}</p>
+        <p>Default locale: {defaultLocale}</p>
+        <p>Configured locales: {JSON.stringify(locales)}</p>
+        <Main />
+        <Total data={data} isLoading={isLoading} />
+        <Weekly data={data} isLoading={isLoading} />
+        <FaQ />
+      </Layout>
     </div>
   );
 };
