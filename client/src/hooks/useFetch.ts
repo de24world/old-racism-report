@@ -1,21 +1,39 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
+import axios from "axios";
 
-interface Props {}
+import { IDataProps } from "../interfaces/interfaces";
 
-const useFetch = (props: Props) => {
+// interface Props {}
+
+function useFetch(url: string) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // async function fetchUrl() {
+  //   await axios.get(url).then((response) => {
+  //     setData(response.data);
+  //     setIsLoading(false);
+  //   });
+  // }
+
+  // useEffect(() => {
+  //   fetchUrl;
+  // }, []);
+
   useEffect(() => {
-    Axios.get("http://localhost:3006/api").then((res) => {
-      // console.log(res.data);
-      setData(res.data);
-      setIsLoading(false);
-    });
+    axios
+      .get(url)
+      .then((res) => {
+        // console.log(res.data, "res.data in useFetch");
+        setData(res.data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return [data, isLoading];
-};
+}
 
 export default useFetch;

@@ -59,18 +59,14 @@ function Weekly({ data }: Props) {
           Recently Updated Videos
         </Typography>
         <Grid container spacing={4}>
-          {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
+          {recenltlyObject.map((three) => (
+            <Grid item key={three.id} xs={12} sm={6} md={4}>
               <Card className={classes.card}>
-                <ReactPlayer
-                  url="https://youtu.be/iqjLiXaQrng"
-                  width="100%"
-                  height="100%"
-                />
+                <ReactPlayer url={three.evidence} width="100%" height="100%" />
 
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Heading
+                    {three.id}
                   </Typography>
                   <Typography>
                     This is a media card. You can use this section to describe
