@@ -6,8 +6,8 @@ import { IDataProps } from "../interfaces/interfaces";
 // interface Props {}
 
 function useFetch(url: string) {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState<any>(true);
 
   // async function fetchUrl() {
   //   await axios.get(url).then((response) => {

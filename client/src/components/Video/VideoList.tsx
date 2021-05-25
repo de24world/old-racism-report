@@ -1,8 +1,13 @@
 import React from "react";
+
+// Libarary
 import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
-import { useTheme, makeStyles } from "@material-ui/core/styles";
+
+// Material UI
 import {
+  useTheme,
+  makeStyles,
   Link,
   useMediaQuery,
   GridList,
@@ -13,11 +18,14 @@ import {
 import Pagination from "@material-ui/lab/Pagination";
 import InfoIcon from "@material-ui/icons/Info";
 
+// interface
+import { IDataProps } from "../../interfaces/interfaces";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
     // backgroundColor: theme.palette.background.paper,
   },
   gridList: {
@@ -36,7 +44,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VideoList = ({ data }) => {
+interface Props {
+  data: IDataProps[];
+}
+
+function VideoList({ data }: Props) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
@@ -71,7 +83,7 @@ const VideoList = ({ data }) => {
               actionIcon={
                 <Link href={`/video/${data.id}`}>
                   <IconButton
-                    aria-label={`info about ${data.title}`}
+                    // aria-label={`info about ${data.title}`}
                     className={classes.iconButton}
                     title="더보기"
                   >
@@ -86,6 +98,6 @@ const VideoList = ({ data }) => {
       <Pagination count={10} />
     </div>
   );
-};
+}
 
 export default VideoList;
