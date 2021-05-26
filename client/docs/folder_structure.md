@@ -1,64 +1,28 @@
-All
-.
-├── build # Compiled files (alternatively `dist`)
-├── docs # Documentation files (alternatively `doc`)
-├── pages # Pages
-├── public # locales (korean, english json)
-├── src # Source files (alternatively `lib` or `app`)
-├── static / images
-└── styles
+# Folder Structure (폴더구조)
 
-Pages
-.
-├── api
-├── pages
-│ ├── \_app.tsx
-│ ├── \_document.tsx
-│ ├── chart.tsx
-│ ├── contact.tsx
-│ ├── index.tsx
-│ ├── list.tsx
-│ ├── contact.tsx
-│ └── ... # etc.
-└── video
+```md
+├─Github
+│  │  README.md
+│  ├─docs
+│  │      01-git-설치.md
+│  │      02-github-회원가입.md
+│  └─images
+│          demun-001.jpg
+│          demun-002.jpg
+├─Javascript
+│  │  README.md
+│  ├─docs
+│  └─images
+└─Sublimetext
+   │  README.md
+   │  Sublime Text 3.zip
+   ├─docs
+   │      01-프로그램-설치.md
+   │      02-플러그인-설치.md
+   └─images
+           demun-024.jpg
+           demun-025.jpg
 
-react // frontend root dir
-|
-| - .storybook // all things storybook
-|
-| - .vscode // suggested IDE settings and extensions for vscode
-|
-| - .yarn // yarn config and caches
-|
-| - config
-| |
-| | - namespaces.js // contains all namespaces used in webpack config
-| |
-| | - webpack // webpack configuration files
-|
-| - public // files emulating deployment enviroment
-|
-| - src // the good stuff
-| |
-| | - assets
-| |
-| | - static // static files, are not to be |processed
-| |
-| | - generated // generated assets
-|
-| - tools // contains scripts for handling/processing data
+```
 
-|-root
-|-components
-|-Navbar.js
-|-Footer.js
-|-styles
-|-global.css
-|-navbar.module.css  
- |-footer.module.css  
- |-pages
-|-api
-|-users.js
-|-index.js
-|-utils
-|- dbConnect.js
+## .vscode
