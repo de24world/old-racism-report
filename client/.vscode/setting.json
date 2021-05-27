@@ -1,8 +1,14 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "editor.formatOnSave": true,
-  "[markdown]": {
-    "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
