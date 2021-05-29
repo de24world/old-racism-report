@@ -2,6 +2,7 @@ import React from "react";
 
 // Libarary
 import ReactPlayer from "react-player";
+import ReactCountryFlag from "react-country-flag";
 
 // Material UI
 import {
@@ -14,7 +15,10 @@ import {
   Typography,
   Button,
   CircularProgress,
+  IconButton,
+  Link,
 } from "@material-ui/core/";
+import InfoIcon from "@material-ui/icons/Info";
 
 // interface
 import { IDataProps } from "../../interfaces/interfaces";
@@ -36,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
+  // iconButton: {
+  //   position: "absolute",
+  // },
 }));
 
 interface Props {
@@ -75,7 +82,17 @@ function Weekly({ data, isLoading }: Props) {
 
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      {three.id}
+                      id : {three.id}
+                      <ReactCountryFlag countryCode={three.countryCode} />
+                      <Link href={`/video/${three.id}`}>
+                        <IconButton
+                          // aria-label={`info about ${data.title}`}
+                          // className={classes.iconButton}
+                          title="더보기"
+                        >
+                          <InfoIcon />
+                        </IconButton>
+                      </Link>
                     </Typography>
                     <Typography>
                       This is a media card. You can use this section to describe
