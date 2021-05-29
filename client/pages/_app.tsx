@@ -6,7 +6,6 @@ import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
 
 // Libarary
-import NProgress from "nprogress";
 
 // material UI
 import { ThemeProvider } from "@material-ui/core/styles";

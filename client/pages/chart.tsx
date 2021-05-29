@@ -55,7 +55,7 @@ const ChartPage = () => {
         {/* {loading && <div>loading</div>}
         {!loading &&  ... */}
         <LineChart />
-        <BarChart data={data} />
+        {/* <BarChart data={data} /> */}
         <HorizontalBarChart items={data} />
 
         <LevelStep />
