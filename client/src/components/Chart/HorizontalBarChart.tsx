@@ -5,6 +5,7 @@ import { Bar } from "react-chartjs-2";
 
 // Material UI
 import { makeStyles, Container, Typography } from "@material-ui/core/";
+import { count } from "node:console";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -21,21 +22,33 @@ interface Props {
 function HorizontalBarChart({ items }: Props) {
   const classes = useStyles();
 
-  const countrys = items
-    .map((item) => item.country)
-    .filter((value, index, self) => self.indexOf(value) === index);
-  // console.log(countrys, "this is unique country");
+  const countryData = items.map((item) => item.country);
+  // console.log(
+  //   countryData,
+  //   "this is countryData. Must be [usa, usa, germany, usa...]"
+  // );
 
-  const usa = items.filter((obj) => obj.country === "USA").length;
-  const germany = items.filter((obj) => obj.country === "Germany").length;
-  // console.log(count, "this is count of countrys");
+  const counts = {};
+  countryData.forEach((x) => {
+    counts[x] = (counts[x] || 0) + 1;
+  });
+  // console.log(
+  //   counts,
+  //   "this is country counts object. Must be {USA: 8, Germany: 2}"
+  // );
+
+  const countryList = Object.keys(counts);
+  // console.log(countryList, "this is countryList without Duplicate. Must be [usa, germany ...]");
+
+  const countryCount = Object.values(counts);
+  // console.log(countryCount, "this is countryList. Must be [8, 2 ...]");
 
   const BarData = {
-    labels: countrys,
+    labels: countryList,
     datasets: [
       {
-        label: "# Number of occurrences",
-        data: [usa, germany],
+        label: " Number of occurrences",
+        data: countryCount,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
