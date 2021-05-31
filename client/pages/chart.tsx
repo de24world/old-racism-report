@@ -5,6 +5,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as d3 from "d3";
 import Axios from "axios";
 
+// Hooks
+import useFetch from "../src/hooks/useFetch";
+
 // Material UI
 import { Typography, makeStyles } from "@material-ui/core";
 
@@ -21,30 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ChartPage = () => {
   const classes = useStyles();
-  const API_URL = "http://localhost:3006/api";
-  const [data, setData] = useState([]);
-
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   d3.json("http://localhost:3001/api").then((data) => {
-  //     setData(data);
-  //     // console.log(data, "this is data in statics");
-  //     // setLoading(false);
-  //   });
-  //   return () => undefined;
-  // }, []);
-
-  useEffect(() => {
-    Axios.get(API_URL)
-      .then((res) => {
-        // console.log(res.data);
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const [data, isLoading] = useFetch("http://localhost:3006/api");
 
   return (
     <div className={classes.root}>
