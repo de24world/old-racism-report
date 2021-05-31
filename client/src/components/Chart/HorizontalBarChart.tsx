@@ -82,7 +82,7 @@ function HorizontalBarChart({ items }: Props) {
     <div>
       <Container className={classes.cardGrid}>
         <Typography>HorizontalBarChart</Typography>
-        {/* <Bar data={BarData} options={options} /> */}
+        <Bar type="bar" data={BarData} options={options} />
       </Container>
     </div>
   );
