@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 
-// Libarary
-import { Bar } from "react-chartjs-2";
-
 // Material UI
-import { makeStyles, Container, Typography, Button } from "@material-ui/core/";
+import {
+  makeStyles,
+  Container,
+  Grid,
+  Typography,
+  Button,
+} from "@material-ui/core/";
 
 // source
 import CountryChart from "./CountryChart";
 import CityChart from "./CityChart";
 import LevelChart from "./LevelChart";
+import OffenderChart from "./OffenderChart";
+import VictimChart from "./VictimChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
 }));
 
 interface Props {
@@ -25,7 +26,15 @@ interface Props {
 
 function Charts({ items }: Props) {
   const classes = useStyles();
-  const [chartState, setChartState] = useState("country-chart");
+  const [chartState, setChartState] = useState("victim-chart");
+
+  const victimChange = () => {
+    setChartState("victim-chart");
+  };
+
+  const offenderChange = () => {
+    setChartState("offender-chart");
+  };
 
   const countryChange = () => {
     setChartState("country-chart");
@@ -41,24 +50,52 @@ function Charts({ items }: Props) {
 
   return (
     <div>
-      <Container className={classes.cardGrid}>
+      <Container>
         <Typography variant="h3">Charts</Typography>
 
+        {chartState === "victim-chart" && <VictimChart items={items} />}
+        {chartState === "offender-chart" && <OffenderChart items={items} />}
         {chartState === "country-chart" && <CountryChart items={items} />}
         {chartState === "city-chart" && <CityChart items={items} />}
         {chartState === "level-chart" && <LevelChart items={items} />}
+        {/*  TimeChart */}
 
-        {/*  RaceChart(Multiple : victim, offender), TimeChart */}
-
-        <Button variant="contained" color="primary" onClick={countryChange}>
-          Country Chart
-        </Button>
-        <Button variant="contained" color="primary" onClick={cityChange}>
-          City Chart
-        </Button>
-        <Button variant="contained" color="primary" onClick={levelChange}>
-          Level Chart
-        </Button>
+        <Grid container>
+          <Grid item sm={2}>
+            <Button variant="contained" color="primary" onClick={victimChange}>
+              Victim
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={offenderChange}
+            >
+              Offender
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button variant="contained" color="primary" onClick={countryChange}>
+              Country
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button variant="contained" color="primary" onClick={cityChange}>
+              City
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button variant="contained" color="primary" onClick={levelChange}>
+              Level
+            </Button>
+          </Grid>
+          <Grid item sm={2}>
+            <Button variant="contained" color="primary">
+              Time
+            </Button>
+          </Grid>
+        </Grid>
       </Container>
     </div>
   );

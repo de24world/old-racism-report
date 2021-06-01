@@ -1,11 +1,10 @@
 import React from "react";
 
 // Libarary
-import { Pie } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/";
-import LevelStep from "../LevelStep";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -15,26 +14,26 @@ interface Props {
   items: any;
 }
 
-function LevelChart({ items }: Props) {
+function VictimChart({ items }: Props) {
   const classes = useStyles();
 
-  const levelData = items.map((item) => item.level);
+  const victimData = items.map((item) => item.victim);
 
   const counts = {};
-  levelData.forEach((x) => {
+  victimData.forEach((x) => {
     counts[x] = (counts[x] || 0) + 1;
   });
 
-  const levelList = Object.keys(counts);
+  const victimList = Object.keys(counts);
 
-  const levelCount = Object.values(counts);
+  const victimCount = Object.values(counts);
 
-  const PieData = {
-    labels: levelList,
+  const BarData = {
+    labels: victimList,
     datasets: [
       {
-        label: "City Count",
-        data: levelCount,
+        label: "Victim Count",
+        data: victimCount,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -56,12 +55,25 @@ function LevelChart({ items }: Props) {
     ],
   };
 
+  const options = {
+    indexAxis: "x",
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "right",
+      },
+      title: {
+        display: true,
+        text: "Number of occurrences",
+      },
+    },
+  };
+
   return (
     <>
-      <Pie type="pie" data={PieData} height={50} width={50} />
-      <LevelStep />
+      <Bar type="bar" data={BarData} options={options} />
     </>
   );
 }
 
-export default LevelChart;
+export default VictimChart;

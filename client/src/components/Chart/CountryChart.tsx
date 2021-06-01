@@ -4,14 +4,10 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 
 // Material UI
-import { makeStyles, Container } from "@material-ui/core/";
+import { makeStyles } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
 }));
 
 interface Props {
@@ -70,7 +66,7 @@ function CountryChart({ items }: Props) {
   };
 
   const options = {
-    indexAxis: "x",
+    indexAxis: "y",
     responsive: true,
     plugins: {
       legend: {
@@ -84,11 +80,9 @@ function CountryChart({ items }: Props) {
   };
 
   return (
-    <div>
-      <Container className={classes.cardGrid}>
-        <Bar type="bar" data={BarData} options={options} />
-      </Container>
-    </div>
+    <>
+      <Bar type="bar" data={BarData} options={options} />
+    </>
   );
 }
 

@@ -18,10 +18,6 @@ import {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {},
-    cardGrid: {
-      paddingTop: theme.spacing(8),
-      paddingBottom: theme.spacing(8),
-    },
     button: {
       marginTop: theme.spacing(1),
       marginRight: theme.spacing(1),
@@ -78,7 +74,7 @@ function LevelStep({}: Props): ReactElement {
 
   return (
     <>
-      <Container className={classes.cardGrid}>
+      <Container>
         <Typography variant="h4" color="primary" gutterBottom>
           인종차별 단계
         </Typography>
