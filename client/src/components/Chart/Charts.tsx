@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 
 // Libarary
 import { Bar } from "react-chartjs-2";
@@ -24,19 +24,27 @@ interface Props {
 
 function Charts({ items }: Props) {
   const classes = useStyles();
+  const [chartState, setChartState] = useState("country-chart");
+
+  const countryChange = () => {
+    setChartState("country-chart");
+  };
+
   const cityChange = () => {
-    console.log("change City");
+    setChartState("city-chart");
   };
 
   return (
     <div>
       <Container className={classes.cardGrid}>
         <Typography variant="h3">Charts</Typography>
-        <CountryChart items={items} />
-        <CityChart items={items} />
+
+        {chartState === "country-chart" && <CountryChart items={items} />}
+        {chartState === "city-chart" && <CityChart items={items} />}
+
         {/* LevelChart(Pie), RaceChart(Multiple : victim, offender), TimeChart */}
 
-        <Button variant="contained" color="primary" onClick={cityChange}>
+        <Button variant="contained" color="primary" onClick={countryChange}>
           Country Chart
         </Button>
         <Button variant="contained" color="primary" onClick={cityChange}>
