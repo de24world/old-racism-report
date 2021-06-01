@@ -59,15 +59,6 @@ function VictimChart({ items }: Props) {
   const options = {
     indexAxis: "x",
     responsive: true,
-    plugins: {
-      legend: {
-        position: "right",
-      },
-      title: {
-        display: true,
-        text: "Number of occurrences",
-      },
-    },
   };
 
   return (

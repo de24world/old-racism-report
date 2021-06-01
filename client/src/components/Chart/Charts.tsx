@@ -3,10 +3,10 @@ import React, { useState } from "react";
 // Material UI
 import {
   makeStyles,
-  Container,
   Grid,
   Typography,
   Button,
+  Breadcrumbs,
 } from "@material-ui/core/";
 
 // source
@@ -50,53 +50,33 @@ function Charts({ items }: Props) {
 
   return (
     <div>
-      <Container>
-        <Typography variant="h3">Charts</Typography>
+      <Typography variant="h3">Charts</Typography>
 
-        {chartState === "victim-chart" && <VictimChart items={items} />}
-        {chartState === "offender-chart" && <OffenderChart items={items} />}
-        {chartState === "country-chart" && <CountryChart items={items} />}
-        {chartState === "city-chart" && <CityChart items={items} />}
-        {chartState === "level-chart" && <LevelChart items={items} />}
-        {/*  TimeChart */}
+      {chartState === "victim-chart" && <VictimChart items={items} />}
+      {chartState === "offender-chart" && <OffenderChart items={items} />}
+      {chartState === "country-chart" && <CountryChart items={items} />}
+      {chartState === "city-chart" && <CityChart items={items} />}
+      {chartState === "level-chart" && <LevelChart items={items} />}
+      {/*  TimeChart */}
 
-        <Grid container>
-          <Grid item sm={2}>
-            <Button variant="contained" color="primary" onClick={victimChange}>
-              Victim
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={offenderChange}
-            >
-              Offender
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button variant="contained" color="primary" onClick={countryChange}>
-              Country
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button variant="contained" color="primary" onClick={cityChange}>
-              City
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button variant="contained" color="primary" onClick={levelChange}>
-              Level
-            </Button>
-          </Grid>
-          <Grid item sm={2}>
-            <Button variant="contained" color="primary">
-              Time
-            </Button>
-          </Grid>
-        </Grid>
-      </Container>
+      <Breadcrumbs aria-label="breadcrumb">
+        <Button color="primary" onClick={victimChange}>
+          Victim
+        </Button>
+        <Button color="primary" onClick={offenderChange}>
+          Offender
+        </Button>
+        <Button color="primary" onClick={countryChange}>
+          Country
+        </Button>
+        <Button color="primary" onClick={cityChange}>
+          City
+        </Button>
+        <Button color="primary" onClick={levelChange}>
+          Level
+        </Button>
+        <Button color="primary">Time</Button>
+      </Breadcrumbs>
     </div>
   );
 }

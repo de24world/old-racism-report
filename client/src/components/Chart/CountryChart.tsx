@@ -70,11 +70,7 @@ function CountryChart({ items }: Props) {
     responsive: true,
     plugins: {
       legend: {
-        position: "right",
-      },
-      title: {
-        display: true,
-        text: "Number of occurrences",
+        position: "bottom",
       },
     },
   };
