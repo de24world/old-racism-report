@@ -13,9 +13,7 @@ import { Typography, makeStyles } from "@material-ui/core";
 
 // source
 import Layout from "../src/components/Layout";
-import LineChart from "../src/components/Chart/LineChart";
-import BarChart from "../src/components/Chart/BarChart";
-import HorizontalBarChart from "../src/components/Chart/HorizontalBarChart";
+import Charts from "../src/components/Chart/Charts";
 import LevelStep from "../src/components/LevelStep";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,9 +32,8 @@ const ChartPage = () => {
         </Typography>
         {/* {loading && <div>loading</div>}
         {!loading &&  ... */}
-        <LineChart />
         {/* <BarChart data={data} /> */}
-        <HorizontalBarChart items={data} />
+        <Charts items={data} />
 
         <LevelStep />
       </Layout>

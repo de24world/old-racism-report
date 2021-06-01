@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // Libarary
 import { Bar } from "react-chartjs-2";
 
 // Material UI
-import { makeStyles, Container, Typography } from "@material-ui/core/";
-import { count } from "node:console";
+import { makeStyles, Container } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -19,7 +18,7 @@ interface Props {
   items: any;
 }
 
-function HorizontalBarChart({ items }: Props) {
+function CountryChart({ items }: Props) {
   const classes = useStyles();
 
   const countryData = items.map((item) => item.country);
@@ -47,7 +46,8 @@ function HorizontalBarChart({ items }: Props) {
     labels: countryList,
     datasets: [
       {
-        label: " Number of occurrences",
+        type: "bar",
+        label: "Country Count",
         data: countryCount,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
@@ -71,14 +71,7 @@ function HorizontalBarChart({ items }: Props) {
   };
 
   const options = {
-    indexAxis: "y",
-    // Elements options apply to all of the options unless overridden in a dataset
-    // In this case, we are setting the border of each horizontal bar to be 2px wide
-    elements: {
-      bar: {
-        borderWidth: 2,
-      },
-    },
+    indexAxis: "x",
     responsive: true,
     plugins: {
       legend: {
@@ -86,7 +79,7 @@ function HorizontalBarChart({ items }: Props) {
       },
       title: {
         display: true,
-        text: "Country Racism Report",
+        text: "Number of occurrences",
       },
     },
   };
@@ -94,11 +87,10 @@ function HorizontalBarChart({ items }: Props) {
   return (
     <div>
       <Container className={classes.cardGrid}>
-        <Typography>HorizontalBarChart</Typography>
         <Bar type="bar" data={BarData} options={options} />
       </Container>
     </div>
   );
 }
 
-export default HorizontalBarChart;
+export default CountryChart;
