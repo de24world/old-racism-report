@@ -9,6 +9,7 @@ import { makeStyles, Container, Typography, Button } from "@material-ui/core/";
 // source
 import CountryChart from "./CountryChart";
 import CityChart from "./CityChart";
+import LevelChart from "./LevelChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -34,6 +35,10 @@ function Charts({ items }: Props) {
     setChartState("city-chart");
   };
 
+  const levelChange = () => {
+    setChartState("level-chart");
+  };
+
   return (
     <div>
       <Container className={classes.cardGrid}>
@@ -41,14 +46,18 @@ function Charts({ items }: Props) {
 
         {chartState === "country-chart" && <CountryChart items={items} />}
         {chartState === "city-chart" && <CityChart items={items} />}
+        {chartState === "level-chart" && <LevelChart items={items} />}
 
-        {/* LevelChart(Pie), RaceChart(Multiple : victim, offender), TimeChart */}
+        {/*  RaceChart(Multiple : victim, offender), TimeChart */}
 
         <Button variant="contained" color="primary" onClick={countryChange}>
           Country Chart
         </Button>
         <Button variant="contained" color="primary" onClick={cityChange}>
           City Chart
+        </Button>
+        <Button variant="contained" color="primary" onClick={levelChange}>
+          Level Chart
         </Button>
       </Container>
     </div>

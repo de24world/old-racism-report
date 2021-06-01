@@ -20,7 +20,7 @@
       "countryCode": "US",
       "city": "Atlanta",
       "evidence": "https://youtu.be/dWehG6U2JOo",
-      "level": "1"
+      "level": "3"
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "countryCode": "DE",
       "city": "Leipzig",
       "evidence": "https://youtu.be/IeEaSoaDTLU",
-      "level": "1"
+      "level": "2"
     },
     {
       "id": 4,
@@ -53,7 +53,7 @@
       "countryCode": "US",
       "city": "Frankfurt",
       "evidence": "https://youtu.be/dWehG6U2JOo",
-      "level": "1"
+      "level": "2"
     },
     {
       "id": 6,

@@ -1,10 +1,11 @@
 import React from "react";
 
 // Libarary
-import { Bar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 
 // Material UI
 import { makeStyles, Container } from "@material-ui/core/";
+import LevelStep from "../LevelStep";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -18,36 +19,26 @@ interface Props {
   items: any;
 }
 
-function CountryChart({ items }: Props) {
+function LevelChart({ items }: Props) {
   const classes = useStyles();
 
-  const countryData = items.map((item) => item.country);
-  // console.log(
-  //   countryData,
-  //   "this is countryData. Must be [usa, usa, germany, usa...]"
-  // );
+  const levelData = items.map((item) => item.level);
 
   const counts = {};
-  countryData.forEach((x) => {
+  levelData.forEach((x) => {
     counts[x] = (counts[x] || 0) + 1;
   });
-  // console.log(
-  //   counts,
-  //   "this is country counts object. Must be {USA: 8, Germany: 2}"
-  // );
 
-  const countryList = Object.keys(counts);
-  // console.log(countryList, "this is countryList without Duplicate. Must be [usa, germany ...]");
+  const levelList = Object.keys(counts);
 
-  const countryCount = Object.values(counts);
-  // console.log(countryCount, "this is countryList. Must be [8, 2 ...]");
+  const levelCount = Object.values(counts);
 
-  const BarData = {
-    labels: countryList,
+  const PieData = {
+    labels: levelList,
     datasets: [
       {
-        label: "Country Count",
-        data: countryCount,
+        label: "City Count",
+        data: levelCount,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -69,27 +60,14 @@ function CountryChart({ items }: Props) {
     ],
   };
 
-  const options = {
-    indexAxis: "x",
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "right",
-      },
-      title: {
-        display: true,
-        text: "Number of occurrences",
-      },
-    },
-  };
-
   return (
     <div>
       <Container className={classes.cardGrid}>
-        <Bar type="bar" data={BarData} options={options} />
+        <Pie type="pie" data={PieData} />
+        <LevelStep />
       </Container>
     </div>
   );
 }
 
-export default CountryChart;
+export default LevelChart;

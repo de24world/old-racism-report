@@ -36,7 +36,6 @@ function CityChart({ items }: Props) {
     labels: cityList,
     datasets: [
       {
-        type: "bar",
         label: "City Count",
         data: cityCount,
         backgroundColor: ["rgba(255, 99, 132, 0.2)"],

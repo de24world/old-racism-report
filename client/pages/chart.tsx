@@ -14,7 +14,6 @@ import { Typography, makeStyles } from "@material-ui/core";
 // source
 import Layout from "../src/components/Layout";
 import Charts from "../src/components/Chart/Charts";
-import LevelStep from "../src/components/LevelStep";
 
 const useStyles = makeStyles((theme) => ({
   root: { margin: theme.spacing(2) },
@@ -34,8 +33,6 @@ const ChartPage = () => {
         {!loading &&  ... */}
         {/* <BarChart data={data} /> */}
         <Charts items={data} />
-
-        <LevelStep />
       </Layout>
     </div>
   );
