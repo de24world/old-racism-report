@@ -8,6 +8,7 @@ import { makeStyles, Container, Typography, Button } from "@material-ui/core/";
 
 // source
 import CountryChart from "./CountryChart";
+import CityChart from "./CityChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -32,6 +33,7 @@ function Charts({ items }: Props) {
       <Container className={classes.cardGrid}>
         <Typography variant="h3">Charts</Typography>
         <CountryChart items={items} />
+        <CityChart items={items} />
         <Button variant="contained" color="primary" onClick={cityChange}>
           Country Chart
         </Button>
