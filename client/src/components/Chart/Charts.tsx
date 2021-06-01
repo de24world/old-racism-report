@@ -34,6 +34,8 @@ function Charts({ items }: Props) {
         <Typography variant="h3">Charts</Typography>
         <CountryChart items={items} />
         <CityChart items={items} />
+        {/* LevelChart(Pie), RaceChart(Multiple : victim, offender), TimeChart */}
+
         <Button variant="contained" color="primary" onClick={cityChange}>
           Country Chart
         </Button>
