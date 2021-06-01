@@ -17,7 +17,7 @@ interface Props {
 function CountryChart({ items }: Props) {
   const classes = useStyles();
 
-  const countryData = items.map((item) => item.country);
+  const countryData = items.map((item) => item.country).sort();
   // console.log(
   //   countryData,
   //   "this is countryData. Must be [usa, usa, germany, usa...]"

@@ -17,7 +17,7 @@ interface Props {
 function CityChart({ items }: Props) {
   const classes = useStyles();
 
-  const cityData = items.map((item) => item.city);
+  const cityData = items.map((item) => item.city).sort();
 
   const counts = {};
   cityData.forEach((x) => {

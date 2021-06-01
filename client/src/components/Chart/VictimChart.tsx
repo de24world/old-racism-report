@@ -17,7 +17,8 @@ interface Props {
 function VictimChart({ items }: Props) {
   const classes = useStyles();
 
-  const victimData = items.map((item) => item.victim);
+  const victimData = items.map((item) => item.victim).sort();
+  // console.log(victimData, "this is victimData. Must start from A-Z");
 
   const counts = {};
   victimData.forEach((x) => {

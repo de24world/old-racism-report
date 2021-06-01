@@ -17,7 +17,7 @@ interface Props {
 function OffenderChart({ items }: Props) {
   const classes = useStyles();
 
-  const offenderData = items.map((item) => item.offender);
+  const offenderData = items.map((item) => item.offender).sort();
 
   const counts = {};
   offenderData.forEach((x) => {
