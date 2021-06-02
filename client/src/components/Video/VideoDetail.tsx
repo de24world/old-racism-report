@@ -3,7 +3,7 @@ import React from "react";
 // Interface Typescript
 import { IDataProps } from "../../interfaces/interfaces";
 
-// React Libaray
+// Libaray
 import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
 

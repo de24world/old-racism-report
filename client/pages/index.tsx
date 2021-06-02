@@ -13,7 +13,7 @@ import useFetch from "../src/hooks/useFetch";
 
 // Source Components
 import Layout from "../src/components/Layout";
-import Weekly from "../src/components/Home/Weekly";
+import Recently from "../src/components/Home/Recently";
 import Main from "../src/components/Home/Main";
 import FaQ from "../src/components/Home/FaQ";
 import Total from "../src/components/Home/Total";
@@ -37,7 +37,7 @@ const Home = () => {
         <p>Configured locales: {JSON.stringify(locales)}</p>
         <Main />
         <Total data={data} isLoading={isLoading} />
-        <Weekly data={data} isLoading={isLoading} />
+        <Recently data={data} isLoading={isLoading} />
         <FaQ />
       </Layout>
     </div>
