@@ -5,9 +5,15 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 // material UI
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core/";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core/";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 
 // Source Component
@@ -26,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
-  const { t } = useTranslation("common");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t } = useTranslation("common");
 
   return (
     <>

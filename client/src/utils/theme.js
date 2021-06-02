@@ -40,4 +40,10 @@ const theme = createMuiTheme({
 // lg, large: 1280px
 // xl, extra-large: 1920px
 
+// Media Query Sample
+// in Total.tsx
+// [theme.breakpoints.down("sm")]: {
+//   padding: theme.spacing(2),
+// }
+
 export default theme;
