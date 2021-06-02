@@ -34,8 +34,8 @@ function CityChart({ items }: Props) {
       {
         label: "City Count",
         data: cityCount,
-        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1)"],
+        backgroundColor: ["rgb(63,81,181,0.2)"],
+        borderColor: ["rgb(63,81,181)"],
         borderWidth: 1,
       },
     ],

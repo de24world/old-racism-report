@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
+// Material UI
 import {
+  makeStyles,
+  withStyles,
   Typography,
   Button,
   Stepper,
@@ -11,11 +13,10 @@ import {
   StepConnector,
 } from "@material-ui/core/";
 
+// Source
 import EmailIcon from "@material-ui/icons/Email";
 import SearchIcon from "@material-ui/icons/Search";
 import VideoLabelIcon from "@material-ui/icons/VideoLabel";
-
-interface Props {}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,6 +79,8 @@ const ColorlibConnector = withStyles({
     borderRadius: 1,
   },
 })(StepConnector);
+
+interface Props {}
 
 function ColorlibStepIcon(props) {
   const classes = useColorlibStepIconStyles();

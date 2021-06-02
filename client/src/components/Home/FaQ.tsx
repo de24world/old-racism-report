@@ -39,6 +39,14 @@ const FaQ = (props: Props) => {
       headings: "How can I report the Racism?",
       details: " et et et et et ",
     },
+    {
+      headings: "어떻게 인종을 나누었나요",
+      details: " et et et et et ",
+    },
+    {
+      headings: "인종 범죄 종류가 뭔가요",
+      details: " et et et et et ",
+    },
   ];
 
   return (

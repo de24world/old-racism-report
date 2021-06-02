@@ -20,6 +20,7 @@ import {
   MenuItem,
   Button,
   Typography,
+  Paper,
 } from "@material-ui/core/";
 import Alert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
@@ -73,64 +74,61 @@ function Form() {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="lg">
-        <Typography variant="h4" gutterBottom>
-          Send us Reacism Report
-        </Typography>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel>Offender</InputLabel>
-                <Controller
-                  name="offender"
-                  control={control}
-                  defaultValue=""
-                  rules={{ required: true }}
-                  render={({ field }) => (
-                    <Select label="Offender" {...field}>
-                      <MenuItem value="asian guy">Asian guy</MenuItem>
-                      <MenuItem value="asian women">Asian women</MenuItem>
-                      <MenuItem value="black guy">Black guy</MenuItem>
-                      <MenuItem value="black women">Black women</MenuItem>
-                      <MenuItem value="white guy">White guy</MenuItem>
-                      <MenuItem value="white women">White women</MenuItem>
-                    </Select>
-                  )}
-                />
-              </FormControl>
-              {errors.offender && (
-                <Alert severity="error">This is required</Alert>
-              )}
-            </Grid>
+      <Typography variant="h4" gutterBottom>
+        Send us Reacism Report
+      </Typography>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel>Offender</InputLabel>
+              <Controller
+                name="offender"
+                control={control}
+                defaultValue=""
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select label="Offender" {...field}>
+                    <MenuItem value="asian guy">Asian guy</MenuItem>
+                    <MenuItem value="asian women">Asian women</MenuItem>
+                    <MenuItem value="black guy">Black guy</MenuItem>
+                    <MenuItem value="black women">Black women</MenuItem>
+                    <MenuItem value="white guy">White guy</MenuItem>
+                    <MenuItem value="white women">White women</MenuItem>
+                  </Select>
+                )}
+              />
+            </FormControl>
+            {errors.offender && (
+              <Alert severity="error">This is required</Alert>
+            )}
+          </Grid>
 
-            <Grid item xs={12} sm={6}>
-              <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel>Victim</InputLabel>
-                <Controller
-                  name="victim"
-                  control={control}
-                  defaultValue=""
-                  rules={{ required: true }}
-                  render={({ field }) => (
-                    <Select label="Victim" {...field}>
-                      <MenuItem value="asian guy">Asian guy</MenuItem>
-                      <MenuItem value="asian women">Asian women</MenuItem>
-                      <MenuItem value="black guy">Black guy</MenuItem>
-                      <MenuItem value="black women">Black women</MenuItem>
-                      <MenuItem value="white guy">White guy</MenuItem>
-                      <MenuItem value="white women">White women</MenuItem>
-                    </Select>
-                  )}
-                />
-              </FormControl>
-              {errors.victim && (
-                <Alert severity="error">This is required</Alert>
-              )}
-            </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel>Victim</InputLabel>
+              <Controller
+                name="victim"
+                control={control}
+                defaultValue=""
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select label="Victim" {...field}>
+                    <MenuItem value="asian guy">Asian guy</MenuItem>
+                    <MenuItem value="asian women">Asian women</MenuItem>
+                    <MenuItem value="black guy">Black guy</MenuItem>
+                    <MenuItem value="black women">Black women</MenuItem>
+                    <MenuItem value="white guy">White guy</MenuItem>
+                    <MenuItem value="white women">White women</MenuItem>
+                  </Select>
+                )}
+              />
+            </FormControl>
+            {errors.victim && <Alert severity="error">This is required</Alert>}
+          </Grid>
 
-            {/* <DataForm /> */}
-            {/* <Controller
+          {/* <DataForm /> */}
+          {/* <Controller
           control={control}
           name="Datepicker"
           render={({ field }) => (
@@ -145,73 +143,59 @@ function Form() {
           )}
         /> */}
 
-            <Grid item xs={12} sm={6}>
-              <Countries control={control} errors={errors} />
-            </Grid>
+          <Grid item xs={12} sm={6}>
+            <Countries control={control} errors={errors} />
+          </Grid>
 
-            <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6}>
+            <Controller
+              name="city"
+              control={control}
+              defaultValue=""
+              rules={{ required: true }}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  label="City Name"
+                  variant="outlined"
+                  fullWidth
+                />
+              )}
+            />
+            {errors.city && <Alert severity="error">This is required</Alert>}
+          </Grid>
+
+          <Grid item xs={12}>
+            <TextInput control={control} errors={errors} />
+          </Grid>
+
+          <Grid item xs={12}>
+            <FormControl>
+              <FormLabel>Level</FormLabel>
               <Controller
-                name="city"
+                name="level"
                 control={control}
                 defaultValue=""
                 rules={{ required: true }}
                 render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="City Name"
-                    variant="outlined"
-                    fullWidth
-                  />
+                  <RadioGroup {...field} className={classes.radioGroup}>
+                    <FormControlLabel value="1" control={<Radio />} label="1" />
+                    <FormControlLabel value="2" control={<Radio />} label="2" />
+                    <FormControlLabel value="3" control={<Radio />} label="3" />
+                  </RadioGroup>
                 )}
               />
-              {errors.city && <Alert severity="error">This is required</Alert>}
-            </Grid>
-
-            <Grid item xs={12}>
-              <TextInput control={control} errors={errors} />
-            </Grid>
-
-            <Grid item xs={12}>
-              <FormControl>
-                <FormLabel>Level</FormLabel>
-                <Controller
-                  name="level"
-                  control={control}
-                  defaultValue=""
-                  rules={{ required: true }}
-                  render={({ field }) => (
-                    <RadioGroup {...field} className={classes.radioGroup}>
-                      <FormControlLabel
-                        value="1"
-                        control={<Radio />}
-                        label="1"
-                      />
-                      <FormControlLabel
-                        value="2"
-                        control={<Radio />}
-                        label="2"
-                      />
-                      <FormControlLabel
-                        value="3"
-                        control={<Radio />}
-                        label="3"
-                      />
-                    </RadioGroup>
-                  )}
-                />
-              </FormControl>
-              {errors.level && <Alert severity="error">This is required</Alert>}
-            </Grid>
-
-            <Grid item>
-              <Button type="submit" variant="contained" color="primary">
-                Submit
-              </Button>
-            </Grid>
+            </FormControl>
+            {errors.level && <Alert severity="error">This is required</Alert>}
           </Grid>
-        </form>
-        <Typography>대량 데이터는 이메일로 보내주세요</Typography>
-      </Container>
+
+          <Grid item>
+            <Button type="submit" variant="contained" color="primary">
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
     </div>
   );
 }

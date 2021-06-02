@@ -50,15 +50,6 @@ function Charts({ items }: Props) {
 
   return (
     <div>
-      <Typography variant="h3">Charts</Typography>
-
-      {chartState === "victim-chart" && <VictimChart items={items} />}
-      {chartState === "offender-chart" && <OffenderChart items={items} />}
-      {chartState === "country-chart" && <CountryChart items={items} />}
-      {chartState === "city-chart" && <CityChart items={items} />}
-      {chartState === "level-chart" && <LevelChart items={items} />}
-      {/*  TimeChart */}
-
       <Breadcrumbs aria-label="breadcrumb">
         <Button color="primary" onClick={victimChange}>
           Victim
@@ -77,6 +68,13 @@ function Charts({ items }: Props) {
         </Button>
         <Button color="primary">Time</Button>
       </Breadcrumbs>
+
+      {chartState === "victim-chart" && <VictimChart items={items} />}
+      {chartState === "offender-chart" && <OffenderChart items={items} />}
+      {chartState === "country-chart" && <CountryChart items={items} />}
+      {chartState === "city-chart" && <CityChart items={items} />}
+      {chartState === "level-chart" && <LevelChart items={items} />}
+      {/*  TimeChart */}
     </div>
   );
 }
