@@ -22,10 +22,6 @@ import { IDataProps } from "../../interfaces/interfaces";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
   card: {
     height: "100%",
     display: "flex",
@@ -54,7 +50,7 @@ function Recently({ data, isLoading }: Props) {
   const recenltlyObject = [lastObject, secondLastObject, thirdLastObject];
 
   return (
-    <div className={classes.cardGrid}>
+    <div className="block">
       <Typography variant="h4" color="primary" gutterBottom>
         Recently Updated Videos
       </Typography>

@@ -3,7 +3,6 @@ import React from "react";
 // Material UI
 import {
   makeStyles,
-  Container,
   Typography,
   Accordion,
   AccordionSummary,
@@ -14,9 +13,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 interface Props {}
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
+  root: {},
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
@@ -50,30 +47,28 @@ const FaQ = (props: Props) => {
   ];
 
   return (
-    <>
-      <Container maxWidth="lg">
-        <Typography variant="h4" color="primary" gutterBottom>
-          FaQ
-        </Typography>
-        {accordionData.map((accordion, i) => {
-          const { headings, details } = accordion;
-          return (
-            <Accordion key={i}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className={classes.heading}>{headings}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>{details}</Typography>
-              </AccordionDetails>
-            </Accordion>
-          );
-        })}
-      </Container>
-    </>
+    <div className="block">
+      <Typography variant="h4" color="primary" gutterBottom>
+        FaQ
+      </Typography>
+      {accordionData.map((accordion, i) => {
+        const { headings, details } = accordion;
+        return (
+          <Accordion key={i}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className={classes.heading}>{headings}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>{details}</Typography>
+            </AccordionDetails>
+          </Accordion>
+        );
+      })}
+    </div>
   );
 };
 

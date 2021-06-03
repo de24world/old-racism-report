@@ -1,3 +1,7 @@
+.block {
+  padding-bottom: 3rem;
+}
+
 .progressbar {
   position: relative;
   top: calc(50%);

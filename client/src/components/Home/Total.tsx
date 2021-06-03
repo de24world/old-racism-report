@@ -13,10 +13,7 @@ import {
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
+  root: {},
   paper: {
     padding: theme.spacing(6),
     [theme.breakpoints.down("sm")]: {
@@ -77,7 +74,7 @@ function Total({ data, isLoading }: Props): ReactElement {
   ).length;
 
   return (
-    <div className={classes.root}>
+    <div className="block">
       <Typography variant="h4" color="primary" gutterBottom>
         Total Report
       </Typography>
