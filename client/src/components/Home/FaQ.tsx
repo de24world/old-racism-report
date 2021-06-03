@@ -47,7 +47,7 @@ const FaQ = (props: Props) => {
   ];
 
   return (
-    <div className="block">
+    <div className="faq __block">
       <Typography variant="h4" color="primary" gutterBottom>
         FaQ
       </Typography>

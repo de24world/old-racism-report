@@ -25,7 +25,7 @@ const Main = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <div className="block">
+    <div className="main __block">
       <Container maxWidth="sm">
         <Typography
           component="h1"

@@ -17,30 +17,36 @@ const FormExample = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className="formexample __block">
       <Typography>대량 데이터는 이메일로 보내주세요</Typography>
-
       <Paper className={classes.paper}>
-        example
-        <br />
-        &#123;
-        <br />
-        offender: "Asian guy",
-        <br />
-        victim: "Black guy",
-        <br />
-        time: "2020-Jan",
-        <br />
-        country: "USA",
-        <br />
-        countryCode: "US",
-        <br />
-        city: "Boston",
-        <br />
-        evidence: "https://youtu.be/dWehG6U2JOo",
-        <br />
-        level: "1",
-        <br /> &#125;
+        <pre>
+          <code>
+            &#123;
+            <br /> offender: "White guy",
+            <br /> victim: "Black women",
+            <br /> time: "2020-Jan",
+            <br /> country: "USA",
+            <br /> countryCode: "US",
+            <br /> city: "Boston",
+            <br /> evidence: "https://youtu.be/dWehG6U2JOo",
+            <br /> level: "1",
+            <br />
+            &#125;,
+            <br />
+            &#123;
+            <br /> offender: "Black guy",
+            <br /> victim: "Asian women",
+            <br /> time: "2020-Jan",
+            <br /> country: "United Kingdom",
+            <br /> countryCode: "GB",
+            <br /> city: "London",
+            <br /> evidence: "https://youtu.be/dWehG6U2JOo",
+            <br /> level: "2",
+            <br />
+            &#125;,
+          </code>
+        </pre>
       </Paper>
     </div>
   );

@@ -50,7 +50,7 @@ function Recently({ data, isLoading }: Props) {
   const recenltlyObject = [lastObject, secondLastObject, thirdLastObject];
 
   return (
-    <div className="block">
+    <div className="recently __block">
       <Typography variant="h4" color="primary" gutterBottom>
         Recently Updated Videos
       </Typography>

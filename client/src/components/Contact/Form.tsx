@@ -73,7 +73,7 @@ function Form() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className="form __block">
       <Typography variant="h4" gutterBottom>
         Send us Reacism Report
       </Typography>
