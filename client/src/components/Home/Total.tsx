@@ -31,7 +31,6 @@ interface Props {
 function Total({ data, isLoading }: Props): ReactElement {
   const classes = useStyles();
   const totalOccur = Object.keys(data).length;
-  const countryUSA = data.filter((item) => item.country === "USA").length;
 
   // 피해자 종류
   const victimAsianGuy = data.filter(
@@ -85,7 +84,7 @@ function Total({ data, isLoading }: Props): ReactElement {
         <Paper className={classes.paper}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Typography variant="h5" color="primary" gutterBottom>
+              <Typography variant="h5" gutterBottom>
                 {totalOccur}
               </Typography>
               총 사건 발생 수
@@ -93,43 +92,43 @@ function Total({ data, isLoading }: Props): ReactElement {
 
             <Grid item xs={6}>
               <Typography variant="h5" gutterBottom>
-                sample 5
+                111
               </Typography>
-              최대 발생 국가
+              총 발생 국가
             </Grid>
 
             <Grid item xs={6}>
               <Typography variant="h5" gutterBottom>
-                sample 1
+                222
               </Typography>
-              최대 도시 국가
+              총 발생 도시
             </Grid>
 
             {/* 도시 */}
             <Grid item xs={3}>
               <Typography variant="h5" gutterBottom>
-                {countryUSA}
+                미국 (10)
               </Typography>
-              미국
+              최대 발생 국가
             </Grid>
 
             <Grid item xs={3}>
               <Typography variant="h5" gutterBottom>
-                sample 1
+                보스턴 (8)
               </Typography>
-              최대 도시 국가
+              최대 발생 도시
             </Grid>
 
             <Grid item xs={3}>
               <Typography variant="h5" gutterBottom>
-                sample 1
+                백인 남성 (2)
               </Typography>
-              최대 도시 국가
+              최대 가해 남성
             </Grid>
 
             <Grid item xs={3}>
               <Typography variant="h5" gutterBottom>
-                sample 1
+                아시아 여성(11)
               </Typography>
               최대 도시 국가
             </Grid>

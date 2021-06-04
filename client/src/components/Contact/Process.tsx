@@ -162,7 +162,7 @@ const Process = (props: Props) => {
         {activeStep === steps.length ? (
           <div>
             <Typography className={classes.instructions}>
-              Our E-Mail Address is
+              Our E-Mail Address is &nbsp;
               <a href="mailto:de24world@gmail.com">de24world@gmail.com</a>
             </Typography>
             <Button onClick={handleReset} className={classes.button}>

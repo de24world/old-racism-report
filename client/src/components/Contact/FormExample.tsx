@@ -90,7 +90,7 @@ const FormExample = (props: Props) => {
 
       <div className={classes.explain}>
         <ControlPointDuplicateIcon /> &nbsp;
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle2">
           If you want to send us multiple Racism Report Data, you can copy over
           the example(Multiple Data exmaple). And please send directly our
           E-Mail &nbsp;
