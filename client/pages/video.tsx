@@ -48,9 +48,8 @@ const VideoPage = () => {
   const dataKeys = data[0] && Object.keys(data[0]);
 
   return (
-    <>
+    <div className="video page">
       <Layout>
-        <p>This is video.js Page</p>
         <Grid container spacing={2}>
           <Grid item lg={3}>
             <TextField
@@ -100,7 +99,7 @@ const VideoPage = () => {
           </Grid>
         </Grid>
       </Layout>
-    </>
+    </div>
   );
 };
 

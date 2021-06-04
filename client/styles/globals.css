@@ -1,3 +1,8 @@
+.page {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .__block {
   padding-bottom: 3rem;
 }

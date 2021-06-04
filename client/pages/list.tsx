@@ -27,9 +27,8 @@ const ListPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="list page">
       <Layout>
-        <p>This is list.js Page</p>
         <ItemList dataList={dataList} />
         <LevelStep />
       </Layout>

@@ -74,8 +74,8 @@ function Form() {
 
   return (
     <div className="form __block">
-      <Typography variant="h4" gutterBottom>
-        Send us Reacism Report
+      <Typography variant="h4" color="primary" gutterBottom>
+        Send us a Racism Report
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>

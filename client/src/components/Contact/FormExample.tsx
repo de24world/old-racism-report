@@ -68,7 +68,7 @@ const FormExample = (props: Props) => {
 
   return (
     <div className="formexample __block">
-      <Typography variant="h6" color="primary" gutterBottom>
+      <Typography variant="h4" color="primary" gutterBottom>
         Multiple Data example
       </Typography>
 
@@ -91,9 +91,9 @@ const FormExample = (props: Props) => {
       <div className={classes.explain}>
         <ControlPointDuplicateIcon /> &nbsp;
         <Typography variant="subtitle1">
-          If you want to report multiple Data, you can copy over the
-          example(Multiple Data exmaple). And please send directly our E-Mail
-          &nbsp;
+          If you want to send us multiple Racism Report Data, you can copy over
+          the example(Multiple Data exmaple). And please send directly our
+          E-Mail &nbsp;
           <a href="mailto:de24world@gmail.com">de24world@gmail.com</a>
         </Typography>
       </div>

@@ -16,7 +16,7 @@ import Layout from "../src/components/Layout";
 import Charts from "../src/components/Chart/Charts";
 
 const useStyles = makeStyles((theme) => ({
-  root: { margin: theme.spacing(2) },
+  root: {},
 }));
 
 const ChartPage = () => {
@@ -24,7 +24,7 @@ const ChartPage = () => {
   const [data, isLoading] = useFetch("http://localhost:3006/api");
 
   return (
-    <div className={classes.root}>
+    <div className="chart page">
       <Layout>
         <Typography variant="h5" align="center" paragraph>
           CHART PAGE

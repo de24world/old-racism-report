@@ -7,14 +7,13 @@ import FormExample from "../src/components/Contact/FormExample";
 
 const ContactPage = () => {
   return (
-    <>
+    <div className="contact page">
       <Layout>
-        <p>This is contact.js Page</p>
         <Process />
         <Form />
         <FormExample />
       </Layout>
-    </>
+    </div>
   );
 };
 

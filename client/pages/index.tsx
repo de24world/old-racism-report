@@ -29,7 +29,7 @@ const Home = () => {
   // );
 
   return (
-    <div>
+    <div className="index page">
       <Layout>
         <h1>Index page</h1>
         <p>Current locale: {locale}</p>

@@ -144,7 +144,7 @@ const Process = (props: Props) => {
 
   return (
     <div className="process __block">
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" color="primary" gutterBottom>
         Process of Report
       </Typography>
       <Stepper

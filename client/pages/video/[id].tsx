@@ -17,12 +17,12 @@ const Video = ({ item }) => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className="video [id] page">
       <Layout>
         {item && <VideoDetail item={item} />}
         {/* {isLoading && <CircularProgress />} */}
       </Layout>
-    </>
+    </div>
   );
 };
 
