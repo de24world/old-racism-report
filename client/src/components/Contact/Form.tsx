@@ -77,7 +77,7 @@ function Form() {
 
   return (
     <div className="form __block">
-      <Typography variant="h4" color="primary" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Send us a Racism Report
       </Typography>
       <div className={classes.root}>

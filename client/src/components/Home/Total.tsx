@@ -74,7 +74,7 @@ function Total({ data, isLoading }: Props): ReactElement {
 
   return (
     <div className="total __block">
-      <Typography variant="h4" color="primary" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Total Report
       </Typography>
 

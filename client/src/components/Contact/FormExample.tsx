@@ -68,7 +68,7 @@ const FormExample = (props: Props) => {
 
   return (
     <div className="formexample __block">
-      <Typography variant="h4" color="primary" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Multiple Data example
       </Typography>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 
 // Libarary
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -25,16 +25,14 @@ const ChartPage = () => {
   return (
     <div className="chart page">
       <Layout>
-        <div className="__block">
-          <Typography variant="h4" color="primary" paragraph gutterBottom>
-            <EqualizerIcon />
-            &nbsp; Chart Page
-          </Typography>
-          <Typography variant="body1" paragraph gutterBottom>
-            This Page is Chart Page. You can see a lot of Charts about Racism.
-            You can see <strong>6 Charts </strong>
-          </Typography>
-        </div>
+        <Typography variant="h4" color="primary" paragraph gutterBottom>
+          <EqualizerIcon />
+          &nbsp; Chart Page
+        </Typography>
+        <Typography variant="body1" paragraph gutterBottom>
+          This Page is Chart Page. You can see a lot of Charts about Racism. You
+          can see <strong>6 Charts </strong>
+        </Typography>
 
         {/* {loading && <div>loading</div>}
         {!loading &&  ... */}

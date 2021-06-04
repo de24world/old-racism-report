@@ -11,7 +11,9 @@ import {
   FormControlLabel,
   Checkbox,
   CircularProgress,
+  Typography,
 } from "@material-ui/core/";
+import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 
 // Hooks
 import useFetch from "../src/hooks/useFetch";
@@ -50,6 +52,15 @@ const VideoPage = () => {
   return (
     <div className="video page">
       <Layout>
+        <Typography variant="h4" color="primary" paragraph gutterBottom>
+          <VideoLibraryIcon />
+          &nbsp; Video Page
+        </Typography>
+        <Typography variant="body1" paragraph gutterBottom>
+          This Page is Video Page. You can watch a lot of Videos about Racism.
+          You can do <strong> search & filter </strong> videos.
+        </Typography>
+
         <Grid container spacing={2}>
           <Grid item lg={3} xs={12}>
             <TextField

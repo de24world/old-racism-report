@@ -51,7 +51,7 @@ function Recently({ data, isLoading }: Props) {
 
   return (
     <div className="recently __block">
-      <Typography variant="h4" color="primary" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Recently Updated Videos
       </Typography>
       {isLoading ? (

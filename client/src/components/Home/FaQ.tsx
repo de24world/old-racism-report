@@ -48,7 +48,7 @@ const FaQ = (props: Props) => {
 
   return (
     <div className="faq __block">
-      <Typography variant="h4" color="primary" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         FaQ
       </Typography>
       {accordionData.map((accordion, i) => {

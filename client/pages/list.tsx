@@ -6,6 +6,10 @@ import Axios from "axios";
 // Next
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+// Materail UI
+import { Typography } from "@material-ui/core/";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+
 // Source Components
 import Layout from "../src/components/Layout";
 import ItemList from "../src/components/List/ItemList";
@@ -29,6 +33,16 @@ const ListPage = () => {
   return (
     <div className="list page">
       <Layout>
+        <Typography variant="h4" color="primary" paragraph gutterBottom>
+          <ListAltIcon />
+          &nbsp; List Page
+        </Typography>
+        <Typography variant="body1" paragraph gutterBottom>
+          This Page is List Table Page. We need your report. You can
+          <strong> search, filter, sort </strong> the table. Please click the
+          table title.
+        </Typography>
+
         <ItemList dataList={dataList} />
         <LevelStep />
       </Layout>
