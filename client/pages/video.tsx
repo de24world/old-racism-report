@@ -6,8 +6,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // Material UI
 import {
   makeStyles,
-  Box,
-  Container,
   Grid,
   TextField,
   FormControlLabel,
@@ -24,6 +22,8 @@ import VideoList from "../src/components/Video/VideoList";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
+  searchBar: { width: "100%" },
+  filterCategory: { lineHeight: "3rem" },
 }));
 
 const VideoPage = () => {
@@ -51,11 +51,12 @@ const VideoPage = () => {
     <div className="video page">
       <Layout>
         <Grid container spacing={2}>
-          <Grid item lg={3}>
+          <Grid item lg={3} xs={12}>
             <TextField
+              className={classes.searchBar}
               id="outlined-secondary"
               type="text"
-              label="Outlined secondary"
+              label="Search with value"
               variant="outlined"
               color="secondary"
               value={query}
@@ -63,7 +64,7 @@ const VideoPage = () => {
             />
           </Grid>
 
-          <Grid item lg={9}>
+          <Grid item lg={9} className={classes.filterCategory}>
             {dataKeys &&
               dataKeys.map((dataKey, index) => (
                 <FormControlLabel

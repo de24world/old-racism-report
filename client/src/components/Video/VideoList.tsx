@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+
     // backgroundColor: theme.palette.background.paper,
   },
   gridList: {
@@ -42,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
   iconButton: {
     color: "white",
   },
+  pagination: { paddingTop: "2rem" },
 }));
 
 interface Props {
@@ -95,7 +99,7 @@ function VideoList({ data }: Props) {
           </GridListTile>
         ))}
       </GridList>
-      <Pagination count={10} />
+      <Pagination className={classes.pagination} count={10} />
     </div>
   );
 }

@@ -18,6 +18,10 @@ import VictimChart from "./VictimChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
+  charts: {
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
+  },
 }));
 
 interface Props {
@@ -49,33 +53,36 @@ function Charts({ items }: Props) {
   };
 
   return (
-    <div>
+    <>
       <Breadcrumbs aria-label="breadcrumb">
-        <Button color="primary" onClick={victimChange}>
-          Victim
+        <Button color="primary" size="large" onClick={victimChange}>
+          01. Victim
         </Button>
-        <Button color="primary" onClick={offenderChange}>
-          Offender
+        <Button color="primary" size="large" onClick={offenderChange}>
+          02. Offender
         </Button>
-        <Button color="primary" onClick={countryChange}>
-          Country
+        <Button color="primary" size="large" onClick={countryChange}>
+          03. Country
         </Button>
-        <Button color="primary" onClick={cityChange}>
-          City
+        <Button color="primary" size="large" onClick={cityChange}>
+          04. City
         </Button>
-        <Button color="primary" onClick={levelChange}>
-          Level
+        <Button color="primary" size="large" onClick={levelChange}>
+          05. Level
         </Button>
-        <Button color="primary">Time</Button>
+        <Button color="primary" size="large">
+          06. Time
+        </Button>
       </Breadcrumbs>
-
-      {chartState === "victim-chart" && <VictimChart items={items} />}
-      {chartState === "offender-chart" && <OffenderChart items={items} />}
-      {chartState === "country-chart" && <CountryChart items={items} />}
-      {chartState === "city-chart" && <CityChart items={items} />}
-      {chartState === "level-chart" && <LevelChart items={items} />}
-      {/*  TimeChart */}
-    </div>
+      <div className={classes.charts}>
+        {chartState === "victim-chart" && <VictimChart items={items} />}
+        {chartState === "offender-chart" && <OffenderChart items={items} />}
+        {chartState === "country-chart" && <CountryChart items={items} />}
+        {chartState === "city-chart" && <CityChart items={items} />}
+        {chartState === "level-chart" && <LevelChart items={items} />}
+        {/*  TimeChart */}
+      </div>
+    </>
   );
 }
 
