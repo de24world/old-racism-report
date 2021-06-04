@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // next
 import Head from "next/head";
 import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 // Libarary
+import * as gtag from "../lib/gtag";
 
 // material UI
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -21,13 +23,25 @@ import "../styles/globals.css";
 const MyApp = (props) => {
   const { Component, pageProps } = props;
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
+
+  // Google Analytics
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <React.Fragment>

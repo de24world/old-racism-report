@@ -32,7 +32,7 @@ function OffenderChart({ items }: Props) {
     labels: offenderList,
     datasets: [
       {
-        label: "Country Count",
+        label: "Offender Count",
         data: offenderCount,
         backgroundColor: [
           "rgb(255,62,47,0.2)",
