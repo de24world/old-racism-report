@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-// Next i18n
+// Next
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 // Material UI
 import {
@@ -51,6 +52,14 @@ const VideoPage = () => {
 
   return (
     <div className="video page">
+      <Head>
+        <title>Racism Report App | video</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+
       <Layout>
         <Typography variant="h4" color="primary" paragraph gutterBottom>
           <VideoLibraryIcon />

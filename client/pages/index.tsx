@@ -4,6 +4,7 @@
 // Next Libarary
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 // Material UI
 import { CircularProgress } from "@material-ui/core/";
@@ -30,6 +31,14 @@ const Home = () => {
 
   return (
     <div className="index page">
+      <Head>
+        <title>Racism Report App | index</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+
       <Layout>
         <h1>Index page</h1>
         <p>Current locale: {locale}</p>

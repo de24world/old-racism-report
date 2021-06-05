@@ -5,6 +5,7 @@ import Axios from "axios";
 
 // Next
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 // Materail UI
 import { Typography } from "@material-ui/core/";
@@ -32,6 +33,14 @@ const ListPage = () => {
 
   return (
     <div className="list page">
+      <Head>
+        <title>Racism Report App | list</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+
       <Layout>
         <Typography variant="h4" color="primary" paragraph gutterBottom>
           <ListAltIcon />

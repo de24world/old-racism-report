@@ -1,5 +1,8 @@
 import React from "react";
 
+// next
+import Head from "next/head";
+
 // Libarary
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -24,6 +27,14 @@ const ChartPage = () => {
 
   return (
     <div className="chart page">
+      <Head>
+        <title>Racism Report App | chart</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+
       <Layout>
         <Typography variant="h4" color="primary" paragraph gutterBottom>
           <EqualizerIcon />
