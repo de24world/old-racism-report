@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 
 // Libarary
 import * as gtag from "../lib/gtag";
+import CookieConsent from "react-cookie-consent";
 
 // material UI
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -56,6 +57,23 @@ const MyApp = (props) => {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Header />
+
+        <CookieConsent
+          buttonText="Accept"
+          onAccept={() => {
+            alert("Accept Cookie");
+          }}
+          declineButtonText="Decline"
+          enableDeclineButton
+          onDecline={() => {
+            alert("Decline Cookie!");
+          }}
+        >
+          Please confirm, if you accepted our tracking cookies. You can also
+          decline the tracking. So you can continue to visit our website without
+          any data sent to third party services.
+        </CookieConsent>
+
         <Layout>
           <Component {...pageProps} />
         </Layout>

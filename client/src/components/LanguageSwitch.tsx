@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core/";
 
 import TranslateIcon from "@material-ui/icons/Translate";
+import { relative } from "node:path";
 
 interface Props {}
 
@@ -21,12 +22,15 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiInputBase-root": {
       color: theme.palette.primary.light,
     },
+    position: "relative",
+    right: "1rem",
   },
   translateIcon: {
-    marginRight: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      marginRight: theme.spacing(1),
+    },
   },
   language: {
-    marginRight: theme.spacing(2),
     width: "auto",
   },
 }));

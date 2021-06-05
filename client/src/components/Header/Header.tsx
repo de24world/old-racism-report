@@ -23,7 +23,6 @@ import MobileHeader from "./MobileHeader";
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
-    wordBreak: "keep-all",
     // [theme.breakpoints.down("xs")]: {
     //   display: "none",
     // },
