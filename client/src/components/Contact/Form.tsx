@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 // Libarary
 import { useForm, Controller } from "react-hook-form";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 // Material UI
 import {
@@ -108,6 +106,7 @@ function Form() {
               )}
             </Grid>
 
+            {/* Victim */}
             <Grid item xs={12} sm={6}>
               <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel>Victim</InputLabel>
@@ -133,26 +132,12 @@ function Form() {
               )}
             </Grid>
 
-            {/* <DataForm /> */}
-            {/* <Controller
-          control={control}
-          name="Datepicker"
-          render={({ field }) => (
-            <DatePicker
-              {...field}
-              selected={field.value}
-              dateFormat="MM/yyyy"
-              showMonthYearPicker
-              showFullMonthYearPicker
-              placeholderText="Select date"
-            />
-          )}
-        /> */}
-
+            {/* Country */}
             <Grid item xs={12} sm={6}>
               <Countries control={control} errors={errors} />
             </Grid>
 
+            {/* City */}
             <Grid item xs={12} sm={6}>
               <Controller
                 name="city"
@@ -171,10 +156,31 @@ function Form() {
               {errors.city && <Alert severity="error">This is required</Alert>}
             </Grid>
 
-            <Grid item xs={12}>
+            {/* <DataForm /> */}
+            <Grid item xs={12} sm={6}>
+              <DataForm />
+            </Grid>
+            {/* <Controller
+          control={control}
+          name="Datepicker"
+          render={({ field }) => (
+            <DatePicker
+              {...field}
+              selected={field.value}
+              dateFormat="MM/yyyy"
+              showMonthYearPicker
+              showFullMonthYearPicker
+              placeholderText="Select date"
+            />
+          )}
+        /> */}
+
+            {/* Evidence */}
+            <Grid item xs={12} sm={6}>
               <TextInput control={control} errors={errors} />
             </Grid>
 
+            {/* Level */}
             <Grid item xs={12}>
               <FormControl>
                 <FormLabel>Level</FormLabel>
@@ -206,7 +212,6 @@ function Form() {
               </FormControl>
               {errors.level && <Alert severity="error">This is required</Alert>}
             </Grid>
-
             <Grid item>
               <Button
                 className={classes.formButton}
