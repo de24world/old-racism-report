@@ -11,6 +11,7 @@ import Layout from "../src/components/Layout";
 import Form from "../src/components/Contact/Form";
 import Process from "../src/components/Contact/Process";
 import FormExample from "../src/components/Contact/FormExample";
+import ReportWay from "../src/components/Contact/ReportWay";
 
 const ContactPage = () => {
   return (
@@ -34,6 +35,7 @@ const ContactPage = () => {
         </Typography>
 
         <Process />
+        <ReportWay />
         <Form />
         <FormExample />
       </Layout>

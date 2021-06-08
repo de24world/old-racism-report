@@ -73,7 +73,7 @@ function LevelStep({}: Props): ReactElement {
   };
 
   return (
-    <>
+    <div className="levelStep __block">
       <Container>
         <Typography variant="h4" color="primary" gutterBottom>
           인종차별 단계
@@ -116,7 +116,7 @@ function LevelStep({}: Props): ReactElement {
           </Paper>
         )}
       </Container>
-    </>
+    </div>
   );
 }
 
