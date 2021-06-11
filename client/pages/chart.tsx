@@ -23,7 +23,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ChartPage = () => {
   const classes = useStyles();
-  const [data, isLoading] = useFetch("http://localhost:3006/api");
+  const [data, isLoading] = useFetch(
+    "https://de24world.github.io/racism_data.json"
+  );
 
   return (
     <div className="chart page">

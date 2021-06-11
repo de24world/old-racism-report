@@ -32,7 +32,9 @@ const useStyles = makeStyles((theme) => ({
 const VideoPage = () => {
   const classes = useStyles();
 
-  const [data, isLoading] = useFetch("http://localhost:3006/api");
+  const [data, isLoading] = useFetch(
+    "https://de24world.github.io/racism_data.json"
+  );
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
 

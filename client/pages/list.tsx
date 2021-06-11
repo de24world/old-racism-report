@@ -18,7 +18,7 @@ import LevelStep from "../src/components/LevelStep";
 
 const ListPage = () => {
   const [dataList, setDataList] = useState([]);
-  const API_URL = "http://localhost:3006/api";
+  const API_URL = "https://de24world.github.io/racism_data.json";
 
   const getData = () => {
     Axios.get(API_URL).then((res) => {

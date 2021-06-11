@@ -22,7 +22,9 @@ import Total from "../src/components/Home/Total";
 const Home = () => {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  const [data, isLoading] = useFetch("http://localhost:3006/api");
+  const [data, isLoading] = useFetch(
+    "https://de24world.github.io/racism_data.json"
+  );
   // console.log(
   //   data,
   //   isLoading,
