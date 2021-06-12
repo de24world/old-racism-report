@@ -55,6 +55,7 @@ type FormValues = {
   victim: string;
   city: string;
   level: number;
+  time: Date;
 };
 
 function Form() {
@@ -62,9 +63,9 @@ function Form() {
 
   const {
     control,
-    reset,
-    setValue,
-    register,
+    // reset,
+    // setValue,
+    // register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
@@ -158,22 +159,15 @@ function Form() {
 
             {/* <DataForm /> */}
             <Grid item xs={12} sm={6}>
-              <DataForm />
+              <Controller
+                name="time"
+                control={control}
+                defaultValue=""
+                render={({ field: { onChange, value } }) => (
+                  <DataForm value={value} onChange={onChange} />
+                )}
+              />
             </Grid>
-            {/* <Controller
-          control={control}
-          name="Datepicker"
-          render={({ field }) => (
-            <DatePicker
-              {...field}
-              selected={field.value}
-              dateFormat="MM/yyyy"
-              showMonthYearPicker
-              showFullMonthYearPicker
-              placeholderText="Select date"
-            />
-          )}
-        /> */}
 
             {/* Evidence */}
             <Grid item xs={12} sm={6}>

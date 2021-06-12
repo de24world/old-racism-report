@@ -7,30 +7,35 @@ import DateFnsUtils from "@date-io/date-fns";
 import { Grid } from "@material-ui/core";
 import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
 
-const DateForm = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+interface IDataForm {
+  field: any;
+  value: any;
+}
 
-  const handleDateChange = (date: Date | null) => {
-    setSelectedDate(date);
-  };
+const DateForm = ({ value, onChange }) => {
+  // const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+
+  // const handleDateChange = (date: Date | null) => {
+  //   setSelectedDate(date);
+  // };
 
   return (
     <>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid container justify="space-around">
           <DatePicker
-            // type="date"
             format="MM/yyyy"
-            // required
             variant="inline"
             inputVariant="outlined"
             fullWidth
             openTo="year"
             views={["year", "month"]}
             label="Time(Year&Month)"
-            // helperText="Start from year selection"
-            value={selectedDate}
-            onChange={handleDateChange}
+            helperText="Please select Date from year selection"
+            value={value}
+            onChange={(e) => {
+              onChange(e);
+            }}
           />
         </Grid>
       </MuiPickersUtilsProvider>
