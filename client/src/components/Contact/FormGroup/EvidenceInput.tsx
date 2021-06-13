@@ -9,7 +9,7 @@ import Alert from "@material-ui/lab/Alert";
 
 interface Props {}
 
-const TextInput = ({ control, errors }) => {
+const EvidenceInput = ({ control, errors }) => {
   return (
     <div>
       <Controller
@@ -31,4 +31,4 @@ const TextInput = ({ control, errors }) => {
   );
 };
 
-export default TextInput;
+export default EvidenceInput;

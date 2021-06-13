@@ -46,9 +46,9 @@ const FormExample = (props: Props) => {
   };
 
   const codeSnippet = `{
-  offender: "WHITE GUY",
-  victim: "BLACK WOMEN",
-  time: "2020-Jan",
+  offender: "White Guy",
+  victim: "Black Women",
+  time: "2020-01",
   country: "USA",
   countryCode: "US",
   city: "BOSTON",
@@ -56,9 +56,9 @@ const FormExample = (props: Props) => {
   level: "1",
 },
 {
-  offender: "BLACK GUY",
-  victim: "ASIAN WOMEN",
-  time: "2020-Jan",
+  offender: "Black Guy",
+  victim: "Aisan Women",
+  time: "2020-12",
   country: "UNITED KINGDOM",
   countryCode: "GB",
   city: "LONDON",

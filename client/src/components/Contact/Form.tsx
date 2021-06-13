@@ -13,8 +13,6 @@ import {
   InputLabel,
   RadioGroup,
   Radio,
-  Select,
-  MenuItem,
   Button,
   Typography,
 } from "@material-ui/core/";
@@ -24,7 +22,8 @@ import { makeStyles } from "@material-ui/core/styles";
 // Source FormGroup Component
 import Countries from "./FormGroup/Countries";
 import DataForm from "./FormGroup/DateForm";
-import TextInput from "./FormGroup/TextInput";
+import EvidenceInput from "./FormGroup/EvidenceInput";
+import PeopleSelect from "./FormGroup/PeopleSelect";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,16 +89,7 @@ function Form() {
                   control={control}
                   defaultValue=""
                   rules={{ required: true }}
-                  render={({ field }) => (
-                    <Select label="Offender" {...field}>
-                      <MenuItem value="asian guy">Asian guy</MenuItem>
-                      <MenuItem value="asian women">Asian women</MenuItem>
-                      <MenuItem value="black guy">Black guy</MenuItem>
-                      <MenuItem value="black women">Black women</MenuItem>
-                      <MenuItem value="white guy">White guy</MenuItem>
-                      <MenuItem value="white women">White women</MenuItem>
-                    </Select>
-                  )}
+                  render={({ field }) => <PeopleSelect {...field} />}
                 />
               </FormControl>
               {errors.offender && (
@@ -116,16 +106,7 @@ function Form() {
                   control={control}
                   defaultValue=""
                   rules={{ required: true }}
-                  render={({ field }) => (
-                    <Select label="Victim" {...field}>
-                      <MenuItem value="asian guy">Asian guy</MenuItem>
-                      <MenuItem value="asian women">Asian women</MenuItem>
-                      <MenuItem value="black guy">Black guy</MenuItem>
-                      <MenuItem value="black women">Black women</MenuItem>
-                      <MenuItem value="white guy">White guy</MenuItem>
-                      <MenuItem value="white women">White women</MenuItem>
-                    </Select>
-                  )}
+                  render={({ field }) => <PeopleSelect {...field} />}
                 />
               </FormControl>
               {errors.victim && (
@@ -157,21 +138,27 @@ function Form() {
               {errors.city && <Alert severity="error">This is required</Alert>}
             </Grid>
 
+            {/* Evidence */}
+            <Grid item xs={12} sm={6}>
+              <EvidenceInput control={control} errors={errors} />
+            </Grid>
+
             {/* <DataForm /> */}
             <Grid item xs={12} sm={6}>
               <Controller
                 name="time"
                 control={control}
                 defaultValue=""
+                rules={{ required: true }}
                 render={({ field: { onChange, value } }) => (
                   <DataForm value={value} onChange={onChange} />
                 )}
               />
-            </Grid>
-
-            {/* Evidence */}
-            <Grid item xs={12} sm={6}>
-              <TextInput control={control} errors={errors} />
+              {errors.time && (
+                <Alert severity="error">
+                  Please select the Data(Default value is only example)
+                </Alert>
+              )}
             </Grid>
 
             {/* Level */}

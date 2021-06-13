@@ -12,12 +12,6 @@ import { Autocomplete, Alert } from "@material-ui/lab";
 // https://codesandbox.io/embed/mui-autocomplete-with-react-hook-form-3ufmf
 // https://material-ui.com/components/autocomplete/#country-select
 
-interface Props {
-  code: string;
-  label: string;
-  phone: string;
-}
-
 const useStyles = makeStyles({
   option: {
     fontSize: 15,
@@ -27,6 +21,11 @@ const useStyles = makeStyles({
     },
   },
 });
+interface Props {
+  code: string;
+  label: string;
+  phone: string;
+}
 
 const Countries = ({ control, errors }) => {
   const classes = useStyles();
