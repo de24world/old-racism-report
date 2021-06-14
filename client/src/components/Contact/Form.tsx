@@ -22,7 +22,6 @@ import { makeStyles } from "@material-ui/core/styles";
 // Source FormGroup Component
 import Countries from "./FormGroup/Countries";
 import DataForm from "./FormGroup/DateForm";
-import EvidenceInput from "./FormGroup/EvidenceInput";
 import PeopleSelect from "./FormGroup/PeopleSelect";
 
 const useStyles = makeStyles((theme) => ({
@@ -47,15 +46,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-type FormValues = {
+interface IUseForm {
   // https://codesandbox.io/s/react-hook-form-v6-controller-ts-jwyzw?file=/src/index.tsx:1129-1496
-  TextField: string;
   offender: string;
   victim: string;
   city: string;
-  level: number;
+  evidence: string;
   time: Date;
-};
+  level: number;
+}
 
 function Form() {
   const classes = useStyles();
@@ -67,7 +66,7 @@ function Form() {
     // register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<IUseForm>();
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
@@ -140,7 +139,23 @@ function Form() {
 
             {/* Evidence */}
             <Grid item xs={12} sm={6}>
-              <EvidenceInput control={control} errors={errors} />
+              <Controller
+                name="evidence"
+                control={control}
+                defaultValue=""
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <TextField
+                    {...field}
+                    label="Youtube URL"
+                    variant="outlined"
+                    fullWidth
+                  />
+                )}
+              />
+              {errors.evidence && (
+                <Alert severity="error">This is required</Alert>
+              )}
             </Grid>
 
             {/* <DataForm /> */}
