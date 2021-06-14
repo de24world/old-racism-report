@@ -8,16 +8,19 @@ import { Grid } from "@material-ui/core";
 import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
 
 interface IDataForm {
-  field: any;
-  value: any;
+  value: Date;
+  onChange: Function;
 }
 
-const DateForm = ({ value, onChange }) => {
+function DateForm({ ...field }: IDataForm) {
   // const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
   // const handleDateChange = (date: Date | null) => {
   //   setSelectedDate(date);
   // };
+
+  // data form error
+  // https://github.com/react-hook-form/react-hook-form/issues/3411
 
   return (
     <>
@@ -32,15 +35,15 @@ const DateForm = ({ value, onChange }) => {
             views={["year", "month"]}
             label="Time(Year&Month)"
             helperText="Please select Date from year selection"
-            value={value}
+            value={field.value}
             onChange={(e) => {
-              onChange(e);
+              field.onChange(e);
             }}
           />
         </Grid>
       </MuiPickersUtilsProvider>
     </>
   );
-};
+}
 
 export default DateForm;
