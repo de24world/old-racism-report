@@ -27,7 +27,7 @@ function DateForm({ ...field }: IDataForm) {
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid container justify="space-around">
           <DatePicker
-            format="MM/yyyy"
+            format="yyyy-MM"
             variant="inline"
             inputVariant="outlined"
             fullWidth

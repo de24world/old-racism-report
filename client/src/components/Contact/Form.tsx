@@ -153,7 +153,9 @@ function Form() {
                   />
                 )}
               />
-              {errors.city && <Alert severity="error">This is required</Alert>}
+              {errors.city && (
+                <Alert severity="error">This is required. 대문자 구분!</Alert>
+              )}
             </Grid>
 
             {/* Evidence */}
@@ -173,7 +175,7 @@ function Form() {
                 )}
               />
               {errors.evidence && (
-                <Alert severity="error">This is required</Alert>
+                <Alert severity="error">This is required.</Alert>
               )}
             </Grid>
 

@@ -141,32 +141,32 @@ function Total({ data, isLoading }: Props): ReactElement {
             </Grid>
             <Grid item xs={2}>
               <Typography variant="h5">{victimAsianGuy}</Typography>
-              <Typography gutterBottom>👦🏻 Asian guy</Typography>
+              <Typography gutterBottom>👦🏻 Asian Guy</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{victimAsianWomen}</Typography>
-              <Typography gutterBottom>👩🏻 Asian women</Typography>
+              <Typography gutterBottom>👩🏻 Asian Women</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{victimBlackguy}</Typography>
-              <Typography gutterBottom>👦🏿 Black guy</Typography>
+              <Typography gutterBottom>👦🏿 Black Guy</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{victimBlackwomen}</Typography>
-              <Typography gutterBottom>👩🏿‍🦱 Black women</Typography>
+              <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{victimWhiteguy}</Typography>
-              <Typography gutterBottom>👦🏼 White guy</Typography>
+              <Typography gutterBottom>👦🏼 White Guy</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{victimWhitewomen}</Typography>
-              <Typography gutterBottom>👩🏼 White women</Typography>
+              <Typography gutterBottom>👩🏼 White Women</Typography>
             </Grid>
 
             {/* --------- 가해자 인종  ----------- */}
@@ -177,32 +177,32 @@ function Total({ data, isLoading }: Props): ReactElement {
             </Grid>
             <Grid item xs={2}>
               <Typography variant="h5">{offenderAsianGuy}</Typography>
-              <Typography gutterBottom>👦🏻 Asian guy</Typography>
+              <Typography gutterBottom>👦🏻 Asian Guy</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{offenderAsianWomen}</Typography>
-              <Typography gutterBottom>👩🏻 Asian women</Typography>
+              <Typography gutterBottom>👩🏻 Asian Women</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{offenderBlackguy}</Typography>
-              <Typography gutterBottom>👦🏿 Black guy</Typography>
+              <Typography gutterBottom>👦🏿 Black Guy</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{offenderBlackwomen}</Typography>
-              <Typography gutterBottom>👩🏿‍🦱 Black women</Typography>
+              <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{offenderWhiteguy}</Typography>
-              <Typography gutterBottom>👦🏼 White guy</Typography>
+              <Typography gutterBottom>👦🏼 White Guy</Typography>
             </Grid>
 
             <Grid item xs={2}>
               <Typography variant="h5">{offenderWhitewomen}</Typography>
-              <Typography gutterBottom>👩🏼 White women</Typography>
+              <Typography gutterBottom>👩🏼 White Women</Typography>
             </Grid>
           </Grid>
         </Paper>

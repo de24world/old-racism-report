@@ -51,7 +51,7 @@ const FormExample = (props: Props) => {
   time: "2020-01",
   country: "USA",
   countryCode: "US",
-  city: "BOSTON",
+  city: "Boston",
   evidence: "https://youtu.be/dWehG6U2JOo",
   level: "1",
 },
@@ -59,9 +59,9 @@ const FormExample = (props: Props) => {
   offender: "Black Guy",
   victim: "Aisan Women",
   time: "2020-12",
-  country: "UNITED KINGDOM",
+  country: "United Kingdom",
   countryCode: "GB",
-  city: "LONDON",
+  city: "London",
   evidence: "https://youtu.be/dWehG6U2JOo",
   level: "2",
 },`;
@@ -86,7 +86,11 @@ const FormExample = (props: Props) => {
           </CopyToClipboard>
         </Tooltip>
       </div>
-      <Alert severity="warning">꼭 샘플데로 대소문자 구분해서 보내주세요</Alert>
+      <Alert severity="warning">
+        꼭 샘플데로 대소문자 구분해서 보내주세요 국가별 코드는 위의 입력란
+        참조해주세요!
+        <a href="">(국가별 코드 찾기)</a>
+      </Alert>
 
       <div className={classes.explain}>
         <ControlPointDuplicateIcon /> &nbsp;
