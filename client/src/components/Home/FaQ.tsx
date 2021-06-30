@@ -10,8 +10,6 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-interface Props {}
-
 const useStyles = makeStyles((theme) => ({
   root: {},
   heading: {
@@ -20,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FaQ = (props: Props) => {
+interface Props {}
+
+function FaQ(props: Props): JSX.Element {
   const classes = useStyles();
 
   const accordionData = [
@@ -70,6 +70,6 @@ const FaQ = (props: Props) => {
       })}
     </div>
   );
-};
+}
 
 export default FaQ;

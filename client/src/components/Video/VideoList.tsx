@@ -52,7 +52,7 @@ interface Props {
   data: IDataProps[];
 }
 
-function VideoList({ data }: Props) {
+function VideoList({ data }: Props): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));

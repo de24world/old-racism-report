@@ -13,7 +13,7 @@ import Process from "../src/components/Contact/Process";
 import FormExample from "../src/components/Contact/FormExample";
 import ReportWay from "../src/components/Contact/ReportWay";
 
-const ContactPage = () => {
+function ContactPage(): JSX.Element {
   return (
     <div className="contact page">
       <Head>
@@ -41,7 +41,7 @@ const ContactPage = () => {
       </Layout>
     </div>
   );
-};
+}
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

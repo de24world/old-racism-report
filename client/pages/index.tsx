@@ -19,7 +19,7 @@ import Main from "../src/components/Home/Main";
 import FaQ from "../src/components/Home/FaQ";
 import Total from "../src/components/Home/Total";
 
-const Home = () => {
+function Home(): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const [data, isLoading] = useFetch(
@@ -53,7 +53,7 @@ const Home = () => {
       </Layout>
     </div>
   );
-};
+}
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

@@ -14,7 +14,7 @@ interface Props {
   items: any;
 }
 
-function OffenderChart({ items }: Props) {
+function OffenderChart({ items }: Props): JSX.Element {
   const classes = useStyles();
 
   const offenderData = items.map((item) => item.offender).sort();

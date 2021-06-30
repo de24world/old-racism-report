@@ -14,7 +14,7 @@ interface Props {
   items: any;
 }
 
-function CountryChart({ items }: Props) {
+function CountryChart({ items }: Props): JSX.Element {
   const classes = useStyles();
 
   const countryData = items.map((item) => item.country).sort();

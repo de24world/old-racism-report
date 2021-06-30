@@ -15,7 +15,7 @@ interface Props {
   items: any;
 }
 
-function LevelChart({ items }: Props) {
+function LevelChart({ items }: Props): JSX.Element {
   const classes = useStyles();
 
   const levelData = items.map((item) => item.level);

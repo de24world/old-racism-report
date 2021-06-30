@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {}
 
-const FormExample = (props: Props) => {
+const FormExample = (props: Props): JSX.Element => {
   const classes = useStyles();
 
   const [isCopied, setIsCopied] = useState(false);

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-const ChartPage = () => {
+function ChartPage(): JSX.Element {
   const classes = useStyles();
   const [data, isLoading] = useFetch(
     "https://de24world.github.io/racism_data.json"
@@ -54,7 +54,7 @@ const ChartPage = () => {
       </Layout>
     </div>
   );
-};
+}
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 // next
+import type { AppProps } from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 import { appWithTranslation } from "next-i18next";
@@ -21,9 +22,7 @@ import Footer from "../src/components/Footer";
 import Layout from "../src/components/Layout";
 import "../styles/globals.css";
 
-const MyApp = (props) => {
-  const { Component, pageProps } = props;
-
+const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");

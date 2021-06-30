@@ -8,6 +8,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // import dataJson from "../../data/listdata.json";
 
+interface ListProps {
+  dataList: any;
+}
+
 const columns = [
   { field: "id", headerName: "ID", width: 80 },
   { field: "offender", headerName: "Offender", width: 130 },
@@ -24,7 +28,7 @@ const columns = [
   { field: "level", headerName: "Level(What, 언어 폭행)", width: 260 },
 ];
 
-const ItemList = ({ dataList }) => {
+function ItemList({ dataList }: ListProps): JSX.Element {
   // console.log(dataJson);
 
   // const history = useHistory();
@@ -57,6 +61,6 @@ const ItemList = ({ dataList }) => {
       {/* </Link> */}
     </>
   );
-};
+}
 
 export default ItemList;

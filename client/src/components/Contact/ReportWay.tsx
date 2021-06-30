@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {}
 
-const ReportWay = (props: Props) => {
+const ReportWay = (props: Props): JSX.Element => {
   const classes = useStyles();
 
   return (

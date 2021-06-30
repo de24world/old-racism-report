@@ -14,7 +14,7 @@ interface Props {
   items: any;
 }
 
-function CityChart({ items }: Props) {
+function CityChart({ items }: Props): JSX.Element {
   const classes = useStyles();
 
   const cityData = items.map((item) => item.city).sort();

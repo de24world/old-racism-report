@@ -57,7 +57,7 @@ interface IUseForm {
   level: number;
 }
 
-function Form() {
+function Form(): JSX.Element {
   const classes = useStyles();
 
   const {

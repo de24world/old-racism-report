@@ -16,7 +16,7 @@ import Layout from "../src/components/Layout";
 import ItemList from "../src/components/List/ItemList";
 import LevelStep from "../src/components/LevelStep";
 
-const ListPage = () => {
+function ListPage(): JSX.Element {
   const [dataList, setDataList] = useState([]);
   const API_URL = "https://de24world.github.io/racism_data.json";
 
@@ -57,7 +57,7 @@ const ListPage = () => {
       </Layout>
     </div>
   );
-};
+}
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

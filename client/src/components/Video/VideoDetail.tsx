@@ -58,7 +58,7 @@ interface ItemProps {
   item: IDataProps;
 }
 
-function VideoDetail({ item }: ItemProps) {
+function VideoDetail({ item }: ItemProps): JSX.Element {
   const classes = useStyles();
 
   const {

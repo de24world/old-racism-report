@@ -37,7 +37,7 @@ interface Props {
   isLoading: boolean;
 }
 
-function Recently({ data, isLoading }: Props) {
+function Recently({ data, isLoading }: Props): JSX.Element {
   const classes = useStyles();
   const cards = [1, 2, 3];
 

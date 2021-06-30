@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LanguageSwitch = (props: Props) => {
+function LanguageSwitch(props: Props): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const { t } = useTranslation("common");
@@ -79,6 +79,6 @@ const LanguageSwitch = (props: Props) => {
       </TextField>
     </div>
   );
-};
+}
 
 export default LanguageSwitch;

@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   filterCategory: { lineHeight: "3rem" },
 }));
 
-const VideoPage = () => {
+function VideoPage(): JSX.Element {
   const classes = useStyles();
 
   const [data, isLoading] = useFetch(
@@ -124,7 +124,7 @@ const VideoPage = () => {
       </Layout>
     </div>
   );
-};
+}
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

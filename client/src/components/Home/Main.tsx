@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Main = (props: Props) => {
+function Main(props: Props): JSX.Element {
   const classes = useStyles();
 
   return (
@@ -60,6 +60,6 @@ const Main = (props: Props) => {
       </Container>
     </div>
   );
-};
+}
 
 export default Main;

@@ -125,7 +125,7 @@ function getStepContent(step) {
   }
 }
 
-const Process = (props: Props) => {
+const Process = (props: Props): JSX.Element => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(1);
   const steps = getSteps();

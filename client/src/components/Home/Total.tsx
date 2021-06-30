@@ -28,7 +28,7 @@ interface Props {
   isLoading: boolean;
 }
 
-function Total({ data, isLoading }: Props): ReactElement {
+function Total({ data, isLoading }: Props): JSX.Element {
   const classes = useStyles();
   const totalOccur = Object.keys(data).length;
 

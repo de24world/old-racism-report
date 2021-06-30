@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Layout = (props) => {
+function Layout(props): JSX.Element {
   const classes = useStyles();
 
   return (
@@ -16,6 +16,6 @@ const Layout = (props) => {
       <Container>{props.children}</Container>
     </div>
   );
-};
+}
 
 export default Layout;

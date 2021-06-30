@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Footer = () => {
+function Footer(): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const { t } = useTranslation("common");
@@ -141,6 +141,6 @@ const Footer = () => {
       </Typography>
     </>
   );
-};
+}
 
 export default Footer;

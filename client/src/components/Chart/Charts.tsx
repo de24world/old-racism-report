@@ -28,7 +28,7 @@ interface Props {
   items: any;
 }
 
-function Charts({ items }: Props) {
+function Charts({ items }: Props): JSX.Element {
   const classes = useStyles();
   const [chartState, setChartState] = useState("victim-chart");
 
