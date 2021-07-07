@@ -2,8 +2,7 @@ export interface IDataProps {
   id: string;
   offender: string;
   victim: string;
-  time: any;
-  // change later moment
+  time: string;
   country: string;
   countryCode: string;
   city: string;

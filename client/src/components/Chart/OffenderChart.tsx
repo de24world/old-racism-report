@@ -6,15 +6,18 @@ import { Bar } from "react-chartjs-2";
 // Material UI
 import { makeStyles } from "@material-ui/core/";
 
+// Interface
+import { IDataProps } from "../../interfaces/interfaces";
+
 const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-interface Props {
-  items: any;
+interface OffenderChartProps {
+  items: IDataProps[];
 }
 
-function OffenderChart({ items }: Props): JSX.Element {
+function OffenderChart({ items }: OffenderChartProps): JSX.Element {
   const classes = useStyles();
 
   const offenderData = items.map((item) => item.offender).sort();

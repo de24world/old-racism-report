@@ -7,15 +7,18 @@ import { Pie } from "react-chartjs-2";
 import { makeStyles } from "@material-ui/core/";
 import LevelStep from "../LevelStep";
 
+// Interface
+import { IDataProps } from "../../interfaces/interfaces";
+
 const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-interface Props {
-  items: any;
+interface LevelChartProps {
+  items: IDataProps[];
 }
 
-function LevelChart({ items }: Props): JSX.Element {
+function LevelChart({ items }: LevelChartProps): JSX.Element {
   const classes = useStyles();
 
   const levelData = items.map((item) => item.level);

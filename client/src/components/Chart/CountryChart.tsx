@@ -6,15 +6,18 @@ import { Bar } from "react-chartjs-2";
 // Material UI
 import { makeStyles } from "@material-ui/core/";
 
+// Interface
+import { IDataProps } from "../../interfaces/interfaces";
+
 const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-interface Props {
-  items: any;
+interface CountryChartProps {
+  items: IDataProps[];
 }
 
-function CountryChart({ items }: Props): JSX.Element {
+function CountryChart({ items }: CountryChartProps): JSX.Element {
   const classes = useStyles();
 
   const countryData = items.map((item) => item.country).sort();

@@ -9,12 +9,16 @@ import {
   Breadcrumbs,
 } from "@material-ui/core/";
 
+// Interface
+import { IDataProps } from "../../interfaces/interfaces";
+
 // source
 import CountryChart from "./CountryChart";
 import CityChart from "./CityChart";
 import LevelChart from "./LevelChart";
 import OffenderChart from "./OffenderChart";
 import VictimChart from "./VictimChart";
+import TimeChart from "./TimeChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -24,53 +28,57 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {
-  items: any;
+interface ChartProps {
+  items: IDataProps[];
 }
 
-function Charts({ items }: Props): JSX.Element {
+function Charts({ items }: ChartProps): JSX.Element {
   const classes = useStyles();
   const [chartState, setChartState] = useState("victim-chart");
 
-  const victimChange = () => {
+  const victimChartChange = () => {
     setChartState("victim-chart");
   };
 
-  const offenderChange = () => {
+  const offenderChartChange = () => {
     setChartState("offender-chart");
   };
 
-  const countryChange = () => {
+  const countryChartChange = () => {
     setChartState("country-chart");
   };
 
-  const cityChange = () => {
+  const cityChartChange = () => {
     setChartState("city-chart");
   };
 
-  const levelChange = () => {
+  const levelChartChange = () => {
     setChartState("level-chart");
+  };
+
+  const timeChartChange = () => {
+    setChartState("time-chart");
   };
 
   return (
     <>
       <Breadcrumbs aria-label="breadcrumb">
-        <Button color="primary" size="large" onClick={victimChange}>
+        <Button color="primary" size="large" onClick={victimChartChange}>
           01. Victim
         </Button>
-        <Button color="primary" size="large" onClick={offenderChange}>
+        <Button color="primary" size="large" onClick={offenderChartChange}>
           02. Offender
         </Button>
-        <Button color="primary" size="large" onClick={countryChange}>
+        <Button color="primary" size="large" onClick={countryChartChange}>
           03. Country
         </Button>
-        <Button color="primary" size="large" onClick={cityChange}>
+        <Button color="primary" size="large" onClick={cityChartChange}>
           04. City
         </Button>
-        <Button color="primary" size="large" onClick={levelChange}>
+        <Button color="primary" size="large" onClick={levelChartChange}>
           05. Level
         </Button>
-        <Button color="primary" size="large">
+        <Button color="primary" size="large" onClick={timeChartChange}>
           06. Time
         </Button>
       </Breadcrumbs>
@@ -80,7 +88,7 @@ function Charts({ items }: Props): JSX.Element {
         {chartState === "country-chart" && <CountryChart items={items} />}
         {chartState === "city-chart" && <CityChart items={items} />}
         {chartState === "level-chart" && <LevelChart items={items} />}
-        {/*  TimeChart */}
+        {chartState === "time-chart" && <TimeChart items={items} />}
       </div>
     </>
   );
