@@ -2,7 +2,7 @@
 react, next.js
 
 ## URL
-https://racism-report-client.vercel.app/
+https://racism-report.vercel.app
 
 실행 방법 (dev)
 cd client
