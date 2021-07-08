@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Libarary
 import ReactPlayer from "react-player";
@@ -59,33 +59,38 @@ function VideoList({ data }: Props): JSX.Element {
   const matchesLg = useMediaQuery(theme.breakpoints.down("md"));
   // https://codesandbox.io/s/usemediaquery-3-options-pm88p?fontsize=14&hidenavigation=1&theme=dark&file=/src/App.js:27-80
 
+  const [page, setPage] = useState(1);
+  const pageChange = (event: React.ChangeEvent, value: number) => {
+    setPage(value);
+  };
+
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={matchesLg ? 1 : 4}>
         {/* <GridListTile key="Subheader" cols={3}>
           <ListSubheader component="div">VideoList</ListSubheader>
         </GridListTile> */}
-        {data.map((data) => (
-          <GridListTile key={data.id} className={classes.gridListTile}>
-            <ReactPlayer url={data.evidence} width="100%" height="100%" />
+        {data.map((video) => (
+          <GridListTile key={video.id} className={classes.gridListTile}>
+            <ReactPlayer url={video.evidence} width="100%" height="100%" />
             <GridListTileBar
               className={classes.girdListTileBar}
               title={
                 <span>
-                  <ReactCountryFlag countryCode={data.countryCode} />
-                  {data.country} {data.city}
+                  <ReactCountryFlag countryCode={video.countryCode} />
+                  {video.country} {video.city}
                 </span>
               }
               subtitle={
                 <p>
-                  offender: {data.offender}
-                  victim: {data.victim}
-                  time: {data.time}
-                  level: {data.level}
+                  offender: {video.offender}
+                  victim: {video.victim}
+                  time: {video.time}
+                  level: {video.level}
                 </p>
               }
               actionIcon={
-                <Link href={`/video/${data.id}`}>
+                <Link href={`/video/${video.id}`}>
                   <IconButton
                     // aria-label={`info about ${data.title}`}
                     className={classes.iconButton}
@@ -99,7 +104,13 @@ function VideoList({ data }: Props): JSX.Element {
           </GridListTile>
         ))}
       </GridList>
-      <Pagination className={classes.pagination} count={10} />
+      <Pagination
+        className={classes.pagination}
+        count={10}
+        page={page}
+        onChange={pageChange}
+      />
+      {/* Page: {page} */}
     </div>
   );
 }

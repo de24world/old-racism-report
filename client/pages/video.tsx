@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 // Next
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 // Material UI
 import {
@@ -16,9 +17,6 @@ import {
 } from "@material-ui/core/";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 
-// Hooks
-import useFetch from "../src/hooks/useFetch";
-
 // Source Component
 import Layout from "../src/components/Layout";
 import VideoList from "../src/components/Video/VideoList";
@@ -29,12 +27,10 @@ const useStyles = makeStyles((theme) => ({
   filterCategory: { lineHeight: "3rem" },
 }));
 
-function VideoPage(): JSX.Element {
+function VideoPage({ data }): JSX.Element {
   const classes = useStyles();
+  const router = useRouter();
 
-  const [data, isLoading] = useFetch(
-    "https://de24world.github.io/racism_data.json"
-  );
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
 
@@ -114,8 +110,8 @@ function VideoPage(): JSX.Element {
 
         <Grid container spacing={2}>
           <Grid item>
-            {isLoading ? (
-              <CircularProgress className="progressbar" />
+            {router.isFallback ? (
+              <CircularProgress />
             ) : (
               <VideoList data={search(data)} />
             )}
@@ -126,10 +122,16 @@ function VideoPage(): JSX.Element {
   );
 }
 
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common"])),
-  },
-});
+export async function getStaticProps({ locale }) {
+  const res = await fetch(`https://de24world.github.io/racism_data.json`);
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+      // ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default VideoPage;
