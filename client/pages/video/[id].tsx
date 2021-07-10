@@ -25,9 +25,7 @@ function VideoID(): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const { query } = router;
-  const [data, isLoading] = useFetch(
-    "https://de24world.github.io/racism_data.json/"
-  );
+  const [data, isLoading] = useFetch("http://localhost:3006/api");
 
   console.log(data, "data in [id].tsx");
   console.log(router, "router in [id].tsx");
@@ -46,7 +44,7 @@ export default VideoID;
 
 // export async function getServerSideProps(context) {
 //   const id = context.params.id;
-//   const apiUrl = `https://de24world.github.io/racism_data.json/${id}`;
+//   const apiUrl = `http://localhost:3006/api${id}`;
 //   const res = await Axios.get(apiUrl);
 //   const data = res.data;
 

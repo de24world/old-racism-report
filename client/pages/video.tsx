@@ -123,13 +123,13 @@ function VideoPage({ data }): JSX.Element {
 }
 
 export async function getStaticProps({ locale }) {
-  const res = await fetch(`https://de24world.github.io/racism_data.json`);
+  const res = await fetch(`http://localhost:3006/api`);
   const data = await res.json();
 
   return {
     props: {
       data,
-      // ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
