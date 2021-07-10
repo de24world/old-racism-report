@@ -9,9 +9,6 @@ import Head from "next/head";
 // Material UI
 import { CircularProgress } from "@material-ui/core/";
 
-// Custom Hooks
-import useFetch from "../src/hooks/useFetch";
-
 // Source Components
 import Layout from "../src/components/Layout";
 import Recently from "../src/components/Home/Recently";
@@ -19,15 +16,9 @@ import Main from "../src/components/Home/Main";
 import FaQ from "../src/components/Home/FaQ";
 import Total from "../src/components/Home/Total";
 
-function Home(): JSX.Element {
+function Home({ data }): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  const [data, isLoading] = useFetch("http://localhost:3006/api");
-  // console.log(
-  //   data,
-  //   isLoading,
-  //   "this is data, isLoading(original:true must be false) in index.tsx"
-  // );
 
   return (
     <div className="index page">
@@ -45,18 +36,24 @@ function Home(): JSX.Element {
         <p>Default locale: {defaultLocale}</p>
         <p>Configured locales: {JSON.stringify(locales)}</p>
         <Main />
-        <Total data={data} isLoading={isLoading} />
-        <Recently data={data} isLoading={isLoading} />
+        <Total data={data} />
+        <Recently data={data} />
         <FaQ />
       </Layout>
     </div>
   );
 }
 
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common"])),
-  },
-});
+export async function getStaticProps({ locale }) {
+  const res = await fetch(`http://localhost:3006/api`);
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default Home;

@@ -6,9 +6,6 @@ import Head from "next/head";
 // Libarary
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-// Hooks
-import useFetch from "../src/hooks/useFetch";
-
 // Material UI
 import { Typography, makeStyles } from "@material-ui/core";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
@@ -21,9 +18,8 @@ const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-function ChartPage(): JSX.Element {
+function ChartPage({ data }): JSX.Element {
   const classes = useStyles();
-  const [data, isLoading] = useFetch("http://localhost:3006/api");
 
   return (
     <div className="chart page">
@@ -54,10 +50,16 @@ function ChartPage(): JSX.Element {
   );
 }
 
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common"])),
-  },
-});
+export async function getStaticProps({ locale }) {
+  const res = await fetch(`http://localhost:3006/api`);
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default ChartPage;

@@ -32,12 +32,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {
+interface recentlyProps {
   data: IDataProps[];
-  isLoading: boolean;
 }
 
-function Recently({ data, isLoading }: Props): JSX.Element {
+function Recently({ data }: recentlyProps): JSX.Element {
   const classes = useStyles();
   const cards = [1, 2, 3];
 
@@ -51,39 +50,36 @@ function Recently({ data, isLoading }: Props): JSX.Element {
       <Typography variant="h5" gutterBottom>
         Recently Updated Videos
       </Typography>
-      {isLoading ? (
-        <CircularProgress className="progressbar" />
-      ) : (
-        <Grid container spacing={4}>
-          {recenltlyObject.map((three) => (
-            <Grid item key={three.id} xs={12} sm={6} md={4}>
-              <Card className={classes.card}>
-                <ReactPlayer url={three.evidence} width="100%" height="100%" />
 
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    <ReactCountryFlag countryCode={three.countryCode} />
-                    {three.country} / {three.city}
-                  </Typography>
-                  <Typography>
-                    Time : {three.time} <br />
-                    Offender : {three.offender} <br />
-                    Victim : {three.victim} <br />
-                  </Typography>
-                </CardContent>
+      <Grid container spacing={4}>
+        {recenltlyObject.map((three) => (
+          <Grid item key={three.id} xs={12} sm={6} md={4}>
+            <Card className={classes.card}>
+              <ReactPlayer url={three.evidence} width="100%" height="100%" />
 
-                <CardActions>
-                  <Link href={`/video/${three.id}`}>
-                    <Button size="small" color="primary">
-                      Detail
-                    </Button>
-                  </Link>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      )}
+              <CardContent className={classes.cardContent}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  <ReactCountryFlag countryCode={three.countryCode} />
+                  {three.country} / {three.city}
+                </Typography>
+                <Typography>
+                  Time : {three.time} <br />
+                  Offender : {three.offender} <br />
+                  Victim : {three.victim} <br />
+                </Typography>
+              </CardContent>
+
+              <CardActions>
+                <Link href={`/video/${three.id}`}>
+                  <Button size="small" color="primary">
+                    Detail
+                  </Button>
+                </Link>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </div>
   );
 }

@@ -10,7 +10,6 @@ import ReactCountryFlag from "react-country-flag";
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  Container,
   Card,
   CardContent,
   CardActions,
@@ -55,10 +54,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface ItemProps {
-  item: IDataProps;
+  data: IDataProps;
 }
 
-function VideoDetail({ item }: ItemProps): JSX.Element {
+function VideoDetail({ data }: ItemProps): JSX.Element {
   const classes = useStyles();
 
   const {
@@ -70,92 +69,90 @@ function VideoDetail({ item }: ItemProps): JSX.Element {
     city,
     evidence,
     level,
-  } = item;
+  } = data;
 
   return (
     <>
-      <Container maxWidth="md">
-        <Card className={classes.root}>
-          <CardContent>
-            <List
-            // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              <div className={classes.wrapper}>
-                <ReactPlayer
-                  className={classes.player}
-                  url={evidence}
-                  width="100%"
-                  height="100%"
-                />
-              </div>
+      <Card className={classes.root}>
+        <CardContent>
+          <List
+          // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
+            <div className={classes.wrapper}>
+              <ReactPlayer
+                className={classes.player}
+                url={evidence}
+                width="100%"
+                height="100%"
+              />
+            </div>
 
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    <ReactCountryFlag
-                      countryCode={countryCode}
-                      className={classes.flagIcon}
-                    />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Country" secondary={country} />
-              </ListItem>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    <MyLocationIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="City" secondary={city} />
-              </ListItem>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    <DateRangeIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Time" secondary={time} />
-              </ListItem>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    <SportsMmaIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Offender" secondary={offender} />
-              </ListItem>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    <PregnantWomanIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Victim" secondary={victim} />
-              </ListItem>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    <ReportIcon />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary="Level" secondary={level} />
-                <Tooltip title="레벨1은 언어 폭력 / 레벨2는 폭행 / 레벨3은 살인, 강간 등 강력범죄">
-                  <HelpIcon className={classes.tooltipIcon} />
-                </Tooltip>
-              </ListItem>
-            </List>
-          </CardContent>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <ReactCountryFlag
+                    countryCode={countryCode}
+                    className={classes.flagIcon}
+                  />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Country" secondary={country} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <MyLocationIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="City" secondary={city} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <DateRangeIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Time" secondary={time} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <SportsMmaIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Offender" secondary={offender} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <PregnantWomanIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Victim" secondary={victim} />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <ReportIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Level" secondary={level} />
+              <Tooltip title="레벨1은 언어 폭력 / 레벨2는 폭행 / 레벨3은 살인, 강간 등 강력범죄">
+                <HelpIcon className={classes.tooltipIcon} />
+              </Tooltip>
+            </ListItem>
+          </List>
+        </CardContent>
 
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
-            </Button>
-          </CardActions>
-        </Card>
-      </Container>
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
     </>
   );
 }

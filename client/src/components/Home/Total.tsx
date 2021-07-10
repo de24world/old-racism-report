@@ -23,12 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {
+interface totalProps {
   data: IDataProps[];
-  isLoading: boolean;
 }
 
-function Total({ data, isLoading }: Props): JSX.Element {
+function Total({ data }: totalProps): JSX.Element {
   const classes = useStyles();
   const totalOccur = Object.keys(data).length;
 
@@ -78,135 +77,131 @@ function Total({ data, isLoading }: Props): JSX.Element {
         Total Report
       </Typography>
 
-      {isLoading ? (
-        <CircularProgress className="progressbar" />
-      ) : (
-        <Paper className={classes.paper}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <Typography variant="h5" gutterBottom>
-                {totalOccur}
-              </Typography>
-              총 사건 발생 수
-            </Grid>
-
-            <Grid item xs={6}>
-              <Typography variant="h5" gutterBottom>
-                111
-              </Typography>
-              총 발생 국가
-            </Grid>
-
-            <Grid item xs={6}>
-              <Typography variant="h5" gutterBottom>
-                222
-              </Typography>
-              총 발생 도시
-            </Grid>
-
-            {/* 도시 */}
-            <Grid item xs={3}>
-              <Typography variant="h5" gutterBottom>
-                미국 (10)
-              </Typography>
-              최대 발생 국가
-            </Grid>
-
-            <Grid item xs={3}>
-              <Typography variant="h5" gutterBottom>
-                보스턴 (8)
-              </Typography>
-              최대 발생 도시
-            </Grid>
-
-            <Grid item xs={3}>
-              <Typography variant="h5" gutterBottom>
-                백인 남성 (2)
-              </Typography>
-              최대 가해 남성
-            </Grid>
-
-            <Grid item xs={3}>
-              <Typography variant="h5" gutterBottom>
-                아시아 여성(11)
-              </Typography>
-              최대 도시 국가
-            </Grid>
-
-            {/* ------ 피해자 인종 ---------- */}
-            <Grid item xs={12}>
-              <Typography variant="h5" color="primary">
-                Victim Race
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography variant="h5">{victimAsianGuy}</Typography>
-              <Typography gutterBottom>👦🏻 Asian Guy</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{victimAsianWomen}</Typography>
-              <Typography gutterBottom>👩🏻 Asian Women</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{victimBlackguy}</Typography>
-              <Typography gutterBottom>👦🏿 Black Guy</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{victimBlackwomen}</Typography>
-              <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{victimWhiteguy}</Typography>
-              <Typography gutterBottom>👦🏼 White Guy</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{victimWhitewomen}</Typography>
-              <Typography gutterBottom>👩🏼 White Women</Typography>
-            </Grid>
-
-            {/* --------- 가해자 인종  ----------- */}
-            <Grid item xs={12}>
-              <Typography variant="h5" color="error">
-                Offender Race
-              </Typography>
-            </Grid>
-            <Grid item xs={2}>
-              <Typography variant="h5">{offenderAsianGuy}</Typography>
-              <Typography gutterBottom>👦🏻 Asian Guy</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{offenderAsianWomen}</Typography>
-              <Typography gutterBottom>👩🏻 Asian Women</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{offenderBlackguy}</Typography>
-              <Typography gutterBottom>👦🏿 Black Guy</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{offenderBlackwomen}</Typography>
-              <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{offenderWhiteguy}</Typography>
-              <Typography gutterBottom>👦🏼 White Guy</Typography>
-            </Grid>
-
-            <Grid item xs={2}>
-              <Typography variant="h5">{offenderWhitewomen}</Typography>
-              <Typography gutterBottom>👩🏼 White Women</Typography>
-            </Grid>
+      <Paper className={classes.paper}>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Typography variant="h5" gutterBottom>
+              {totalOccur}
+            </Typography>
+            총 사건 발생 수
           </Grid>
-        </Paper>
-      )}
+
+          <Grid item xs={6}>
+            <Typography variant="h5" gutterBottom>
+              111
+            </Typography>
+            총 발생 국가
+          </Grid>
+
+          <Grid item xs={6}>
+            <Typography variant="h5" gutterBottom>
+              222
+            </Typography>
+            총 발생 도시
+          </Grid>
+
+          {/* 도시 */}
+          <Grid item xs={3}>
+            <Typography variant="h5" gutterBottom>
+              미국 (10)
+            </Typography>
+            최대 발생 국가
+          </Grid>
+
+          <Grid item xs={3}>
+            <Typography variant="h5" gutterBottom>
+              보스턴 (8)
+            </Typography>
+            최대 발생 도시
+          </Grid>
+
+          <Grid item xs={3}>
+            <Typography variant="h5" gutterBottom>
+              백인 남성 (2)
+            </Typography>
+            최대 가해 남성
+          </Grid>
+
+          <Grid item xs={3}>
+            <Typography variant="h5" gutterBottom>
+              아시아 여성(11)
+            </Typography>
+            최대 도시 국가
+          </Grid>
+
+          {/* ------ 피해자 인종 ---------- */}
+          <Grid item xs={12}>
+            <Typography variant="h5" color="primary">
+              Victim Race
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h5">{victimAsianGuy}</Typography>
+            <Typography gutterBottom>👦🏻 Asian Guy</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{victimAsianWomen}</Typography>
+            <Typography gutterBottom>👩🏻 Asian Women</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{victimBlackguy}</Typography>
+            <Typography gutterBottom>👦🏿 Black Guy</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{victimBlackwomen}</Typography>
+            <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{victimWhiteguy}</Typography>
+            <Typography gutterBottom>👦🏼 White Guy</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{victimWhitewomen}</Typography>
+            <Typography gutterBottom>👩🏼 White Women</Typography>
+          </Grid>
+
+          {/* --------- 가해자 인종  ----------- */}
+          <Grid item xs={12}>
+            <Typography variant="h5" color="error">
+              Offender Race
+            </Typography>
+          </Grid>
+          <Grid item xs={2}>
+            <Typography variant="h5">{offenderAsianGuy}</Typography>
+            <Typography gutterBottom>👦🏻 Asian Guy</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{offenderAsianWomen}</Typography>
+            <Typography gutterBottom>👩🏻 Asian Women</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{offenderBlackguy}</Typography>
+            <Typography gutterBottom>👦🏿 Black Guy</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{offenderBlackwomen}</Typography>
+            <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{offenderWhiteguy}</Typography>
+            <Typography gutterBottom>👦🏼 White Guy</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <Typography variant="h5">{offenderWhitewomen}</Typography>
+            <Typography gutterBottom>👩🏼 White Women</Typography>
+          </Grid>
+        </Grid>
+      </Paper>
     </div>
   );
 }
