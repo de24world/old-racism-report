@@ -24,7 +24,7 @@ function VideoID({ data }): JSX.Element {
 
   return (
     <div className="video [id] page">
-      <VideoDetail data={data} />{" "}
+      <VideoDetail data={data} />
     </div>
   );
 }

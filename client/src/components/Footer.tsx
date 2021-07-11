@@ -61,19 +61,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Footer(): JSX.Element {
   const classes = useStyles();
-  const router = useRouter();
   const { t } = useTranslation("common");
-
-  const LANGUAGES = [
-    {
-      code: "en-US",
-      name: "English",
-    },
-    {
-      code: "fr-FR",
-      name: "Français",
-    },
-  ];
 
   return (
     <>
