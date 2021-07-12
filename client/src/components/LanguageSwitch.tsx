@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+
+// Next
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { makeStyles } from "@material-ui/core/styles";
-import {
-  Grid,
-  TextField,
-  MenuItem,
-  Link,
-  FormControl,
-  Select,
-  Typography,
-} from "@material-ui/core/";
 
+// Material
+import { TextField, makeStyles } from "@material-ui/core/";
 import TranslateIcon from "@material-ui/icons/Translate";
-import { relative } from "node:path";
 
 interface Props {}
 
@@ -44,7 +38,11 @@ function LanguageSwitch(props: Props): JSX.Element {
     <div className={classes.root}>
       <TranslateIcon className={classes.translateIcon} />
 
-      <TextField
+      <Link href="/" locale={router.locale === "en" ? "ko" : "en"}>
+        <button>언어 바꾸기</button>
+      </Link>
+
+      {/* <TextField
         select
         SelectProps={{
           native: true,
@@ -76,7 +74,7 @@ function LanguageSwitch(props: Props): JSX.Element {
           {t("English")}
         </option>
         ))
-      </TextField>
+      </TextField> */}
     </div>
   );
 }

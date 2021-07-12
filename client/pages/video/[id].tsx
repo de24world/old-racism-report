@@ -1,7 +1,6 @@
 import React from "react";
 
 // Next.js
-import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 // Material UI
@@ -17,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
 
 function VideoID({ data }): JSX.Element {
   const classes = useStyles();
-  const router = useRouter();
 
   // console.log(data, "data in [id].tsx")
   // console.log(router, "router in [id].tsx");
@@ -40,8 +38,10 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ locale, params }) {
-  const res = await fetch(`http://localhost:3006/api/${params.id}`);
+export async function getStaticProps(context) {
+  const { id } = context.params;
+  const { locale } = context;
+  const res = await fetch(`http://localhost:3006/api/${id}`);
   const data = await res.json();
 
   return {

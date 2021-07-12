@@ -2,6 +2,7 @@ import React from "react";
 
 // Next Libarary
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 // Material UI
 import { makeStyles, Grid, Typography, Button } from "@material-ui/core/";
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Main(props: Props): JSX.Element {
   const classes = useStyles();
+  const { t } = useTranslation("common");
 
   return (
     <div className="main __block">
@@ -27,7 +29,7 @@ function Main(props: Props): JSX.Element {
         color="textPrimary"
         gutterBottom
       >
-        No Racism !
+        {t("No Racism !")}
       </Typography>
       <Typography variant="h5" align="center" color="textSecondary" paragraph>
         Our App will report Racism. Where, who, how did Racism.
