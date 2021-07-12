@@ -6,7 +6,13 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
 // Material
-import { TextField, makeStyles } from "@material-ui/core/";
+import {
+  makeStyles,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@material-ui/core/";
 import TranslateIcon from "@material-ui/icons/Translate";
 
 interface Props {}
@@ -38,43 +44,21 @@ function LanguageSwitch(props: Props): JSX.Element {
     <div className={classes.root}>
       <TranslateIcon className={classes.translateIcon} />
 
-      <Link href="/" locale={router.locale === "en" ? "ko" : "en"}>
-        <button>언어 바꾸기</button>
-      </Link>
-
-      {/* <TextField
-        select
-        SelectProps={{
-          native: true,
-        }}
-        className={classes.language}
-      >
-        <option
-          value=""
-          onClick={() => {
-            router.push("", "", { locale: "" });
-          }}
-        >
-          {t("Language")}
-        </option>
-        <option
-          value="ko"
-          onClick={() => {
-            router.push("", "", { locale: "ko" });
-          }}
-        >
-          {t("Korean")}
-        </option>
-        <option
-          value="en"
-          onClick={() => {
-            router.push("", "", { locale: "en" });
-          }}
-        >
-          {t("English")}
-        </option>
-        ))
-      </TextField> */}
+      <FormControl className={classes.language}>
+        <InputLabel>{t("Language")}</InputLabel>
+        <Select autoWidth>
+          <MenuItem>
+            <Link href="" locale={(router.locale = "en")}>
+              {t("English")}
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <Link href="" locale={(router.locale = "ko")}>
+              {t("Korean")}
+            </Link>
+          </MenuItem>
+        </Select>
+      </FormControl>
     </div>
   );
 }
