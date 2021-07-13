@@ -22,16 +22,24 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiInputBase-root": {
       color: theme.palette.primary.light,
     },
+    "& .MuiSelect-select.MuiSelect-select": {
+      paddingRight: "5rem",
+      "& .MuiInputLabel-formControl": {
+        top: "-1rem",
+      },
+    },
+    "& label + .MuiInput-formControl": {
+      marginTop: "0",
+    },
+
     position: "relative",
-    right: "1rem",
   },
   translateIcon: {
+    position: "relative",
+    right: "5px",
     [theme.breakpoints.up("sm")]: {
       marginRight: theme.spacing(1),
     },
-  },
-  language: {
-    width: "auto",
   },
 }));
 
@@ -44,9 +52,9 @@ function LanguageSwitch(props: Props): JSX.Element {
     <div className={classes.root}>
       <TranslateIcon className={classes.translateIcon} />
 
-      <FormControl className={classes.language}>
+      <FormControl>
         <InputLabel>{t("Language")}</InputLabel>
-        <Select autoWidth>
+        <Select>
           <MenuItem>
             <Link href="" locale={(router.locale = "en")}>
               {t("English")}
