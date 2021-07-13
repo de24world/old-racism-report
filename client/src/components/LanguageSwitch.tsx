@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
     },
     "& .MuiSelect-select.MuiSelect-select": {
       paddingRight: "5rem",
-      "& .MuiInputLabel-formControl": {
-        top: "-1rem",
-      },
+    },
+    "& .MuiInputLabel-formControl": {
+      top: "-1rem",
     },
     "& label + .MuiInput-formControl": {
       marginTop: "0",
