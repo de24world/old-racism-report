@@ -52,7 +52,11 @@ function LanguageSwitch(props: Props): JSX.Element {
     <div className={classes.root}>
       <TranslateIcon className={classes.translateIcon} />
 
-      <FormControl>
+      <Link href="/" locale={router.locale === "en" ? "ko" : "en"}>
+        <button>언어 바꾸기</button>
+      </Link>
+
+      {/* <FormControl>
         <InputLabel>{t("Language")}</InputLabel>
         <Select>
           <MenuItem>
@@ -66,7 +70,7 @@ function LanguageSwitch(props: Props): JSX.Element {
             </Link>
           </MenuItem>
         </Select>
-      </FormControl>
+      </FormControl> */}
     </div>
   );
 }
