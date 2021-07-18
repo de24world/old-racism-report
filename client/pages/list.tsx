@@ -22,7 +22,7 @@ function ListPage(): JSX.Element {
 
   const getData = () => {
     Axios.get(API_URL).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setDataList(res.data);
     });
   };
