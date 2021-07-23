@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+// Next
+import { useRouter } from "next/router";
+import Link from "next/link";
+
 // Libarary
 import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
@@ -8,7 +12,6 @@ import ReactCountryFlag from "react-country-flag";
 import {
   useTheme,
   makeStyles,
-  Link,
   useMediaQuery,
   GridList,
   GridListTile,
@@ -55,6 +58,9 @@ interface Props {
 function VideoList({ data }: Props): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
+  const router = useRouter();
+  const { locale } = router;
+
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesLg = useMediaQuery(theme.breakpoints.down("md"));
   // https://codesandbox.io/s/usemediaquery-3-options-pm88p?fontsize=14&hidenavigation=1&theme=dark&file=/src/App.js:27-80
@@ -90,7 +96,7 @@ function VideoList({ data }: Props): JSX.Element {
                 </p>
               }
               actionIcon={
-                <Link href={`/video/${video.id}`}>
+                <Link href={`/${locale}/video/${video.id}`}>
                   <IconButton
                     // aria-label={`info about ${data.title}`}
                     className={classes.iconButton}

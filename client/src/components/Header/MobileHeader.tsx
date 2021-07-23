@@ -8,8 +8,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 interface Props {}
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+  MobileHeader: {
+    display: "block",
   },
 }));
 
@@ -51,7 +51,7 @@ const MobileHeader = (props: Props) => {
   ];
 
   return (
-    <div>
+    <div className="MobileHeader">
       <IconButton
         edge="start"
         color="inherit"
