@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     "& label + .MuiInput-formControl": {
       marginTop: "0",
     },
-
+    marginRight: "1rem",
     position: "relative",
   },
   translateIcon: {
@@ -58,7 +58,7 @@ function LanguageSwitch(props: Props): JSX.Element {
         <ReactCountryFlag
           countryCode="US"
           style={{
-            fontSize: "2em",
+            fontSize: "3em",
             padding: "0.5rem",
             cursor: "pointer",
           }}
@@ -71,7 +71,7 @@ function LanguageSwitch(props: Props): JSX.Element {
           className="emojiFlag"
           countryCode="KR"
           style={{
-            fontSize: "2em",
+            fontSize: "3em",
             padding: "0.5rem",
             cursor: "pointer",
           }}

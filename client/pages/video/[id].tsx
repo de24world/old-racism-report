@@ -27,18 +27,18 @@ function VideoID({ data }): JSX.Element {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-    ],
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       { params: { id: "1" } },
+//       { params: { id: "2" } },
+//       { params: { id: "3" } },
+//     ],
+//     fallback: true,
+//   };
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { id } = context.params;
   const { locale } = context;
   const res = await fetch(`http://localhost:3006/api/${id}`);

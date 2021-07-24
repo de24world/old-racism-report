@@ -122,7 +122,7 @@ function VideoPage({ data }): JSX.Element {
   );
 }
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const res = await fetch(`http://localhost:3006/api`);
   const data = await res.json();
 
