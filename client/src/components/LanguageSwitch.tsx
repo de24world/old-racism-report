@@ -2,7 +2,7 @@ import React from "react";
 
 // Next
 import Link from "next/link";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 // import { useTranslation } from "next-i18next";
 
 // Libarary
@@ -48,13 +48,14 @@ const useStyles = makeStyles((theme) => ({
 
 function LanguageSwitch(props: Props): JSX.Element {
   const classes = useStyles();
-  // const router = useRouter();
+  const { asPath } = useRouter();
+
   // const { t } = useTranslation("common");
 
   return (
     <div className={classes.LanguageSwitch}>
       {/* <TranslateIcon className={classes.translateIcon} /> */}
-      <Link href="" locale="en">
+      <Link href={asPath} locale="en">
         <ReactCountryFlag
           countryCode="US"
           style={{
@@ -66,7 +67,7 @@ function LanguageSwitch(props: Props): JSX.Element {
         />
       </Link>
 
-      <Link href="" locale="ko">
+      <Link href={asPath} locale="ko">
         <ReactCountryFlag
           className="emojiFlag"
           countryCode="KR"
