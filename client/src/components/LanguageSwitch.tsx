@@ -55,29 +55,33 @@ function LanguageSwitch(props: Props): JSX.Element {
   return (
     <div className={classes.LanguageSwitch}>
       {/* <TranslateIcon className={classes.translateIcon} /> */}
-      <Link href={asPath} locale="en">
-        <ReactCountryFlag
-          countryCode="US"
-          style={{
-            fontSize: "3em",
-            padding: "0.5rem",
-            cursor: "pointer",
-          }}
-          aria-label="United States"
-        />
+      <Link href={asPath} locale="en" passHref>
+        <a>
+          <ReactCountryFlag
+            countryCode="US"
+            style={{
+              fontSize: "3em",
+              padding: "0.5rem",
+              cursor: "pointer",
+            }}
+            aria-label="United States"
+          />
+        </a>
       </Link>
 
-      <Link href={asPath} locale="ko">
-        <ReactCountryFlag
-          className="emojiFlag"
-          countryCode="KR"
-          style={{
-            fontSize: "3em",
-            padding: "0.5rem",
-            cursor: "pointer",
-          }}
-          aria-label="South Korea"
-        />
+      <Link href={asPath} locale="ko" passHref>
+        <a>
+          <ReactCountryFlag
+            className="emojiFlag"
+            countryCode="KR"
+            style={{
+              fontSize: "3em",
+              padding: "0.5rem",
+              cursor: "pointer",
+            }}
+            aria-label="South Korea"
+          />
+        </a>
       </Link>
 
       {/*
