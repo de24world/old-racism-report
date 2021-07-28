@@ -53,7 +53,7 @@ const FormExample = (props: Props): JSX.Element => {
   countryCode: "US",
   city: "Boston",
   evidence: "https://youtu.be/dWehG6U2JOo",
-  level: "1",
+  level: 1,
 },
 {
   offender: "Black Guy",
@@ -63,7 +63,7 @@ const FormExample = (props: Props): JSX.Element => {
   countryCode: "GB",
   city: "London",
   evidence: "https://youtu.be/dWehG6U2JOo",
-  level: "2",
+  level: 2,
 },`;
 
   return (
