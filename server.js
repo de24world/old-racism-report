@@ -22,7 +22,7 @@ mongoose
 // respond with "hello world" when a GET request is made to the homepage
 app.get("/", (req, res) => {
   // res.send("this is index page");
-  res.json(data.api);
+  res.json(data);
 });
 
 app.get("/contact", (req, res) => {

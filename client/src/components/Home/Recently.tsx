@@ -38,7 +38,7 @@ interface recentlyProps {
 
 function Recently({ data }: recentlyProps): JSX.Element {
   const classes = useStyles();
-  const cards = [1, 2, 3];
+  // const cards = [1, 2, 3];
 
   const lastObject = data[data.length - 1];
   const secondLastObject = data[data.length - 2];
