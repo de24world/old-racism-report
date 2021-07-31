@@ -1,6 +1,8 @@
 // import Head from "next/head";
 // import styles from "../styles/Home.module.css";
 
+import data from "../../db/data.json";
+
 // Next Libarary
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -16,7 +18,7 @@ import Main from "../src/components/Home/Main";
 import FaQ from "../src/components/Home/FaQ";
 import Total from "../src/components/Home/Total";
 
-function Home({ data }): JSX.Element {
+function Home(): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
 
@@ -45,12 +47,12 @@ function Home({ data }): JSX.Element {
 }
 
 export async function getServerSideProps({ locale }) {
-  const res = await fetch(`http://localhost:3006/api`);
-  const data = await res.json();
+  // const res = await fetch(`http://localhost:3006/api`);
+  // const data = await res.json();
 
   return {
     props: {
-      data,
+      // data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };

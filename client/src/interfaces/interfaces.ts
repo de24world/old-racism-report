@@ -8,6 +8,5 @@ export interface IDataProps {
   countryCode: string;
   city: string;
   evidence: string;
-  level: "1" | "2" | "3";
-  // change to 1 | 2 | 3
+  level: number;
 }

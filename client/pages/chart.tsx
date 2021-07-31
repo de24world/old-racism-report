@@ -1,4 +1,5 @@
 import React from "react";
+import data from "../../db/data.json";
 
 // next
 import Head from "next/head";
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-function ChartPage({ data }): JSX.Element {
+function ChartPage(): JSX.Element {
   const classes = useStyles();
 
   return (
@@ -51,12 +52,12 @@ function ChartPage({ data }): JSX.Element {
 }
 
 export async function getServerSideProps({ locale }) {
-  const res = await fetch(`http://localhost:3006/api`);
-  const data = await res.json();
+  // const res = await fetch(`http://localhost:3006/api`);
+  // const data = await res.json();
 
   return {
     props: {
-      data,
+      // data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
