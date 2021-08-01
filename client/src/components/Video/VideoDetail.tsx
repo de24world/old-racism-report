@@ -60,7 +60,7 @@ interface ItemProps {
 function VideoDetail({ data }: ItemProps): JSX.Element {
   const classes = useStyles();
 
-  // console.log(data, "this data i Videodetail");
+  console.log(data, "this data  Videodetail");
 
   const {
     offender,

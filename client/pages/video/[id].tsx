@@ -1,28 +1,31 @@
 import React from "react";
+import data from "../../../db/data.json";
 
 // Next.js
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 
 // Material UI
 import { makeStyles, CircularProgress } from "@material-ui/core/";
 
 // Source
-import Layout from "../../src/components/Layout";
 import VideoDetail from "../../src/components/Video/VideoDetail";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-function VideoID({ data }): JSX.Element {
+function VideoID(): JSX.Element {
   const classes = useStyles();
+  const router = useRouter();
+  const datas = data[+router.query.id - 1];
 
-  // console.log(data, "data in [id].tsx")
-  // console.log(router, "router in [id].tsx");
+  // console.log(datas, "datas in [id].tsx");
+  // console.log(router.query.id, "router in [id].tsx");
 
   return (
     <div className="video [id] page">
-      <VideoDetail data={data} />
+      <VideoDetail data={datas} />
     </div>
   );
 }
@@ -39,14 +42,14 @@ function VideoID({ data }): JSX.Element {
 // }
 
 export async function getServerSideProps(context) {
-  const { id } = context.params;
+  // const { id } = context.params;
   const { locale } = context;
-  const res = await fetch(`http://localhost:3006/api/${id}`);
-  const data = await res.json();
+  // const res = await fetch(`http://localhost:3006/api/${id}`);
+  // const data = await res.json();
 
   return {
     props: {
-      data,
+      // data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
