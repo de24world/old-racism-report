@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 // Material UI
 import { makeStyles, CircularProgress } from "@material-ui/core/";
+import Alert from "@material-ui/lab/Alert";
 
 // Source
 import VideoDetail from "../../src/components/Video/VideoDetail";
@@ -19,6 +20,14 @@ function VideoID(): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const datas = data[+router.query.id - 1];
+  if (!datas)
+    return (
+      <div className="page">
+        <Alert severity="error">
+          <h1>Do not exist Data ID! Please write correct ID</h1>
+        </Alert>
+      </div>
+    );
 
   // console.log(datas, "datas in [id].tsx");
   // console.log(router.query.id, "router in [id].tsx");
