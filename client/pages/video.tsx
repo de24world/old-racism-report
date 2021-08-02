@@ -1,5 +1,5 @@
 import { useState } from "react";
-import data from "../../db/data.json";
+import data from "../public/db/data.json";
 
 // Next
 import Head from "next/head";

@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../../../db/data.json";
+import data from "../../public/db/data.json";
 
 // Next.js
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

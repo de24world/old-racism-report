@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../../db/data.json";
+import data from "../public/db/data.json";
 
 // next
 import Head from "next/head";
