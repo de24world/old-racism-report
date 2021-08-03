@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "mockserver": "json-server --watch ../db/db.json --port 3006",
+    "mockserver": "json-server --watch ./public/db/data.json --port 3006",
     "devstart": "concurrently \"yarn mockserver\" \"yarn run dev\"",
     "dev": "next dev --port 3005",
     "build": "next build",

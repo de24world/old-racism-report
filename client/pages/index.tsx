@@ -1,7 +1,7 @@
 // import Head from "next/head";
 // import styles from "../styles/Home.module.css";
 
-import data from "../public/db/data.json";
+// import data from "../public/db/data.json";
 
 // Next Libarary
 import { useRouter } from "next/router";
@@ -18,9 +18,10 @@ import Main from "../src/components/Home/Main";
 import FaQ from "../src/components/Home/FaQ";
 import Total from "../src/components/Home/Total";
 
-function Home(): JSX.Element {
+function Home({ data }): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
+  const reportData = data.report;
 
   return (
     <div className="index page">
@@ -38,8 +39,8 @@ function Home(): JSX.Element {
         <p>Default locale: {defaultLocale}</p>
         <p>Configured locales: {JSON.stringify(locales)}</p>
         <Main />
-        <Total data={data} />
-        <Recently data={data} />
+        <Total data={reportData} />
+        <Recently data={reportData} />
         <FaQ />
       </Layout>
     </div>
@@ -47,12 +48,12 @@ function Home(): JSX.Element {
 }
 
 export async function getServerSideProps({ locale }) {
-  // const res = await fetch(`http://localhost:3006/api`);
-  // const data = await res.json();
+  const res = await fetch(`http://localhost:1337/reports/`);
+  const data = await res.json();
 
   return {
     props: {
-      // data,
+      data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
