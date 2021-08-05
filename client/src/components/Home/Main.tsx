@@ -29,24 +29,24 @@ function Main(props: Props): JSX.Element {
         color="textPrimary"
         gutterBottom
       >
-        {t("No Racism !")}
+        {t("STOP Racism !")}
       </Typography>
       <Typography variant="h5" align="center" color="textSecondary" paragraph>
-        Our App will report Racism. Where, who, how did Racism.
+        {t("Our App will report Racism. Where, who, how did Racism.")}
       </Typography>
       <div className={classes.heroButtons}>
         <Grid container spacing={2} justify="center">
           <Grid item>
             <Link href="/list">
               <Button variant="contained" color="primary">
-                Go to List
+                {t("Go to List")}
               </Button>
             </Link>
           </Grid>
           <Grid item>
             <Link href="/chart">
               <Button variant="outlined" color="primary">
-                Go to Chart
+                {t("Go to Chart")}
               </Button>
             </Link>
           </Grid>
