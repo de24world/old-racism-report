@@ -1,5 +1,8 @@
 import React from "react";
 
+// Next
+import { useTranslation } from "next-i18next";
+
 // Libarary
 import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
@@ -38,6 +41,8 @@ interface recentlyProps {
 
 function Recently({ data }: recentlyProps): JSX.Element {
   const classes = useStyles();
+  const { t } = useTranslation("common");
+
   // const cards = [1, 2, 3];
 
   const lastObject = data[data.length - 1];
@@ -48,7 +53,7 @@ function Recently({ data }: recentlyProps): JSX.Element {
   return (
     <div className="recently __block">
       <Typography variant="h5" gutterBottom>
-        Recently Updated Videos
+        {t("Recently Updated Videos")}
       </Typography>
 
       <Grid container spacing={4}>
@@ -63,16 +68,16 @@ function Recently({ data }: recentlyProps): JSX.Element {
                   {three.country} / {three.city}
                 </Typography>
                 <Typography>
-                  Time : {three.time} <br />
-                  Offender : {three.offender} <br />
-                  Victim : {three.victim} <br />
+                  {t("Date")} : {three.time} <br />
+                  {t("Offender")} : {three.offender} <br />
+                  {t("Victim")} : {three.victim} <br />
                 </Typography>
               </CardContent>
 
               <CardActions>
                 <Link href={`/video/${three.id}`}>
                   <Button size="small" color="primary">
-                    Detail
+                    {t("Detail")}
                   </Button>
                 </Link>
               </CardActions>
