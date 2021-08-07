@@ -23,5 +23,9 @@
  "Total Report": "Total Report",
  "Total Number of Incidents": "Total Number of Incidents",
  "Total Country of occurrence": "Total Country of occurrence",
- "Total occurrence City": "Total occurrence City"
+ "Total occurrence City": "Total occurrence City",
+ "Maximum Country of Occurrence": "Maximum Country of Occurrence",
+ "Maximum City of Occurrence": "Maximum City of Occurrence",
+ "Maximum Offender Race" : "Maximum Offender Race",
+ "Maximum Victim Race": "Maximum Victim Race"
 }

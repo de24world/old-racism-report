@@ -20,6 +20,20 @@
   "Victim": "피해자",
   "Detail": "상세보기",
 
-  "Total Report": "총 보고서"
+  "Total Report": "총 보고서",
+  "Total Number of Incidents": "총 사건 발생 수",
+  "Total Country of occurrence": "총 발생 국가",
+  "Total occurrence City": "총 발생 도시",
+  "Maximum Country of Occurrence": "최대 발생 국가",
+  "Maximum City of Occurrence": "최대 발생 도시",
+  "Maximum Offender Race" : "최대 가해 인종",
+  "Maximum Victim Race": "최대 피해 인종"
+
+
+
+
+
+
+
 
 }

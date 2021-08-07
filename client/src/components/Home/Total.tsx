@@ -109,28 +109,28 @@ function Total({ data }: totalProps): JSX.Element {
             <Typography variant="h5" gutterBottom>
               미국 (10)
             </Typography>
-            {t("")}최대 발생 국가
+            {t("Maximum Country of Occurrence")}
           </Grid>
 
           <Grid item xs={3}>
             <Typography variant="h5" gutterBottom>
               보스턴 (8)
             </Typography>
-            {t("")}최대 발생 도시
+            {t("Maximum City of Occurrence")}
           </Grid>
 
           <Grid item xs={3}>
             <Typography variant="h5" gutterBottom>
               백인 남성 (2)
             </Typography>
-            {t("")}최대 가해자
+            {t("Maximum Offender Race")}
           </Grid>
 
           <Grid item xs={3}>
             <Typography variant="h5" gutterBottom>
               아시아 여성(11)
             </Typography>
-            {t("")}최대 도시 국가
+            {t("Maximum Victim Race")}
           </Grid>
 
           {/* ------ 피해자 인종 ---------- */}
