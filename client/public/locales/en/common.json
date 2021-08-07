@@ -18,5 +18,10 @@
   "Date": "Date",
   "Offender": "Offender",
   "Victim": "Victim",
-  "Detail": "Detail"
+  "Detail": "Detail",
+
+ "Total Report": "Total Report",
+ "Total Number of Incidents": "Total Number of Incidents",
+ "Total Country of occurrence": "Total Country of occurrence",
+ "Total occurrence City": "Total occurrence City"
 }

@@ -1,7 +1,10 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 // interface
 import { IDataProps } from "../../interfaces/interfaces";
+
+// Next
+import { useTranslation } from "next-i18next";
 
 // Material UI
 import {
@@ -29,6 +32,7 @@ interface totalProps {
 
 function Total({ data }: totalProps): JSX.Element {
   const classes = useStyles();
+  const { t } = useTranslation("common");
   const totalOccur = Object.keys(data).length;
 
   // 피해자 종류
@@ -74,7 +78,7 @@ function Total({ data }: totalProps): JSX.Element {
   return (
     <div className="total __block">
       <Typography variant="h5" gutterBottom>
-        Total Report
+        {t("Total Report")}
       </Typography>
 
       <Paper className={classes.paper}>
@@ -83,21 +87,21 @@ function Total({ data }: totalProps): JSX.Element {
             <Typography variant="h5" gutterBottom>
               {totalOccur}
             </Typography>
-            총 사건 발생 수
+            {t("Total Number of Incidents")}
           </Grid>
 
           <Grid item xs={6}>
             <Typography variant="h5" gutterBottom>
               111
             </Typography>
-            총 발생 국가
+            {t("Total Country of occurrence")}
           </Grid>
 
           <Grid item xs={6}>
             <Typography variant="h5" gutterBottom>
               222
             </Typography>
-            총 발생 도시
+            {t("Total occurrence City")}
           </Grid>
 
           {/* 도시 */}
@@ -105,44 +109,44 @@ function Total({ data }: totalProps): JSX.Element {
             <Typography variant="h5" gutterBottom>
               미국 (10)
             </Typography>
-            최대 발생 국가
+            {t("")}최대 발생 국가
           </Grid>
 
           <Grid item xs={3}>
             <Typography variant="h5" gutterBottom>
               보스턴 (8)
             </Typography>
-            최대 발생 도시
+            {t("")}최대 발생 도시
           </Grid>
 
           <Grid item xs={3}>
             <Typography variant="h5" gutterBottom>
               백인 남성 (2)
             </Typography>
-            최대 가해 남성
+            {t("")}최대 가해자
           </Grid>
 
           <Grid item xs={3}>
             <Typography variant="h5" gutterBottom>
               아시아 여성(11)
             </Typography>
-            최대 도시 국가
+            {t("")}최대 도시 국가
           </Grid>
 
           {/* ------ 피해자 인종 ---------- */}
           <Grid item xs={12}>
             <Typography variant="h5" color="primary">
-              Victim Race
+              {t("")}Victim Race
             </Typography>
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h5">{victimAsianGuy}</Typography>
-            <Typography gutterBottom>👦🏻 Asian Guy</Typography>
+            <Typography gutterBottom>👦🏻 {t("")}Asian Guy</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{victimAsianWomen}</Typography>
-            <Typography gutterBottom>👩🏻 Asian Women</Typography>
+            <Typography gutterBottom>👩🏻 {t("")}Asian Women</Typography>
           </Grid>
 
           <Grid item xs={2}>
@@ -152,53 +156,53 @@ function Total({ data }: totalProps): JSX.Element {
 
           <Grid item xs={2}>
             <Typography variant="h5">{victimBlackwomen}</Typography>
-            <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
+            <Typography gutterBottom>👩🏿‍🦱 {t("")}Black Women</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{victimWhiteguy}</Typography>
-            <Typography gutterBottom>👦🏼 White Guy</Typography>
+            <Typography gutterBottom>👦🏼 {t("")}White Guy</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{victimWhitewomen}</Typography>
-            <Typography gutterBottom>👩🏼 White Women</Typography>
+            <Typography gutterBottom>👩🏼 {t("")}White Women</Typography>
           </Grid>
 
           {/* --------- 가해자 인종  ----------- */}
           <Grid item xs={12}>
             <Typography variant="h5" color="error">
-              Offender Race
+              {t("")}Offender Race
             </Typography>
           </Grid>
           <Grid item xs={2}>
             <Typography variant="h5">{offenderAsianGuy}</Typography>
-            <Typography gutterBottom>👦🏻 Asian Guy</Typography>
+            <Typography gutterBottom>👦🏻 {t("")}Asian Guy</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{offenderAsianWomen}</Typography>
-            <Typography gutterBottom>👩🏻 Asian Women</Typography>
+            <Typography gutterBottom>👩🏻 {t("")}Asian Women</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{offenderBlackguy}</Typography>
-            <Typography gutterBottom>👦🏿 Black Guy</Typography>
+            <Typography gutterBottom>👦🏿 {t("")}Black Guy</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{offenderBlackwomen}</Typography>
-            <Typography gutterBottom>👩🏿‍🦱 Black Women</Typography>
+            <Typography gutterBottom>👩🏿‍🦱 {t("")}Black Women</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{offenderWhiteguy}</Typography>
-            <Typography gutterBottom>👦🏼 White Guy</Typography>
+            <Typography gutterBottom>👦🏼 {t("")}White Guy</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <Typography variant="h5">{offenderWhitewomen}</Typography>
-            <Typography gutterBottom>👩🏼 White Women</Typography>
+            <Typography gutterBottom>👩🏼 {t("")}White Women</Typography>
           </Grid>
         </Grid>
       </Paper>
