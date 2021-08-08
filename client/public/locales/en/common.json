@@ -27,5 +27,13 @@
  "Maximum Country of Occurrence": "Maximum Country of Occurrence",
  "Maximum City of Occurrence": "Maximum City of Occurrence",
  "Maximum Offender Race" : "Maximum Offender Race",
- "Maximum Victim Race": "Maximum Victim Race"
+ "Maximum Victim Race": "Maximum Victim Race",
+ "Victim Race": "Victim Race",
+ "Asian Guy": "Asian Guy",
+ "Asian Women": "Asian Women",
+ "Black Guy": "Black Guy",
+ "Black Women": "Black Women",
+ "White Guy": "White Guy",
+ "White Women": "White Women",
+ "Offender Race": "Offender Race"
 }
