@@ -18,7 +18,7 @@ import {
   GridListTileBar,
   IconButton,
 } from "@material-ui/core";
-import Pagination from "@material-ui/lab/Pagination";
+import { Pagination, PaginationItem } from "@material-ui/lab";
 import InfoIcon from "@material-ui/icons/Info";
 
 // interface
@@ -115,6 +115,7 @@ function VideoList({ data }: Props): JSX.Element {
         count={10}
         page={page}
         onChange={pageChange}
+        renderItem={(item) => <PaginationItem {...item} />}
       />
       {/* Page: {page} */}
     </div>
