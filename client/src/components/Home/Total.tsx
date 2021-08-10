@@ -37,42 +37,42 @@ function Total({ data }: totalProps): JSX.Element {
 
   // 피해자 종류
   const victimAsianGuy = data.filter(
-    (item) => item.victim === "Asian guy"
+    (item) => item.victim === "Asian Guy"
   ).length;
   const victimAsianWomen = data.filter(
-    (item) => item.victim === "Asian women"
+    (item) => item.victim === "Asian Women"
   ).length;
   const victimBlackguy = data.filter(
-    (item) => item.victim === "Black guy"
+    (item) => item.victim === "Black Guy"
   ).length;
   const victimBlackwomen = data.filter(
-    (item) => item.victim === "Black women"
+    (item) => item.victim === "Black Women"
   ).length;
   const victimWhiteguy = data.filter(
-    (item) => item.victim === "White guy"
+    (item) => item.victim === "White Guy"
   ).length;
   const victimWhitewomen = data.filter(
-    (item) => item.victim === "White women"
+    (item) => item.victim === "White Women"
   ).length;
 
   // 가해자 종류
   const offenderAsianGuy = data.filter(
-    (item) => item.offender === "Asian guy"
+    (item) => item.offender === "Asian Guy"
   ).length;
   const offenderAsianWomen = data.filter(
-    (item) => item.offender === "Asian women"
+    (item) => item.offender === "Asian Women"
   ).length;
   const offenderBlackguy = data.filter(
-    (item) => item.offender === "Black guy"
+    (item) => item.offender === "Black Guy"
   ).length;
   const offenderBlackwomen = data.filter(
-    (item) => item.offender === "Black women"
+    (item) => item.offender === "Black Women"
   ).length;
   const offenderWhiteguy = data.filter(
-    (item) => item.offender === "White guy"
+    (item) => item.offender === "White Guy"
   ).length;
   const offenderWhitewomen = data.filter(
-    (item) => item.offender === "White women"
+    (item) => item.offender === "White Women"
   ).length;
 
   return (

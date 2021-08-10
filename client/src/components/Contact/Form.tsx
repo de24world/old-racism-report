@@ -91,12 +91,12 @@ function Form(): JSX.Element {
                   rules={{ required: true }}
                   render={({ field }) => (
                     <Select label="Offender" {...field}>
-                      <MenuItem value="asian guy">Asian guy</MenuItem>
-                      <MenuItem value="asian women">Asian women</MenuItem>
-                      <MenuItem value="black guy">Black guy</MenuItem>
-                      <MenuItem value="black women">Black women</MenuItem>
-                      <MenuItem value="white guy">White guy</MenuItem>
-                      <MenuItem value="white women">White women</MenuItem>
+                      <MenuItem value="Asian Guy">Asian Guy</MenuItem>
+                      <MenuItem value="Asian Women">Asian Women</MenuItem>
+                      <MenuItem value="Black Guy">Black Guy</MenuItem>
+                      <MenuItem value="Black Women">Black Women</MenuItem>
+                      <MenuItem value="White Guy">White Guy</MenuItem>
+                      <MenuItem value="White Women">White Women</MenuItem>
                     </Select>
                   )}
                 />
@@ -117,12 +117,12 @@ function Form(): JSX.Element {
                   rules={{ required: true }}
                   render={({ field }) => (
                     <Select label="Victim" {...field}>
-                      <MenuItem value="asian guy">Asian guy</MenuItem>
-                      <MenuItem value="asian women">Asian women</MenuItem>
-                      <MenuItem value="black guy">Black guy</MenuItem>
-                      <MenuItem value="black women">Black women</MenuItem>
-                      <MenuItem value="white guy">White guy</MenuItem>
-                      <MenuItem value="white women">White women</MenuItem>
+                      <MenuItem value="asian guy">Asian Guy</MenuItem>
+                      <MenuItem value="asian women">Asian Women</MenuItem>
+                      <MenuItem value="black guy">Black Guy</MenuItem>
+                      <MenuItem value="black women">Black Women</MenuItem>
+                      <MenuItem value="white guy">White Guy</MenuItem>
+                      <MenuItem value="white women">White Women</MenuItem>
                     </Select>
                   )}
                 />
