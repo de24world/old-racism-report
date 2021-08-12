@@ -35,7 +35,13 @@
   "Black Women": "흑인 여성",
   "White Guy": "백인 남성",
   "White Women": "백인 여성",
-  "Offender Race": "가해 인종"
+  "Offender Race": "가해 인종",
+
+  "Country": "나라",
+  "City": "도시",
+  "Level": "단계",
+  "Share": "공유하기"
+
 
 }
 

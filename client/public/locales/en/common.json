@@ -35,5 +35,10 @@
  "Black Women": "Black Women",
  "White Guy": "White Guy",
  "White Women": "White Women",
- "Offender Race": "Offender Race"
+ "Offender Race": "Offender Race",
+
+ "Country": "Country",
+ "City": "City",
+ "Level": "Level",
+ "Share": "Share"
 }

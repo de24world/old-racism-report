@@ -1,5 +1,8 @@
 import React from "react";
 
+// Next
+import { useTranslation } from "next-i18next";
+
 // Interface Typescript
 import { IDataProps } from "../../interfaces/interfaces";
 
@@ -59,8 +62,9 @@ interface ItemProps {
 
 function VideoDetail({ data }: ItemProps): JSX.Element {
   const classes = useStyles();
+  const { t } = useTranslation("common");
 
-  console.log(data, "this data  Videodetail");
+  // console.log(data, "this data  Videodetail");
 
   const {
     offender,
@@ -98,7 +102,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                   />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="Country" secondary={country} />
+              <ListItemText primary={t("Country")} secondary={country} />
             </ListItem>
             <ListItem>
               <ListItemAvatar>
@@ -106,7 +110,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                   <MyLocationIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="City" secondary={city} />
+              <ListItemText primary={t("City")} secondary={city} />
             </ListItem>
             <ListItem>
               <ListItemAvatar>
@@ -114,7 +118,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                   <DateRangeIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="Time" secondary={time} />
+              <ListItemText primary={t("Date")} secondary={time} />
             </ListItem>
             <ListItem>
               <ListItemAvatar>
@@ -122,7 +126,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                   <SportsMmaIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="Offender" secondary={offender} />
+              <ListItemText primary={t("Offender")} secondary={t(offender)} />
             </ListItem>
             <ListItem>
               <ListItemAvatar>
@@ -130,7 +134,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                   <PregnantWomanIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="Victim" secondary={victim} />
+              <ListItemText primary={t("Victim")} secondary={t(victim)} />
             </ListItem>
             <ListItem>
               <ListItemAvatar>
@@ -138,7 +142,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                   <ReportIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="Level" secondary={level} />
+              <ListItemText primary={t("Level")} secondary={level} />
               <Tooltip title="레벨1은 언어 폭력 / 레벨2는 폭행 / 레벨3은 살인, 강간 등 강력범죄">
                 <HelpIcon className={classes.tooltipIcon} />
               </Tooltip>
@@ -148,7 +152,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
 
         <CardActions>
           <Button size="small" color="primary">
-            Share
+            {t("Share")}
           </Button>
           <Button size="small" color="primary">
             Learn More
