@@ -110,7 +110,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
   const { t } = useTranslation("common");
   const router = useRouter();
 
-  console.log(router, "router in VideoDetail");
+  // console.log(router, "router in VideoDetail");
 
   // console.log(data, "this da7ta  Videodetail");
 
