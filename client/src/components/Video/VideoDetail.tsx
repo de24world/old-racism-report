@@ -2,6 +2,7 @@ import React from "react";
 
 // Next
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 // Interface Typescript
 import { IDataProps } from "../../interfaces/interfaces";
@@ -9,6 +10,50 @@ import { IDataProps } from "../../interfaces/interfaces";
 // Libaray
 import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton,
+} from "react-share";
+import {
+  EmailIcon,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  HatenaIcon,
+  InstapaperIcon,
+  LineIcon,
+  LinkedinIcon,
+  LivejournalIcon,
+  MailruIcon,
+  OKIcon,
+  PinterestIcon,
+  PocketIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  ViberIcon,
+  VKIcon,
+  WeiboIcon,
+  WhatsappIcon,
+  WorkplaceIcon,
+} from "react-share";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
@@ -63,8 +108,11 @@ interface ItemProps {
 function VideoDetail({ data }: ItemProps): JSX.Element {
   const classes = useStyles();
   const { t } = useTranslation("common");
+  const router = useRouter();
 
-  // console.log(data, "this data  Videodetail");
+  console.log(router, "router in VideoDetail");
+
+  // console.log(data, "this da7ta  Videodetail");
 
   const {
     offender,
@@ -151,6 +199,10 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
         </CardContent>
 
         <CardActions>
+          <FacebookShareButton url={"https://racism-report.vercel.app"}>
+            <FacebookIcon size={48} round={true} borderRadius={24} />
+          </FacebookShareButton>
+
           <Button size="small" color="primary">
             {t("Share")}
           </Button>
