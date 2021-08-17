@@ -48,7 +48,7 @@ function Home({ data }): JSX.Element {
 }
 
 export async function getServerSideProps({ locale }) {
-  const res = await fetch(`http://localhost:1337/reports/`);
+  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
   const data = await res.json();
 
   return {
