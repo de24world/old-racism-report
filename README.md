@@ -2,10 +2,9 @@
 react, next.js
 
 ## URL
-https://racism-report.vercel.app
+Frontend : https://racism-report.vercel.app
+Backend : https://racism-report-strapi.herokuapp.com
 
-실행 방법 (dev)
-cd client
-npm run start / yarn start
+
 
 jenkins 적용
