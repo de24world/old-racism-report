@@ -124,7 +124,7 @@ function VideoPage({ data }): JSX.Element {
   );
 }
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
   const data = await res.json();
 
