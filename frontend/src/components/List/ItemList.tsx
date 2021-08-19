@@ -6,10 +6,11 @@ import Link from "@material-ui/core/Link";
 import { DataGrid } from "@material-ui/data-grid";
 import { makeStyles } from "@material-ui/core/styles";
 
-// import dataJson from "../../data/listdata.json";
+// interface
+import { IDataProps } from "../../interfaces/interfaces";
 
 interface ListProps {
-  dataList: any;
+  data: IDataProps[];
 }
 
 const columns = [
@@ -28,14 +29,9 @@ const columns = [
   { field: "level", headerName: "Level(What, 언어 폭행)", width: 260 },
 ];
 
-function ItemList({ dataList }: ListProps): JSX.Element {
-  // console.log(dataJson);
-
-  // const history = useHistory();
-  // const handleLink = useCallback(() => history.push("/list/1"), [history]);
-
+function ItemList({ data }: ListProps): JSX.Element {
   const handleLink = () => {
-    console.log({ dataList }, "onRowLick");
+    // console.log({ data }, "onRowLick");
     // return <Link href={`/list/${dataList.id}`}></Link>;
   };
 
@@ -49,7 +45,7 @@ function ItemList({ dataList }: ListProps): JSX.Element {
       {/* <Link href={`/list/${dataList.id}`}> */}
       <div style={{ height: 600, width: "100%" }}>
         <DataGrid
-          rows={dataList}
+          rows={data}
           columns={columns}
           // loading
           hideFooterSelectedRowCount

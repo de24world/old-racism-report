@@ -1,8 +1,6 @@
 // import Head from "next/head";
 // import styles from "../styles/Home.module.css";
 
-// import data from "../public/db/data.json";
-
 // Next Libarary
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

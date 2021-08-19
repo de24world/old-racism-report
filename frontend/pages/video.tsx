@@ -1,5 +1,4 @@
 import { useState } from "react";
-import data from "../public/db/data.json";
 
 // Next
 import Head from "next/head";
@@ -28,12 +27,14 @@ const useStyles = makeStyles((theme) => ({
   filterCategory: { lineHeight: "3rem" },
 }));
 
-function VideoPage(): JSX.Element {
+function VideoPage({ data }): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
 
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
+
+  const reportData = data.report;
 
   function search(dataValues) {
     return dataValues.filter((dataValue) =>
@@ -114,7 +115,7 @@ function VideoPage(): JSX.Element {
             {router.isFallback ? (
               <CircularProgress />
             ) : (
-              <VideoList data={search(data)} />
+              <VideoList reportData={search(reportData)} />
             )}
           </Grid>
         </Grid>
@@ -124,12 +125,12 @@ function VideoPage(): JSX.Element {
 }
 
 export async function getServerSideProps({ locale }) {
-  // const res = await fetch(`http://localhost:3006/api`);
-  // const data = await res.json();
+  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
+  const data = await res.json();
 
   return {
     props: {
-      // data,
+      data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };

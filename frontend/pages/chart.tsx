@@ -1,5 +1,4 @@
 import React from "react";
-import data from "../public/db/data.json";
 
 // next
 import Head from "next/head";
@@ -19,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-function ChartPage(): JSX.Element {
+function ChartPage({ data }): JSX.Element {
   const classes = useStyles();
+  const reportData = data.report;
 
   return (
     <div className="chart page">
@@ -45,19 +45,19 @@ function ChartPage(): JSX.Element {
         {/* {loading && <div>loading</div>}
         {!loading &&  ... */}
         {/* <BarChart data={data} /> */}
-        <Charts items={data} />
+        <Charts items={reportData} />
       </Layout>
     </div>
   );
 }
 
 export async function getServerSideProps({ locale }) {
-  // const res = await fetch(`http://localhost:3006/api`);
-  // const data = await res.json();
+  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
+  const data = await res.json();
 
   return {
     props: {
-      // data,
+      data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };

@@ -16,20 +16,22 @@ import Layout from "../src/components/Layout";
 import ItemList from "../src/components/List/ItemList";
 import LevelStep from "../src/components/LevelStep";
 
-function ListPage(): JSX.Element {
-  const [dataList, setDataList] = useState([]);
-  const API_URL = "http://localhost:3006/api";
+function ListPage({ data }): JSX.Element {
+  const reportData = data.report;
 
-  const getData = () => {
-    Axios.get(API_URL).then((res) => {
-      // console.log(res.data);
-      setDataList(res.data);
-    });
-  };
+  // const [dataList, setDataList] = useState([]);
+  // const API_URL = "http://localhost:3006/api";
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // const getData = () => {
+  //   Axios.get(API_URL).then((res) => {
+  //     // console.log(res.data);
+  //     setDataList(res.data);
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div className="list page">
@@ -52,17 +54,23 @@ function ListPage(): JSX.Element {
           table title.
         </Typography>
 
-        <ItemList dataList={dataList} />
+        <ItemList data={reportData} />
         <LevelStep />
       </Layout>
     </div>
   );
 }
 
-export const getServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common"])),
-  },
-});
+export async function getStaticProps({ locale }) {
+  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
 
 export default ListPage;
