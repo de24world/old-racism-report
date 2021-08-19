@@ -48,7 +48,7 @@ function VideoPage({ data }): JSX.Element {
     );
   }
 
-  const dataKeys = data[0] && Object.keys(data[0]);
+  const dataKeys = reportData[0] && Object.keys(reportData[0]);
 
   return (
     <div className="video page">
@@ -115,7 +115,7 @@ function VideoPage({ data }): JSX.Element {
             {router.isFallback ? (
               <CircularProgress />
             ) : (
-              <VideoList reportData={search(reportData)} />
+              <VideoList data={search(reportData)} />
             )}
           </Grid>
         </Grid>

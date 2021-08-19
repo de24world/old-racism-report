@@ -52,10 +52,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  reportData: IDataProps[];
+  data: IDataProps[];
 }
 
-function VideoList({ reportData }: Props): JSX.Element {
+function VideoList({ data }: Props): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
   const router = useRouter();
@@ -76,7 +76,7 @@ function VideoList({ reportData }: Props): JSX.Element {
         {/* <GridListTile key="Subheader" cols={3}>
           <ListSubheader component="div">VideoList</ListSubheader>
         </GridListTile> */}
-        {reportData.map((video) => (
+        {data.map((video) => (
           <GridListTile key={video.id} className={classes.gridListTile}>
             <ReactPlayer url={video.evidence} width="100%" height="100%" />
             <GridListTileBar
