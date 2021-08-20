@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 // Next
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 // Libarary
 import ReactPlayer from "react-player";
@@ -60,6 +61,7 @@ function VideoList({ data }: Props): JSX.Element {
   const theme = useTheme();
   const router = useRouter();
   const { locale } = router;
+  const { t } = useTranslation("common");
 
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesLg = useMediaQuery(theme.breakpoints.down("md"));
@@ -88,19 +90,19 @@ function VideoList({ data }: Props): JSX.Element {
                 </span>
               }
               subtitle={
-                <p>
-                  offender: {video.offender}
-                  victim: {video.victim}
-                  time: {video.time}
-                  level: {video.level}
-                </p>
+                <span>
+                  {t("Offender")}: {t(video.offender)} &nbsp; {t("Victim")}:
+                  {t(video.victim)}
+                  <br /> {t("Date")}: {video.time} &nbsp; {t("Level")}:{" "}
+                  {video.level}
+                </span>
               }
               actionIcon={
                 <Link href={`/${locale}/video/${video.id}`}>
                   <IconButton
                     // aria-label={`info about ${data.title}`}
                     className={classes.iconButton}
-                    title="더보기"
+                    title={t("Detail")}
                   >
                     <InfoIcon />
                   </IconButton>

@@ -30,11 +30,12 @@ const useStyles = makeStyles((theme) => ({
 function VideoPage({ data }): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
+  const reportData = data.report;
 
+  // serach & filter
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
-
-  const reportData = data.report;
+  const dataKeys = reportData[0] && Object.keys(reportData[0]);
 
   function search(dataValues) {
     return dataValues.filter((dataValue) =>
@@ -47,8 +48,6 @@ function VideoPage({ data }): JSX.Element {
       )
     );
   }
-
-  const dataKeys = reportData[0] && Object.keys(reportData[0]);
 
   return (
     <div className="video page">
