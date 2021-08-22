@@ -53,7 +53,7 @@ interface IUseForm {
   victim: string;
   city: string;
   evidence: string;
-  time: Date;
+  date: Date;
   level: number;
 }
 
@@ -182,13 +182,13 @@ function Form(): JSX.Element {
             {/* Time, <DataForm /> */}
             <Grid item xs={12} sm={6}>
               <Controller
-                name="time"
+                name="date"
                 control={control}
                 defaultValue=""
                 rules={{ required: true }}
                 render={({ field: { ref, ...rest } }) => <DataForm {...rest} />}
               />
-              {errors.time && (
+              {errors.date && (
                 <Alert severity="error">
                   Please select the Data(Default value is only example)
                 </Alert>

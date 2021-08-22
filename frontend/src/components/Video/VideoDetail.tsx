@@ -117,7 +117,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
   const {
     offender,
     victim,
-    time,
+    date,
     country,
     countryCode,
     city,
@@ -166,7 +166,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                   <DateRangeIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary={t("Date")} secondary={time} />
+              <ListItemText primary={t("Date")} secondary={date} />
             </ListItem>
             <ListItem>
               <ListItemAvatar>

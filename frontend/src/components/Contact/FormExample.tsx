@@ -48,7 +48,7 @@ const FormExample = (props: Props): JSX.Element => {
   const codeSnippet = `{
   offender: "White Guy",
   victim: "Black Women",
-  time: "2020-01",
+  date: "2020-01",
   country: "USA",
   countryCode: "US",
   city: "Boston",
@@ -58,7 +58,7 @@ const FormExample = (props: Props): JSX.Element => {
 {
   offender: "Black Guy",
   victim: "Aisan Women",
-  time: "2020-12",
+  date: "2020-12",
   country: "United Kingdom",
   countryCode: "GB",
   city: "London",

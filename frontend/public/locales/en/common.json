@@ -40,5 +40,18 @@
  "Country": "Country",
  "City": "City",
  "Level": "Level",
- "Share": "Share"
+ "Share": "Share",
+
+ "id": "id",
+ "city": "city",
+ "date": "date",
+ "level": "level",
+ "victim": "victim",
+ "country": "country",
+ "evidence": "evidence",
+ "offender": "offender",
+ "countryCode": "countryCode",
+
+ "Video Page": "Video Page",
+ "Search with value" : "Search with value"
 }

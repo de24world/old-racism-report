@@ -4,7 +4,7 @@ const apiSchema = mongoose.Schema({
   id: { type: Number, unpipe: 1 },
   offender: String,
   victim: String,
-  time: { type: Date, default: Date.now },
+  date: { type: Date, default: Date.now },
   countryCode: String,
   city: String,
   evidence: String,

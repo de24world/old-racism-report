@@ -4,6 +4,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 // Material UI
 import {
@@ -31,11 +32,14 @@ function VideoPage({ data }): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const reportData = data.report;
+  const { t } = useTranslation("common");
 
   // serach & filter
   const [query, setQuery] = useState("");
   const [searchDataKeys, setSearchDataKeys] = useState(["country", "city"]);
   const dataKeys = reportData[0] && Object.keys(reportData[0]);
+
+  // console.log(dataKeys, "dataKeys");
 
   function search(dataValues) {
     return dataValues.filter((dataValue) =>
@@ -62,7 +66,8 @@ function VideoPage({ data }): JSX.Element {
       <Layout>
         <Typography variant="h4" color="primary" paragraph gutterBottom>
           <VideoLibraryIcon />
-          &nbsp; Video Page
+          &nbsp;
+          {t("Video Page")}
         </Typography>
         <Typography variant="body1" paragraph gutterBottom>
           This Page is Video Page. You can watch a lot of Videos about Racism.
@@ -75,7 +80,7 @@ function VideoPage({ data }): JSX.Element {
               className={classes.searchBar}
               id="outlined-secondary"
               type="text"
-              label="Search with value"
+              label={t("Search with value")}
               variant="outlined"
               color="secondary"
               value={query}
@@ -103,7 +108,7 @@ function VideoPage({ data }): JSX.Element {
                       color="primary"
                     />
                   }
-                  label={dataKey}
+                  label={t(dataKey)}
                 />
               ))}
           </Grid>

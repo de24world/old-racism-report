@@ -93,7 +93,7 @@ function VideoList({ data }: Props): JSX.Element {
                 <span>
                   {t("Offender")}: {t(video.offender)} &nbsp; {t("Victim")}:
                   {t(video.victim)}
-                  <br /> {t("Date")}: {video.time} &nbsp; {t("Level")}:{" "}
+                  <br /> {t("Date")}: {video.date} &nbsp; {t("Level")}:
                   {video.level}
                 </span>
               }

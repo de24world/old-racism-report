@@ -68,7 +68,7 @@ function Recently({ data }: recentlyProps): JSX.Element {
                   {three.country} / {three.city}
                 </Typography>
                 <Typography>
-                  {t("Date")} : {three.time} <br />
+                  {t("Date")} : {three.date} <br />
                   {t("Offender")} : {t(three.offender)} <br />
                   {t("Victim")} : {t(three.victim)} <br />
                 </Typography>
