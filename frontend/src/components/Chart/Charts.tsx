@@ -18,7 +18,7 @@ import CityChart from "./CityChart";
 import LevelChart from "./LevelChart";
 import OffenderChart from "./OffenderChart";
 import VictimChart from "./VictimChart";
-import TimeChart from "./TimeChart";
+import DateChart from "./DateChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -56,8 +56,8 @@ function Charts({ items }: ChartProps): JSX.Element {
     setChartState("level-chart");
   };
 
-  const timeChartChange = () => {
-    setChartState("time-chart");
+  const dateChartChange = () => {
+    setChartState("date-chart");
   };
 
   return (
@@ -78,8 +78,8 @@ function Charts({ items }: ChartProps): JSX.Element {
         <Button color="primary" size="large" onClick={levelChartChange}>
           05. Level
         </Button>
-        <Button color="primary" size="large" onClick={timeChartChange}>
-          06. Time
+        <Button color="primary" size="large" onClick={dateChartChange}>
+          06. Date
         </Button>
       </Breadcrumbs>
       <div className={classes.charts}>
@@ -88,7 +88,7 @@ function Charts({ items }: ChartProps): JSX.Element {
         {chartState === "country-chart" && <CountryChart items={items} />}
         {chartState === "city-chart" && <CityChart items={items} />}
         {chartState === "level-chart" && <LevelChart items={items} />}
-        {chartState === "time-chart" && <TimeChart items={items} />}
+        {chartState === "date-chart" && <DateChart items={items} />}
       </div>
     </>
   );

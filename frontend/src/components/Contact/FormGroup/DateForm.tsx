@@ -33,7 +33,7 @@ function DateForm({ ...field }: IDataForm) {
             fullWidth
             openTo="year"
             views={["year", "month"]}
-            label="Time(Year&Month)"
+            label="Date(Year&Month)"
             helperText="Please select Date from year selection"
             value={field.value}
             onChange={(e) => {

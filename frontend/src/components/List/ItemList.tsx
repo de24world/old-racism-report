@@ -17,7 +17,7 @@ const columns = [
   { field: "id", headerName: "ID", width: 80 },
   { field: "offender", headerName: "Offender", width: 130 },
   { field: "victim", headerName: "Victim", width: 130 },
-  { field: "time", headerName: "Time", width: 130 },
+  { field: "date", headerName: "Date", width: 130 },
   { field: "country", headerName: "Country", width: 130 },
   { field: "city", headerName: "City", width: 130 },
   {

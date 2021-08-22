@@ -9,12 +9,12 @@ import { makeStyles } from "@material-ui/core/";
 // Interface
 import { IDataProps } from "../../interfaces/interfaces";
 
-interface TimeChartProps {
+interface DateChartProps {
   items: IDataProps[];
 }
 
-function TimeChart({ items }: TimeChartProps): JSX.Element {
-  const timeData = items.map((item) => item.time).sort();
+function DateChart({ items }: DateChartProps): JSX.Element {
+  const timeData = items.map((item) => item.date).sort();
   // console.log(items, "this is items ");
 
   const counts = {};
@@ -60,4 +60,4 @@ function TimeChart({ items }: TimeChartProps): JSX.Element {
   );
 }
 
-export default TimeChart;
+export default DateChart;

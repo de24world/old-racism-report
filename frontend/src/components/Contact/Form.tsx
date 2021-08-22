@@ -179,7 +179,7 @@ function Form(): JSX.Element {
               )}
             </Grid>
 
-            {/* Time, <DataForm /> */}
+            {/* Date, <DataForm /> */}
             <Grid item xs={12} sm={6}>
               <Controller
                 name="date"
