@@ -70,8 +70,10 @@ function VideoPage({ data }): JSX.Element {
           {t("Video Page")}
         </Typography>
         <Typography variant="body1" paragraph gutterBottom>
-          This Page is Video Page. You can watch a lot of Videos about Racism.
-          You can do <strong> search & filter </strong> videos.
+          {t(
+            "This Page is Video Page. You can watch a lot of Videos about Racism. You can do"
+          )}
+          <strong> {t("search & filter")} </strong> {t("videos")}
         </Typography>
 
         <Grid container spacing={2}>
