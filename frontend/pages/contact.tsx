@@ -1,6 +1,7 @@
 // next
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 // Materail UI
 import { Typography } from "@material-ui/core/";
@@ -14,10 +15,14 @@ import FormExample from "../src/components/Contact/FormExample";
 import ReportWay from "../src/components/Contact/ReportWay";
 
 function ContactPage(): JSX.Element {
+  const { t } = useTranslation("common");
+
   return (
     <div className="contact page">
       <Head>
-        <title>Racism Report App | contact</title>
+        <title>
+          {t("Racism Report App")} | {t("Report")}
+        </title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

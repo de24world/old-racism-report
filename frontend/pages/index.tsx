@@ -4,6 +4,7 @@
 // Next Libarary
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Head from "next/head";
 
 // Material UI
@@ -20,11 +21,14 @@ function Home({ data }): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const reportData = data.report;
+  const { t } = useTranslation("common");
 
   return (
     <div className="index page">
       <Head>
-        <title>Racism Report App | index</title>
+        <title>
+          {t("Racism Report App")} | {t("Home")}
+        </title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

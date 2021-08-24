@@ -5,6 +5,7 @@ import Axios from "axios";
 
 // Next
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Head from "next/head";
 
 // Materail UI
@@ -17,6 +18,7 @@ import ItemList from "../src/components/List/ItemList";
 import LevelStep from "../src/components/LevelStep";
 
 function ListPage({ data }): JSX.Element {
+  const { t } = useTranslation("common");
   const reportData = data.report;
 
   // const [dataList, setDataList] = useState([]);
@@ -36,7 +38,9 @@ function ListPage({ data }): JSX.Element {
   return (
     <div className="list page">
       <Head>
-        <title>Racism Report App | list</title>
+        <title>
+          {t("Racism Report App")} | {t("List")}
+        </title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

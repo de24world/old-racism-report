@@ -2,6 +2,7 @@ import React from "react";
 
 // next
 import Head from "next/head";
+import { useTranslation } from "next-i18next";
 
 // Libarary
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -21,11 +22,14 @@ const useStyles = makeStyles((theme) => ({
 function ChartPage({ data }): JSX.Element {
   const classes = useStyles();
   const reportData = data.report;
+  const { t } = useTranslation("common");
 
   return (
     <div className="chart page">
       <Head>
-        <title>Racism Report App | chart</title>
+        <title>
+          {t("Racism Report App")} | {t("Chart")}
+        </title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

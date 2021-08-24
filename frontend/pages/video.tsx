@@ -56,7 +56,9 @@ function VideoPage({ data }): JSX.Element {
   return (
     <div className="video page">
       <Head>
-        <title>Racism Report App | video</title>
+        <title>
+          {t("Racism Report App")} | {t("Video")}
+        </title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
