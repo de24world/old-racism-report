@@ -29,11 +29,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
     paddingBottom: "3rem",
-    // "& .MuiTextField-root": {
-    //   margin: theme.spacing(1),
-    // },
-    // padding: theme.spacing(5),
-    // backgroundColor: theme.palette.secondary.dark,
   },
   radioGroup: {
     flexDirection: "row",
