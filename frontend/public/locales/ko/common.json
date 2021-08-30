@@ -10,7 +10,7 @@
   "Korean": "한국어",
   "Language": "언어",
 
-  "STOP Racism !" : "인종차별 반대!",
+  "STOP Racism !": "인종차별 반대!",
   "Our App will report Racism. Where, who, how did Racism.": "해당 앱은 인종차별을 언제, 누가, 어디서 보고하는 앱입니다.",
   "Go to List": "리스트 페이지로",
   "Go to Chart": "차트 페이지로",
@@ -27,7 +27,7 @@
   "Total occurrence City": "총 발생 도시",
   "Maximum Country of Occurrence": "최대 발생 국가",
   "Maximum City of Occurrence": "최대 발생 도시",
-  "Maximum Offender Race" : "최대 가해 인종",
+  "Maximum Offender Race": "최대 가해 인종",
   "Maximum Victim Race": "최대 피해 인종",
   "Victim Race": "피해 인종",
   "Asian Guy": "아시아 남성",
@@ -53,27 +53,9 @@
   "offender": "가해자",
   "countryCode": "국가코드",
 
-  "Video Page": "비디오 페이지",
+  "Page": "페이지",
   "This Page is Video Page. You can watch a lot of Videos about Racism. You can do": "해당 페이지는 비디오 페이지입니다. 인종차별과 관련한 많은 영상들을 볼 수  있습니다. 또한 비디오를",
   "search & filter": "검색 & 필터",
   "videos": "할 수 있습니다.",
-  "Search with value" : "검색 할 값을 입력하세요"
-
-
-
-
+  "Search with value": "검색 할 값을 입력하세요"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

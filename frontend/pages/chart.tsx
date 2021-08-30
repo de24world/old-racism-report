@@ -2,10 +2,8 @@ import React from "react";
 
 // next
 import Head from "next/head";
-import { useTranslation } from "next-i18next";
-
-// Libarary
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 // Material UI
 import { Typography, makeStyles } from "@material-ui/core";
@@ -15,8 +13,8 @@ import EqualizerIcon from "@material-ui/icons/Equalizer";
 import Layout from "../src/components/Layout";
 import Charts from "../src/components/Chart/Charts";
 
-const useStyles = makeStyles((theme) => ({
-  root: {},
+const useStyles = makeStyles(theme => ({
+  root: {}
 }));
 
 function ChartPage({ data }): JSX.Element {
@@ -39,7 +37,7 @@ function ChartPage({ data }): JSX.Element {
       <Layout>
         <Typography variant="h4" color="primary" paragraph gutterBottom>
           <EqualizerIcon />
-          &nbsp; Chart Page
+          &nbsp; {t("Chart")} {t("Page")}
         </Typography>
         <Typography variant="body1" paragraph gutterBottom>
           This Page is Chart Page. You can see a lot of Charts about Racism. You
@@ -62,8 +60,8 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       data,
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ["common"]))
+    }
   };
 }
 

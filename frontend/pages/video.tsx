@@ -14,7 +14,7 @@ import {
   FormControlLabel,
   Checkbox,
   CircularProgress,
-  Typography,
+  Typography
 } from "@material-ui/core/";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 
@@ -22,10 +22,10 @@ import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import Layout from "../src/components/Layout";
 import VideoList from "../src/components/Video/VideoList";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {},
   searchBar: { width: "100%" },
-  filterCategory: { lineHeight: "3rem" },
+  filterCategory: { lineHeight: "3rem" }
 }));
 
 function VideoPage({ data }): JSX.Element {
@@ -42,9 +42,9 @@ function VideoPage({ data }): JSX.Element {
   // console.log(dataKeys, "dataKeys");
 
   function search(dataValues) {
-    return dataValues.filter((dataValue) =>
+    return dataValues.filter(dataValue =>
       searchDataKeys.some(
-        (dataKey) =>
+        dataKey =>
           dataValue[dataKey]
             .toString()
             .toLowerCase()
@@ -69,7 +69,7 @@ function VideoPage({ data }): JSX.Element {
         <Typography variant="h4" color="primary" paragraph gutterBottom>
           <VideoLibraryIcon />
           &nbsp;
-          {t("Video Page")}
+          {t("Video")} {t("Page")}
         </Typography>
         <Typography variant="body1" paragraph gutterBottom>
           {t(
@@ -88,7 +88,7 @@ function VideoPage({ data }): JSX.Element {
               variant="outlined"
               color="secondary"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={e => setQuery(e.target.value)}
             />
           </Grid>
 
@@ -100,11 +100,11 @@ function VideoPage({ data }): JSX.Element {
                   control={
                     <Checkbox
                       checked={searchDataKeys.includes(dataKey)}
-                      onChange={(e) => {
+                      onChange={e => {
                         const checked = searchDataKeys.includes(dataKey);
-                        setSearchDataKeys((prev) =>
+                        setSearchDataKeys(prev =>
                           checked
-                            ? prev.filter((sc) => sc !== dataKey)
+                            ? prev.filter(sc => sc !== dataKey)
                             : [...prev, dataKey]
                         );
                       }}
@@ -139,8 +139,8 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       data,
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
+      ...(await serverSideTranslations(locale, ["common"]))
+    }
   };
 }
 
