@@ -40,8 +40,7 @@ function ChartPage({ data }): JSX.Element {
           &nbsp; {t("Chart")} {t("Page")}
         </Typography>
         <Typography variant="body1" paragraph gutterBottom>
-          This Page is Chart Page. You can see a lot of Charts about Racism. You
-          can see <strong>6 Charts </strong>
+          {t("This Page is Chart Page. You can see a lot of Charts about Racism. You can see 6 Charts")}
         </Typography>
 
         {/* {loading && <div>loading</div>}
