@@ -75,7 +75,6 @@ function VideoPage({ data }): JSX.Element {
           {t(
             "videoPage.description"
           )}
-          <strong> {t("search & filter")} </strong> {t("videos")}
         </Typography>
 
         <Grid container spacing={2}>
