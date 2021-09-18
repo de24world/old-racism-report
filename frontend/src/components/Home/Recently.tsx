@@ -64,7 +64,7 @@ function Recently({ data }: recentlyProps): JSX.Element {
 
               <CardContent className={classes.cardContent}>
                 <Typography gutterBottom variant="h5" component="h2">
-                  <ReactCountryFlag countryCode={three.countryCode} />
+                  <ReactCountryFlag countryCode={three.countryCode} svg />
                   {three.country} / {three.city}
                 </Typography>
                 <Typography>

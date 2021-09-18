@@ -53,6 +53,7 @@ function LanguageSwitch(props: Props): JSX.Element {
         <a>
           <ReactCountryFlag
             countryCode="US"
+            svg
             style={{
               fontSize: "3em",
               padding: "0.5rem",
@@ -67,6 +68,7 @@ function LanguageSwitch(props: Props): JSX.Element {
         <a>
           <ReactCountryFlag
             className="emojiFlag"
+            svg
             countryCode="KR"
             style={{
               fontSize: "3em",
