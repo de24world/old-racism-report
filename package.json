@@ -9,7 +9,7 @@
   "scripts": {
     "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
     "build": "concurrently \"npm run build --prefix backend\" \"npm run build --prefix frontend\"",
-    "backend": "nodemon server/server.js",
+    "backend:express": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run develop --prefix backend\" \"npm run dev --prefix frontend\""
   },
