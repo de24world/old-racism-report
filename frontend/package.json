@@ -34,7 +34,8 @@
     "react-player": "^2.9.0",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
-    "react-share": "^4.4.0"
+    "react-share": "^4.4.0",
+    "rxjs": "^7.4.0"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.5",
