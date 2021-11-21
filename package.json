@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/de24world/Racism-report#readme",
   "dependencies": {
-    "concurrently": "^6.4.0",
-    "json-server": "^0.17.0",
-    "nodemon": "^2.0.15"
+    "json-server": "^0.17.0"
   }
 }
