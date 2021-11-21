@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "mockserver": "json-server --watch ./public/db/data.json --port 3006",
-    "devstart": "concurrently \"yarn mockserver\" \"yarn run dev\"",
     "dev": "next dev --port 3005",
     "build": "next build",
     "start": "next start"
@@ -20,27 +18,27 @@
     "axios": "^0.21.1",
     "chart.js": "^3.2.0",
     "concurrently": "^6.0.0",
-    "next": "10.0.9",
+    "next": "12",
     "next-i18next": "^8.2.0",
     "next-redux-wrapper": "^6.0.2",
     "prop-types": "latest",
-    "react": "17.0.2",
+    "react": "^17.0.2",
     "react-chartjs-2": "^3.0.2",
     "react-cookie-consent": "^6.2.4",
     "react-copy-to-clipboard": "^5.0.3",
     "react-country-flag": "^2.3.1",
-    "react-dom": "17.0.2",
+    "react-dom": "^17.0.2",
     "react-hook-form": "^7.3.6",
     "react-player": "^2.9.0",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
-    "react-share": "^4.4.0"
+    "react-share": "^4.4.0",
+    "rxjs": "^7.4.0"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.5",
     "@types/node": "^14.14.37",
     "@types/react": "^17.0.3",
-    "json-server": "^0.16.3",
     "redux-logger": "^3.0.6",
     "typescript": "^4.2.4"
   }

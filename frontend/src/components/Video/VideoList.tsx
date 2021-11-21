@@ -85,7 +85,7 @@ function VideoList({ data }: Props): JSX.Element {
               className={classes.girdListTileBar}
               title={
                 <span>
-                  <ReactCountryFlag countryCode={video.countryCode} />
+                  <ReactCountryFlag countryCode={video.countryCode} svg/>
                   {video.country} {video.city}
                 </span>
               }

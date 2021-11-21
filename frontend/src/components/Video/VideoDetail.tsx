@@ -146,6 +146,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
                 <Avatar>
                   <ReactCountryFlag
                     countryCode={countryCode}
+                    svg
                     className={classes.flagIcon}
                   />
                 </Avatar>
