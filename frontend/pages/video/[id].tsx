@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../../public/db/data.json";
+import data from "../../db.json";
 
 // Next.js
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -51,14 +51,14 @@ function VideoID(): JSX.Element {
 // }
 
 export async function getServerSideProps(context) {
-  // const { id } = context.params;
+  const { id } = context.params;
   const { locale } = context;
-  // const res = await fetch(`http://localhost:3006/api/${id}`);
-  // const data = await res.json();
+  const res = await fetch(`http://localhost:3006/api/${id}`);
+  const data = await res.json();
 
   return {
     props: {
-      // data,
+      data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };

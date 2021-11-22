@@ -21,6 +21,7 @@ function Home({ data }): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const reportData = data.report;
+  console.log(reportData, 'reportData in index.tsx')
   const { t } = useTranslation("common");
 
   return (
@@ -42,7 +43,7 @@ function Home({ data }): JSX.Element {
         <p>Configured locales: {JSON.stringify(locales)}</p>
         <Main />
         <Total data={reportData} />
-        <Recently data={reportData} />
+        {/* <Recently data={reportData} /> */}
         <FaQ />
       </Layout>
     </div>
@@ -50,7 +51,7 @@ function Home({ data }): JSX.Element {
 }
 
 export async function getStaticProps({ locale }) {
-  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
+  const res = await fetch(process.env.API_URL);
   const data = await res.json();
 
   return {

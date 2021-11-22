@@ -53,7 +53,7 @@ function ChartPage({ data }): JSX.Element {
 }
 
 export async function getStaticProps({ locale }) {
-  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
+  const res = await fetch(process.env.OLD_API_URL);
   const data = await res.json();
 
   return {

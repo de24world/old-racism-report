@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_dbs",
+  "info": {
+    "name": "reportDB",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "json"
+    }
+  }
+}
