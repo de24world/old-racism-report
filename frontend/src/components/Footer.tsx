@@ -1,34 +1,26 @@
-import React from "react";
+import React from 'react';
 
 // Library
-import ReactCountryFlag from "react-country-flag";
+import ReactCountryFlag from 'react-country-flag';
 
 // Next Module
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 // Material UI
-import {
-  makeStyles,
-  Typography,
-  Grid,
-  Container,
-  Link,
-  Button,
-  Tooltip,
-} from "@material-ui/core";
+import { makeStyles, Typography, Grid, Container, Link, Button, Tooltip } from '@material-ui/core';
 
 // Material Icons
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import EmailIcon from "@material-ui/icons/Email";
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import EmailIcon from '@material-ui/icons/Email';
 
 // Source Component
-import LanguageSwitch from "./LanguageSwitch";
+import LanguageSwitch from './LanguageSwitch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    display: 'flex',
     backgroundColor: theme.palette.warning.light,
     marginTop: theme.spacing(3),
   },
@@ -40,16 +32,16 @@ const useStyles = makeStyles((theme) => ({
     height: 0,
   },
   icons: {
-    display: "flex",
+    display: 'flex',
   },
   icon: {
     width: 48,
     height: 48,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginRight: theme.spacing(1),
-    "&:hover": {
+    '&:hover': {
       backgroundColor: theme.palette.warning.dark,
     },
   },
@@ -61,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Footer(): JSX.Element {
   const classes = useStyles();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
   return (
     <>
@@ -74,29 +66,24 @@ function Footer(): JSX.Element {
 
             <Grid item xs={6} md={6}>
               <Link href="/">
-                <Button>{t("Home")}</Button>
+                <Button>{t('Home')}</Button>
               </Link>
               <Link href="/list">
-                <Button>{t("List")}</Button>
+                <Button>{t('List')}</Button>
               </Link>
               <Link href="/video">
-                <Button>{t("Video")}</Button>
+                <Button>{t('Video')}</Button>
               </Link>
               <Link href="/chart">
-                <Button>{t("Chart")}</Button>
+                <Button>{t('Chart')}</Button>
               </Link>
               <Link href="/contact">
-                <Button>{t("Report")}</Button>
+                <Button>{t('Report')}</Button>
               </Link>
             </Grid>
 
             <Grid item xs={12} md={4}>
-              <Grid
-                container
-                direction="column"
-                className={classes.iconsWrapper}
-                spacing={2}
-              >
+              <Grid container direction="column" className={classes.iconsWrapper} spacing={2}>
                 <Grid item className={classes.icons}>
                   <a href="https://material-ui.com/" className={classes.icon}>
                     <FacebookIcon />
@@ -107,10 +94,7 @@ function Footer(): JSX.Element {
                   </a>
 
                   <Tooltip title="de24world@gmail.com">
-                    <a
-                      href="mailto:de24world@gmail.com"
-                      className={classes.icon}
-                    >
+                    <a href="mailto:de24world@gmail.com" className={classes.icon}>
                       <EmailIcon />
                     </a>
                   </Tooltip>

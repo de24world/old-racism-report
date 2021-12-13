@@ -1,40 +1,40 @@
-import React from "react";
+import React from 'react';
 
 // Next
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 // import { useTranslation } from "next-i18next";
 
 // Libarary
-import ReactCountryFlag from "react-country-flag";
+import ReactCountryFlag from 'react-country-flag';
 
 // Material
-import { makeStyles } from "@material-ui/core/";
+import { makeStyles } from '@material-ui/core/';
 // import TranslateIcon from "@material-ui/icons/Translate";
 
 interface Props {}
 
 const useStyles = makeStyles((theme) => ({
   LanguageSwitch: {
-    "& .MuiInputBase-root": {
+    '& .MuiInputBase-root': {
       color: theme.palette.primary.light,
     },
-    "& .MuiSelect-select.MuiSelect-select": {
-      paddingRight: "5rem",
+    '& .MuiSelect-select.MuiSelect-select': {
+      paddingRight: '5rem',
     },
-    "& .MuiInputLabel-formControl": {
-      top: "-1rem",
+    '& .MuiInputLabel-formControl': {
+      top: '-1rem',
     },
-    "& label + .MuiInput-formControl": {
-      marginTop: "0",
+    '& label + .MuiInput-formControl': {
+      marginTop: '0',
     },
-    marginRight: "1rem",
-    position: "relative",
+    marginRight: '1rem',
+    position: 'relative',
   },
   translateIcon: {
-    position: "relative",
-    right: "5px",
-    [theme.breakpoints.up("sm")]: {
+    position: 'relative',
+    right: '5px',
+    [theme.breakpoints.up('sm')]: {
       marginRight: theme.spacing(1),
     },
   },
@@ -55,9 +55,9 @@ function LanguageSwitch(props: Props): JSX.Element {
             countryCode="US"
             svg
             style={{
-              fontSize: "3em",
-              padding: "0.5rem",
-              cursor: "pointer",
+              fontSize: '3em',
+              padding: '0.5rem',
+              cursor: 'pointer',
             }}
             aria-label="United States"
           />
@@ -71,9 +71,9 @@ function LanguageSwitch(props: Props): JSX.Element {
             svg
             countryCode="KR"
             style={{
-              fontSize: "3em",
-              padding: "0.5rem",
-              cursor: "pointer",
+              fontSize: '3em',
+              padding: '0.5rem',
+              cursor: 'pointer',
             }}
             aria-label="South Korea"
           />
