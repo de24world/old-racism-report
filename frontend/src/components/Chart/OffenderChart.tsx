@@ -17,7 +17,7 @@ interface OffenderChartProps {
   items: IDataProps[];
 }
 
-function OffenderChart({ items }: OffenderChartProps): JSX.Element {
+const OffenderChart = function({ items }: OffenderChartProps): JSX.Element {
   const classes = useStyles();
 
   const offenderData = items.map((item) => item.offender).sort();
@@ -64,9 +64,7 @@ function OffenderChart({ items }: OffenderChartProps): JSX.Element {
   };
 
   return (
-    <>
-      <Bar type="bar" data={BarData} options={options} />
-    </>
+    <Bar type="bar" data={BarData} options={options} />
   );
 }
 

@@ -17,7 +17,7 @@ interface VictimChartProps {
   items: IDataProps[];
 }
 
-function VictimChart({ items }: VictimChartProps): JSX.Element {
+const VictimChart = function({ items }: VictimChartProps): JSX.Element {
   const classes = useStyles();
 
   const victimData = items.map((item) => item.victim).sort();
@@ -65,9 +65,7 @@ function VictimChart({ items }: VictimChartProps): JSX.Element {
   };
 
   return (
-    <>
-      <Bar type="bar" data={BarData} options={options} />
-    </>
+    <Bar type="bar" data={BarData} options={options} />
   );
 }
 

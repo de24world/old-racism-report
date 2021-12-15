@@ -13,7 +13,7 @@ interface DateChartProps {
   items: IDataProps[];
 }
 
-function DateChart({ items }: DateChartProps): JSX.Element {
+const DateChart = function({ items }: DateChartProps): JSX.Element {
   const timeData = items.map((item) => item.date).sort();
   // console.log(items, "this is items ");
 
@@ -54,9 +54,7 @@ function DateChart({ items }: DateChartProps): JSX.Element {
   };
 
   return (
-    <>
-      <Line type="line" data={TimeData} options={options} />
-    </>
+    <Line type="line" data={TimeData} options={options} />
   );
 }
 

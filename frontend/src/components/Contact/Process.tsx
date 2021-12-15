@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import clsx from "clsx";
+import React, { useState } from "react";
 
 // Material UI
 import {
@@ -82,7 +82,7 @@ const ColorlibConnector = withStyles({
 
 interface Props {}
 
-function ColorlibStepIcon(props) {
+const ColorlibStepIcon = function(props) {
   const classes = useColorlibStepIconStyles();
   const { active, completed } = props;
 
@@ -125,7 +125,7 @@ function getStepContent(step) {
   }
 }
 
-const Process = (props: Props): JSX.Element => {
+const Process = function(props: Props): JSX.Element {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(1);
   const steps = getSteps();
@@ -196,6 +196,6 @@ const Process = (props: Props): JSX.Element => {
       </div>
     </div>
   );
-};
+}
 
 export default Process;

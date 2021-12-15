@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
 
 // Libarary
 import Axios from "axios";
 
 // Next
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { useState, useEffect } from "react";
 
 // Materail UI
 import { Typography } from "@material-ui/core/";
@@ -14,10 +14,10 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 
 // Source Components
 import Layout from "../src/components/Layout";
-import ItemList from "../src/components/List/ItemList";
 import LevelStep from "../src/components/LevelStep";
+import ItemList from "../src/components/List/ItemList";
 
-function ListPage({ data }): JSX.Element {
+const ListPage = function({ data }): JSX.Element {
   const { t } = useTranslation("common");
   const reportData = data.report;
 

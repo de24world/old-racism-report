@@ -17,7 +17,7 @@ interface CityChartProps {
   items: IDataProps[];
 }
 
-function CityChart({ items }: CityChartProps): JSX.Element {
+const CityChart = function({ items }: CityChartProps): JSX.Element {
   const classes = useStyles();
 
   const cityData = items.map((item) => item.city).sort();
@@ -55,9 +55,7 @@ function CityChart({ items }: CityChartProps): JSX.Element {
   };
 
   return (
-    <>
-      <Bar type="bar" data={BarData} options={options} />
-    </>
+    <Bar type="bar" data={BarData} options={options} />
   );
 }
 

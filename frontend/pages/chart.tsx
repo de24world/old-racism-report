@@ -1,23 +1,23 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 import React from "react";
 
 // next
-import Head from "next/head";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 
 // Material UI
 import { Typography, makeStyles } from "@material-ui/core";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
 
 // source
-import Layout from "../src/components/Layout";
 import Charts from "../src/components/Chart/Charts";
+import Layout from "../src/components/Layout";
 
 const useStyles = makeStyles(theme => ({
   root: {}
 }));
 
-function ChartPage({ data }): JSX.Element {
+const ChartPage = function({ data }): JSX.Element {
   const classes = useStyles();
   const reportData = data.report;
   const { t } = useTranslation("common");

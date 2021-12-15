@@ -1,15 +1,14 @@
-import React from "react";
 
 // Next
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import React from "react";
 
 // Interface Typescript
-import { IDataProps } from "../../interfaces/interfaces";
 
 // Libaray
-import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
+import ReactPlayer from "react-player";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -30,8 +29,7 @@ import {
   VKShareButton,
   WhatsappShareButton,
   WorkplaceShareButton,
-} from "react-share";
-import {
+
   EmailIcon,
   FacebookIcon,
   FacebookMessengerIcon,
@@ -55,8 +53,8 @@ import {
   WorkplaceIcon,
 } from "react-share";
 
+
 // Material UI
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Card,
   CardContent,
@@ -69,12 +67,15 @@ import {
   Avatar,
   Tooltip,
 } from "@material-ui/core";
-import MyLocationIcon from "@material-ui/icons/MyLocation";
+import { makeStyles } from "@material-ui/core/styles";
 import DateRangeIcon from "@material-ui/icons/DateRange";
-import SportsMmaIcon from "@material-ui/icons/SportsMma";
+import HelpIcon from "@material-ui/icons/Help";
+import MyLocationIcon from "@material-ui/icons/MyLocation";
 import PregnantWomanIcon from "@material-ui/icons/PregnantWoman";
 import ReportIcon from "@material-ui/icons/Report";
-import HelpIcon from "@material-ui/icons/Help";
+import SportsMmaIcon from "@material-ui/icons/SportsMma";
+
+import { IDataProps } from "../../interfaces/interfaces";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,7 +106,7 @@ interface ItemProps {
   data: IDataProps;
 }
 
-function VideoDetail({ data }: ItemProps): JSX.Element {
+const VideoDetail = function({ data }: ItemProps): JSX.Element {
   const classes = useStyles();
   const { t } = useTranslation("common");
   const router = useRouter();
@@ -126,8 +127,7 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
   } = data;
 
   return (
-    <>
-      <Card className={classes.root}>
+    <Card className={classes.root}>
         <CardContent>
           <List
           // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
@@ -200,8 +200,8 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
         </CardContent>
 
         <CardActions>
-          <FacebookShareButton url={"https://racism-report.vercel.app"}>
-            <FacebookIcon size={48} round={true} borderRadius={24} />
+          <FacebookShareButton url="https://racism-report.vercel.app">
+            <FacebookIcon size={48} round borderRadius={24} />
           </FacebookShareButton>
 
           <Button size="small" color="primary">
@@ -212,7 +212,6 @@ function VideoDetail({ data }: ItemProps): JSX.Element {
           </Button>
         </CardActions>
       </Card>
-    </>
   );
 }
 

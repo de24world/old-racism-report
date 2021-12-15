@@ -1,12 +1,7 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 
 // interface
-import { IDataProps } from "../../interfaces/interfaces";
-
-// Next
-import { useTranslation } from "next-i18next";
-
-// Material UI
 import {
   makeStyles,
   Typography,
@@ -14,6 +9,12 @@ import {
   Grid,
   CircularProgress,
 } from "@material-ui/core";
+
+import { IDataProps } from "../../interfaces/interfaces";
+
+// Next
+
+// Material UI
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -30,7 +31,7 @@ interface totalProps {
   data: IDataProps[];
 }
 
-function Total({ data }: totalProps): JSX.Element {
+const Total = function({ data }: totalProps): JSX.Element {
   const classes = useStyles();
   const { t } = useTranslation("common");
   const totalOccur = Object.keys(data).length;

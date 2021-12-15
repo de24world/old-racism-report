@@ -1,8 +1,8 @@
-import React from 'react';
 
 // Next
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 // import { useTranslation } from "next-i18next";
 
 // Libarary
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function LanguageSwitch(props: Props): JSX.Element {
+const LanguageSwitch = function(props: Props): JSX.Element {
   const classes = useStyles();
   const { asPath } = useRouter();
 

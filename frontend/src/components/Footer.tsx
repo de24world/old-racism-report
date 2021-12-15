@@ -1,19 +1,19 @@
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 // Library
 import ReactCountryFlag from 'react-country-flag';
 
 // Next Module
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 
 // Material UI
 import { makeStyles, Typography, Grid, Container, Link, Button, Tooltip } from '@material-ui/core';
 
 // Material Icons
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
 import EmailIcon from '@material-ui/icons/Email';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 // Source Component
 import LanguageSwitch from './LanguageSwitch';
@@ -51,13 +51,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Footer(): JSX.Element {
+const Footer = function(): JSX.Element {
   const classes = useStyles();
   const { t } = useTranslation('common');
 
   return (
-    <>
-      <Typography component="footer" className={classes.root}>
+    <Typography component="footer" className={classes.root}>
         <Container className={classes.container}>
           <Grid container>
             <Grid item xs={6} md={2}>
@@ -111,7 +110,6 @@ function Footer(): JSX.Element {
           </Grid>
         </Container>
       </Typography>
-    </>
   );
 }
 

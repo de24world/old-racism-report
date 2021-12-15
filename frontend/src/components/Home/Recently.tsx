@@ -1,11 +1,11 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 
 // Next
-import { useTranslation } from "next-i18next";
 
 // Libarary
-import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
+import ReactPlayer from "react-player";
 
 // Material UI
 import {
@@ -39,7 +39,7 @@ interface recentlyProps {
   data: IDataProps[];
 }
 
-function Recently({ data }: recentlyProps): JSX.Element {
+const Recently = function({ data }: recentlyProps): JSX.Element {
   const classes = useStyles();
   const { t } = useTranslation("common");
 

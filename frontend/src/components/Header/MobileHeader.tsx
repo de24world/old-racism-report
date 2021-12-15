@@ -1,8 +1,8 @@
-import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
+import React, { useState } from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
 import { Menu, MenuItem, IconButton, Link, Button } from "@material-ui/core/";
+import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 
 interface Props {}
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MobileHeader = (props: Props) => {
+const MobileHeader = function(props: Props) {
   const classes = useStyles();
   const { t } = useTranslation("common");
 
@@ -73,6 +73,6 @@ const MobileHeader = (props: Props) => {
       </Menu>
     </div>
   );
-};
+}
 
 export default MobileHeader;

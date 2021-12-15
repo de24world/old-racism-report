@@ -5,10 +5,11 @@ import { Pie } from "react-chartjs-2";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/";
+
+import { IDataProps } from "../../interfaces/interfaces";
 import LevelStep from "../LevelStep";
 
 // Interface
-import { IDataProps } from "../../interfaces/interfaces";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -18,7 +19,7 @@ interface LevelChartProps {
   items: IDataProps[];
 }
 
-function LevelChart({ items }: LevelChartProps): JSX.Element {
+const LevelChart = function({ items }: LevelChartProps): JSX.Element {
   const classes = useStyles();
 
   const levelData = items.map((item) => item.level);

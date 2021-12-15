@@ -18,8 +18,8 @@ import {
   Select,
   MenuItem,
 } from "@material-ui/core/";
-import Alert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
+import Alert from "@material-ui/lab/Alert";
 
 // Source FormGroup Component
 import Countries from "./FormGroup/Countries";
@@ -52,7 +52,7 @@ interface IUseForm {
   level: number;
 }
 
-function Form(): JSX.Element {
+const Form = function(): JSX.Element {
   const classes = useStyles();
 
   const {

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {}
 
-const ReportWay = (props: Props): JSX.Element => {
+const ReportWay = function(props: Props): JSX.Element {
   const classes = useStyles();
 
   return (
@@ -54,6 +54,6 @@ const ReportWay = (props: Props): JSX.Element => {
       </Grid>
     </div>
   );
-};
+}
 
 export default ReportWay;

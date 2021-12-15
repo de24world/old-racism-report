@@ -1,8 +1,8 @@
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
 import React, { useState } from "react";
 
 // next Libarary;
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
 
 // material UI
 import {
@@ -18,6 +18,7 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 
 // Source Component
 import LanguageSwitch from "../LanguageSwitch";
+
 import MobileHeader from "./MobileHeader";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,15 +30,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = () => {
+const Header = function() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { t } = useTranslation("common");
 
   return (
-    <>
-      <AppBar position="static">
+    <AppBar position="static">
         <Toolbar>
           <AssessmentIcon />
           <Typography variant="h6" className={classes.title}>
@@ -70,8 +70,7 @@ const Header = () => {
           )}
         </Toolbar>
       </AppBar>
-    </>
   );
-};
+}
 
 export default Header;
