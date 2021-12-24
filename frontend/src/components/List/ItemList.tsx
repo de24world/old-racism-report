@@ -1,10 +1,11 @@
 import React, { useCallback } from "react";
+
 // import { useHistory } from "react-router-dom";
 // import Link from "next/link";
 import Link from "@material-ui/core/Link";
 // import Button from "@material-ui/core/Button";
-import { DataGrid } from "@material-ui/data-grid";
 import { makeStyles } from "@material-ui/core/styles";
+import { DataGrid } from "@material-ui/data-grid";
 
 // interface
 import { IDataProps } from "../../interfaces/interfaces";
@@ -29,7 +30,7 @@ const columns = [
   { field: "level", headerName: "Level(What, 언어 폭행)", width: 260 },
 ];
 
-function ItemList({ data }: ListProps): JSX.Element {
+const ItemList = function({ data }: ListProps): JSX.Element {
   const handleLink = () => {
     // console.log({ data }, "onRowLick");
     // return <Link href={`/list/${dataList.id}`}></Link>;
@@ -37,7 +38,7 @@ function ItemList({ data }: ListProps): JSX.Element {
 
   return (
     <>
-      <Link href={`/list/1`}>
+      <Link href="/list/1">
         Link Test 'list/1'
         {/* <Button component="a">// other component ...</Button> */}
       </Link>

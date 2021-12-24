@@ -1,10 +1,10 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 // Next
-import Head from "next/head";
-import { useRouter } from "next/router";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 
 // Material UI
 import {
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   filterCategory: { lineHeight: "3rem" }
 }));
 
-function VideoPage({ data }): JSX.Element {
+const VideoPage = function({ data }): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const reportData = data.report;

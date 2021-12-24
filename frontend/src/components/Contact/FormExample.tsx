@@ -10,9 +10,9 @@ import {
   Typography,
   Tooltip,
 } from "@material-ui/core/";
-import Alert from "@material-ui/lab/Alert";
-import FileCopyIcon from "@material-ui/icons/FileCopy";
 import ControlPointDuplicateIcon from "@material-ui/icons/ControlPointDuplicate";
+import FileCopyIcon from "@material-ui/icons/FileCopy";
+import Alert from "@material-ui/lab/Alert";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {}
 
-const FormExample = (props: Props): JSX.Element => {
+const FormExample = function(props: Props): JSX.Element {
   const classes = useStyles();
 
   const [isCopied, setIsCopied] = useState(false);
@@ -103,6 +103,6 @@ const FormExample = (props: Props): JSX.Element => {
       </div>
     </div>
   );
-};
+}
 
 export default FormExample;

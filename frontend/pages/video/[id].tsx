@@ -1,13 +1,14 @@
-import React from "react";
-import data from "../../db.json";
 
 // Next.js
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
+import React from "react";
 
 // Material UI
 import { makeStyles, CircularProgress } from "@material-ui/core/";
 import Alert from "@material-ui/lab/Alert";
+
+import data from "../../db.json";
 
 // Source
 import VideoDetail from "../../src/components/Video/VideoDetail";
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-function VideoID(): JSX.Element {
+const VideoID = function(): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const datas = data[+router.query.id - 1];

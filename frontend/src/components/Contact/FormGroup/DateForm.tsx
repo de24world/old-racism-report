@@ -12,7 +12,7 @@ interface IDataForm {
   onChange: Function;
 }
 
-function DateForm({ ...field }: IDataForm) {
+const DateForm = function({ ...field }: IDataForm) {
   // const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
   // const handleDateChange = (date: Date | null) => {
@@ -23,8 +23,7 @@ function DateForm({ ...field }: IDataForm) {
   // https://github.com/react-hook-form/react-hook-form/issues/3411
 
   return (
-    <>
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid container justify="space-around">
           <DatePicker
             format="yyyy-MM"
@@ -42,7 +41,6 @@ function DateForm({ ...field }: IDataForm) {
           />
         </Grid>
       </MuiPickersUtilsProvider>
-    </>
   );
 }
 

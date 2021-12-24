@@ -54,7 +54,7 @@ function getStepContent(step: number) {
 
 interface Props {}
 
-function LevelStep({}: Props): JSX.Element {
+const LevelStep = function({}: Props): JSX.Element {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();

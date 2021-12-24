@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {}
 
-function FaQ(props: Props): JSX.Element {
+const FaQ = function(props: Props): JSX.Element {
   const classes = useStyles();
 
   const accordionData = [

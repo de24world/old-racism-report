@@ -27,7 +27,7 @@ interface Props {
   phone: string;
 }
 
-const Countries = ({ control, errors }) => {
+const Countries = function({ control, errors }) {
   const classes = useStyles();
 
   function countryToFlag(isoCode: string) {
@@ -47,10 +47,10 @@ const Countries = ({ control, errors }) => {
         autoHighlight
         getOptionLabel={(option) => option.label}
         renderOption={(option) => (
-          <React.Fragment>
+          <>
             <span>{countryToFlag(option.code)}</span>
             {option.label} ({option.code})
-          </React.Fragment>
+          </>
         )}
         renderInput={(params) => (
           <TextField
@@ -67,7 +67,7 @@ const Countries = ({ control, errors }) => {
       {/* {errors.country && <Alert severity="error">This is required</Alert>} */}
     </>
   );
-};
+}
 
 export default Countries;
 

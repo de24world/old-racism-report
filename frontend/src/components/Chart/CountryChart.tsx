@@ -17,7 +17,7 @@ interface CountryChartProps {
   items: IDataProps[];
 }
 
-function CountryChart({ items }: CountryChartProps): JSX.Element {
+const CountryChart = function({ items }: CountryChartProps): JSX.Element {
   const classes = useStyles();
 
   const countryData = items.map((item) => item.country).sort();
@@ -79,9 +79,7 @@ function CountryChart({ items }: CountryChartProps): JSX.Element {
   };
 
   return (
-    <>
-      <Bar type="bar" data={BarData} options={options} />
-    </>
+    <Bar type="bar" data={BarData} options={options} />
   );
 }
 

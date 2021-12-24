@@ -1,20 +1,20 @@
 // next
-import Head from "next/head";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 // Materail UI
 import { Typography } from "@material-ui/core/";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 
 // source
-import Layout from "../src/components/Layout";
 import Form from "../src/components/Contact/Form";
-import Process from "../src/components/Contact/Process";
 import FormExample from "../src/components/Contact/FormExample";
+import Process from "../src/components/Contact/Process";
 import ReportWay from "../src/components/Contact/ReportWay";
+import Layout from "../src/components/Layout";
 
-function ContactPage(): JSX.Element {
+const ContactPage = function(): JSX.Element {
   const { t } = useTranslation("common");
 
   return (

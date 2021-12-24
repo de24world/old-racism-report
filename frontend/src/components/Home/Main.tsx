@@ -1,8 +1,8 @@
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
 import React from "react";
 
 // Next Libarary
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
 
 // Material UI
 import { makeStyles, Grid, Typography, Button } from "@material-ui/core/";
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Main(props: Props): JSX.Element {
+const Main = function(props: Props): JSX.Element {
   const classes = useStyles();
   const { t } = useTranslation("common");
 

@@ -2,22 +2,22 @@
 // import styles from "../styles/Home.module.css";
 
 // Next Libarary
-import { useRouter } from "next/router";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 // Material UI
 import { CircularProgress } from "@material-ui/core/";
 
 // Source Components
-import Layout from "../src/components/Layout";
-import Recently from "../src/components/Home/Recently";
-import Main from "../src/components/Home/Main";
 import FaQ from "../src/components/Home/FaQ";
+import Main from "../src/components/Home/Main";
+import Recently from "../src/components/Home/Recently";
 import Total from "../src/components/Home/Total";
+import Layout from "../src/components/Layout";
 
-function Home({ data }): JSX.Element {
+const Home = function({ data }): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const reportData = data.report;

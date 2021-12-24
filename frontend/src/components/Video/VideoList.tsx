@@ -1,13 +1,13 @@
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 // Next
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
 
 // Libarary
-import ReactPlayer from "react-player";
 import ReactCountryFlag from "react-country-flag";
+import ReactPlayer from "react-player";
 
 // Material UI
 import {
@@ -19,8 +19,8 @@ import {
   GridListTileBar,
   IconButton,
 } from "@material-ui/core";
-import { Pagination, PaginationItem } from "@material-ui/lab";
 import InfoIcon from "@material-ui/icons/Info";
+import { Pagination, PaginationItem } from "@material-ui/lab";
 
 // interface
 import { IDataProps } from "../../interfaces/interfaces";
@@ -56,7 +56,7 @@ interface Props {
   data: IDataProps[];
 }
 
-function VideoList({ data }: Props): JSX.Element {
+const VideoList = function({ data }: Props): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
   const router = useRouter();

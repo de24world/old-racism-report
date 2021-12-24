@@ -1,6 +1,7 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Container } from "@material-ui/core/";
+import React from 'react';
+
+import { Container } from '@material-ui/core/';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Layout(props): JSX.Element {
+const Layout = (props): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -16,6 +17,6 @@ function Layout(props): JSX.Element {
       <Container>{props.children}</Container>
     </div>
   );
-}
+};
 
 export default Layout;

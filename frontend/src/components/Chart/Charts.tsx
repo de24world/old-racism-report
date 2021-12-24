@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 
 // Material UI
@@ -10,19 +11,18 @@ import {
 } from "@material-ui/core/";
 
 // Next.js
-import { useTranslation } from "next-i18next";
 
 
 // Interface
 import { IDataProps } from "../../interfaces/interfaces";
 
 // source
-import CountryChart from "./CountryChart";
 import CityChart from "./CityChart";
+import CountryChart from "./CountryChart";
+import DateChart from "./DateChart";
 import LevelChart from "./LevelChart";
 import OffenderChart from "./OffenderChart";
 import VictimChart from "./VictimChart";
-import DateChart from "./DateChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -36,7 +36,7 @@ interface ChartProps {
   items: IDataProps[];
 }
 
-function Charts({ items }: ChartProps): JSX.Element {
+const Charts = function({ items }: ChartProps): JSX.Element {
   const classes = useStyles();
   const [chartState, setChartState] = useState("victim-chart");
   const { t } = useTranslation("common");
