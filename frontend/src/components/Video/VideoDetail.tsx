@@ -44,7 +44,11 @@ interface ItemProps {
   data: IDataProps;
 }
 
+<<<<<<< HEAD
 const VideoDetail = function ({ data }: ItemProps): JSX.Element {
+=======
+const VideoDetail = function({ data }: ItemProps): JSX.Element {
+>>>>>>> f1866bbe5b615fa6e0e06bff7984854fa56d41b8
   const classes = useStyles();
   const { t } = useTranslation('common');
 
@@ -52,6 +56,7 @@ const VideoDetail = function ({ data }: ItemProps): JSX.Element {
 
   return (
     <Card className={classes.root}>
+<<<<<<< HEAD
       <CardContent>
         <List
         // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
@@ -59,6 +64,20 @@ const VideoDetail = function ({ data }: ItemProps): JSX.Element {
           <div className={classes.wrapper}>
             <ReactPlayer className={classes.player} url={evidence} width="100%" height="100%" />
           </div>
+=======
+        <CardContent>
+          <List
+          // sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
+            <div className={classes.wrapper}>
+              <ReactPlayer
+                className={classes.player}
+                url={evidence}
+                width="100%"
+                height="100%"
+              />
+            </div>
+>>>>>>> f1866bbe5b615fa6e0e06bff7984854fa56d41b8
 
           <ListItem>
             <ListItemAvatar>
@@ -114,6 +133,7 @@ const VideoDetail = function ({ data }: ItemProps): JSX.Element {
         </List>
       </CardContent>
 
+<<<<<<< HEAD
       <CardActions>
         <FacebookShareButton url="https://racism-report.vercel.app">
           <FacebookIcon size={48} round borderRadius={24} />
@@ -127,6 +147,21 @@ const VideoDetail = function ({ data }: ItemProps): JSX.Element {
         </Button>
       </CardActions>
     </Card>
+=======
+        <CardActions>
+          <FacebookShareButton url="https://racism-report.vercel.app">
+            <FacebookIcon size={48} round borderRadius={24} />
+          </FacebookShareButton>
+
+          <Button size="small" color="primary">
+            {t("Share")}
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+>>>>>>> f1866bbe5b615fa6e0e06bff7984854fa56d41b8
   );
 };
 
