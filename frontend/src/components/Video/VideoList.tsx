@@ -1,42 +1,28 @@
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import ReactCountryFlag from 'react-country-flag';
+import ReactPlayer from 'react-player';
 
-// Next
+import { useTheme, makeStyles, useMediaQuery, GridList, GridListTile, GridListTileBar, IconButton } from '@material-ui/core';
+import InfoIcon from '@material-ui/icons/Info';
+import { Pagination, PaginationItem } from '@material-ui/lab';
 
-// Libarary
-import ReactCountryFlag from "react-country-flag";
-import ReactPlayer from "react-player";
-
-// Material UI
-import {
-  useTheme,
-  makeStyles,
-  useMediaQuery,
-  GridList,
-  GridListTile,
-  GridListTileBar,
-  IconButton,
-} from "@material-ui/core";
-import InfoIcon from "@material-ui/icons/Info";
-import { Pagination, PaginationItem } from "@material-ui/lab";
-
-// interface
-import { IDataProps } from "../../interfaces/interfaces";
+import { IDataProps } from '../../interfaces/interfaces';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    paddingTop: "1rem",
-    paddingBottom: "1rem",
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
 
     // backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: "100%",
+    width: '100%',
   },
 
   gridListTile: {
@@ -44,27 +30,27 @@ const useStyles = makeStyles((theme) => ({
     width: 100,
   },
   girdListTileBar: {
-    height: "auto",
+    height: 'auto',
   },
   iconButton: {
-    color: "white",
+    color: 'white',
   },
-  pagination: { paddingTop: "2rem" },
+  pagination: { paddingTop: '2rem' },
 }));
 
 interface Props {
   data: IDataProps[];
 }
 
-const VideoList = function({ data }: Props): JSX.Element {
+const VideoList = function ({ data }: Props): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
   const router = useRouter();
   const { locale } = router;
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
-  const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesLg = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSm = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchesLg = useMediaQuery(theme.breakpoints.down('md'));
   // https://codesandbox.io/s/usemediaquery-3-options-pm88p?fontsize=14&hidenavigation=1&theme=dark&file=/src/App.js:27-80
 
   const [page, setPage] = useState(1);
@@ -85,16 +71,14 @@ const VideoList = function({ data }: Props): JSX.Element {
               className={classes.girdListTileBar}
               title={
                 <span>
-                  <ReactCountryFlag countryCode={video.countryCode} svg/>
+                  <ReactCountryFlag countryCode={video.countryCode} svg />
                   {video.country} {video.city}
                 </span>
               }
               subtitle={
                 <span>
-                  {t("Offender")}: {t(video.offender)} &nbsp; {t("Victim")}:
-                  {t(video.victim)}
-                  <br /> {t("Date")}: {video.date} &nbsp; {t("Level")}:
-                  {video.level}
+                  {t('Offender')}: {t(video.offender)} &nbsp; {t('Victim')}:{t(video.victim)}
+                  <br /> {t('Date')}: {video.date} &nbsp; {t('Level')}:{video.level}
                 </span>
               }
               actionIcon={
@@ -102,7 +86,7 @@ const VideoList = function({ data }: Props): JSX.Element {
                   <IconButton
                     // aria-label={`info about ${data.title}`}
                     className={classes.iconButton}
-                    title={t("Detail")}
+                    title={t('Detail')}
                   >
                     <InfoIcon />
                   </IconButton>
@@ -112,16 +96,10 @@ const VideoList = function({ data }: Props): JSX.Element {
           </GridListTile>
         ))}
       </GridList>
-      <Pagination
-        className={classes.pagination}
-        count={10}
-        page={page}
-        onChange={pageChange}
-        renderItem={(item) => <PaginationItem {...item} />}
-      />
+      <Pagination className={classes.pagination} count={10} page={page} onChange={pageChange} renderItem={(item) => <PaginationItem {...item} />} />
       {/* Page: {page} */}
     </div>
   );
-}
+};
 
 export default VideoList;

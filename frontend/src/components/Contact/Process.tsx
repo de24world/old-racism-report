@@ -1,26 +1,14 @@
-import clsx from "clsx";
-import React, { useState } from "react";
+import clsx from 'clsx';
+import React, { useState } from 'react';
 
-// Material UI
-import {
-  makeStyles,
-  withStyles,
-  Typography,
-  Button,
-  Stepper,
-  Step,
-  StepLabel,
-  StepConnector,
-} from "@material-ui/core/";
-
-// Source
-import EmailIcon from "@material-ui/icons/Email";
-import SearchIcon from "@material-ui/icons/Search";
-import VideoLabelIcon from "@material-ui/icons/VideoLabel";
+import { makeStyles, withStyles, Typography, Button, Stepper, Step, StepLabel, StepConnector } from '@material-ui/core/';
+import EmailIcon from '@material-ui/icons/Email';
+import SearchIcon from '@material-ui/icons/Search';
+import VideoLabelIcon from '@material-ui/icons/VideoLabel';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& .MuiTextField-root": {
+    '& .MuiTextField-root': {
       margin: theme.spacing(1),
     },
   },
@@ -35,24 +23,22 @@ const useStyles = makeStyles((theme) => ({
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
-    backgroundColor: "#ccc",
+    backgroundColor: '#ccc',
     zIndex: 1,
-    color: "#fff",
+    color: '#fff',
     width: 50,
     height: 50,
-    display: "flex",
-    borderRadius: "50%",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    borderRadius: '50%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   active: {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
-    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
+    backgroundImage: 'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
   },
   completed: {
-    backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
+    backgroundImage: 'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
   },
 });
 
@@ -61,28 +47,24 @@ const ColorlibConnector = withStyles({
     top: 22,
   },
   active: {
-    "& $line": {
-      backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
+    '& $line': {
+      backgroundImage: 'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
     },
   },
   completed: {
-    "& $line": {
-      backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
+    '& $line': {
+      backgroundImage: 'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
     },
   },
   line: {
     height: 3,
     border: 0,
-    backgroundColor: "#eaeaf0",
+    backgroundColor: '#eaeaf0',
     borderRadius: 1,
   },
 })(StepConnector);
 
-interface Props {}
-
-const ColorlibStepIcon = function(props) {
+const ColorlibStepIcon = function (props) {
   const classes = useColorlibStepIconStyles();
   const { active, completed } = props;
 
@@ -102,30 +84,26 @@ const ColorlibStepIcon = function(props) {
       {icons[String(props.icon)]}
     </div>
   );
-}
+};
 
 function getSteps() {
-  return [
-    "Report Racism to our E-Mail",
-    "Admin will check your data",
-    "Approve & Show Data in the Site",
-  ];
+  return ['Report Racism to our E-Mail', 'Admin will check your data', 'Approve & Show Data in the Site'];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return "1. Please send to us report about racism according to the form. (E-Mail)";
+      return '1. Please send to us report about racism according to the form. (E-Mail)';
     case 1:
-      return "2. We will check your Report that not overlap data";
+      return '2. We will check your Report that not overlap data';
     case 2:
       return "3. if the Data doesn't have a problem, we will update your Report";
     default:
-      return "Any Question or Contact you can send a our E-Mail";
+      return 'Any Question or Contact you can send a our E-Mail';
   }
 }
 
-const Process = function(props: Props): JSX.Element {
+const Process = function (): JSX.Element {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(1);
   const steps = getSteps();
@@ -147,11 +125,7 @@ const Process = function(props: Props): JSX.Element {
       <Typography variant="h5" gutterBottom>
         Process of Report
       </Typography>
-      <Stepper
-        alternativeLabel
-        activeStep={activeStep}
-        connector={<ColorlibConnector />}
-      >
+      <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
@@ -171,24 +145,13 @@ const Process = function(props: Props): JSX.Element {
           </div>
         ) : (
           <div>
-            <Typography className={classes.instructions}>
-              {getStepContent(activeStep)}
-            </Typography>
+            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
             <div>
-              <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                className={classes.button}
-              >
+              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                 Back
               </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-                className={classes.button}
-              >
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
+                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
               </Button>
             </div>
           </div>
@@ -196,6 +159,6 @@ const Process = function(props: Props): JSX.Element {
       </div>
     </div>
   );
-}
+};
 
 export default Process;

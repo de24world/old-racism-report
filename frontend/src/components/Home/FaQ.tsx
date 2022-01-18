@@ -1,14 +1,7 @@
-import React from "react";
+import React from 'react';
 
-// Material UI
-import {
-  makeStyles,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { makeStyles, Typography, Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -18,31 +11,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {}
-
-const FaQ = function(props: Props): JSX.Element {
+const FaQ = function (): JSX.Element {
   const classes = useStyles();
 
   const accordionData = [
     {
-      headings: "What is Recism?",
-      details: "Nulla facilisi. Phasellus sollicitudin nulla et",
+      headings: 'What is Recism?',
+      details: 'Nulla facilisi. Phasellus sollicitudin nulla et',
     },
     {
-      headings: "Why did I make it?",
-      details: " et et et et et ",
+      headings: 'Why did I make it?',
+      details: ' et et et et et ',
     },
     {
-      headings: "How can I report the Racism?",
-      details: " et et et et et ",
+      headings: 'How can I report the Racism?',
+      details: ' et et et et et ',
     },
     {
-      headings: "어떻게 인종을 나누었나요",
-      details: " et et et et et ",
+      headings: '어떻게 인종을 나누었나요',
+      details: ' et et et et et ',
     },
     {
-      headings: "인종 범죄 종류가 뭔가요",
-      details: " et et et et et ",
+      headings: '인종 범죄 종류가 뭔가요',
+      details: ' et et et et et ',
     },
   ];
 
@@ -55,11 +46,7 @@ const FaQ = function(props: Props): JSX.Element {
         const { headings, details } = accordion;
         return (
           <Accordion key={i}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
               <Typography className={classes.heading}>{headings}</Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -70,6 +57,6 @@ const FaQ = function(props: Props): JSX.Element {
       })}
     </div>
   );
-}
+};
 
 export default FaQ;

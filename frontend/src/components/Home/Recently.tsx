@@ -1,34 +1,19 @@
-import { useTranslation } from "next-i18next";
-import React from "react";
+import { useTranslation } from 'next-i18next';
+import React from 'react';
+import ReactCountryFlag from 'react-country-flag';
+import ReactPlayer from 'react-player';
 
-// Next
-
-// Libarary
-import ReactCountryFlag from "react-country-flag";
-import ReactPlayer from "react-player";
-
-// Material UI
-import {
-  makeStyles,
-  Grid,
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  Button,
-  CircularProgress,
-  Link,
-} from "@material-ui/core/";
+import { makeStyles, Grid, Card, CardContent, CardActions, Typography, Button, CircularProgress, Link } from '@material-ui/core/';
 
 // interface
-import { IDataProps } from "../../interfaces/interfaces";
+import { IDataProps } from '../../interfaces/interfaces';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   cardContent: {
     flexGrow: 1,
@@ -39,9 +24,9 @@ interface recentlyProps {
   data: IDataProps[];
 }
 
-const Recently = function({ data }: recentlyProps): JSX.Element {
+const Recently = function ({ data }: recentlyProps): JSX.Element {
   const classes = useStyles();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
   // const cards = [1, 2, 3];
 
@@ -53,7 +38,7 @@ const Recently = function({ data }: recentlyProps): JSX.Element {
   return (
     <div className="recently __block">
       <Typography variant="h5" gutterBottom>
-        {t("Recently Updated Videos")}
+        {t('Recently Updated Videos')}
       </Typography>
 
       <Grid container spacing={4}>
@@ -68,16 +53,16 @@ const Recently = function({ data }: recentlyProps): JSX.Element {
                   {three.country} / {three.city}
                 </Typography>
                 <Typography>
-                  {t("Date")} : {three.date} <br />
-                  {t("Offender")} : {t(three.offender)} <br />
-                  {t("Victim")} : {t(three.victim)} <br />
+                  {t('Date')} : {three.date} <br />
+                  {t('Offender')} : {t(three.offender)} <br />
+                  {t('Victim')} : {t(three.victim)} <br />
                 </Typography>
               </CardContent>
 
               <CardActions>
                 <Link href={`/video/${three.id}`}>
                   <Button size="small" color="primary">
-                    {t("Detail")}
+                    {t('Detail')}
                   </Button>
                 </Link>
               </CardActions>
@@ -87,6 +72,6 @@ const Recently = function({ data }: recentlyProps): JSX.Element {
       </Grid>
     </div>
   );
-}
+};
 
 export default Recently;

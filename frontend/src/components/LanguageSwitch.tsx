@@ -1,18 +1,9 @@
-
-// Next
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-// import { useTranslation } from "next-i18next";
-
-// Libarary
 import ReactCountryFlag from 'react-country-flag';
 
-// Material
 import { makeStyles } from '@material-ui/core/';
-// import TranslateIcon from "@material-ui/icons/Translate";
-
-interface Props {}
 
 const useStyles = makeStyles((theme) => ({
   LanguageSwitch: {
@@ -40,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LanguageSwitch = function(props: Props): JSX.Element {
+const LanguageSwitch = function (): JSX.Element {
   const classes = useStyles();
   const { asPath } = useRouter();
 
@@ -99,6 +90,6 @@ const LanguageSwitch = function(props: Props): JSX.Element {
        */}
     </div>
   );
-}
+};
 
 export default LanguageSwitch;
