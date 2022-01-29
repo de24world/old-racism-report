@@ -9,11 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-<<<<<<< HEAD
-const Layout = (props): JSX.Element => {
-=======
-const Layout = function(props): JSX.Element {
->>>>>>> f1866bbe5b615fa6e0e06bff7984854fa56d41b8
+const Layout = function (props): JSX.Element {
   const classes = useStyles();
 
   return (
