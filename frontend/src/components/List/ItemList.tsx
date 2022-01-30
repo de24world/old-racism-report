@@ -1,36 +1,36 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
 // import { useHistory } from "react-router-dom";
 // import Link from "next/link";
-import Link from "@material-ui/core/Link";
+import Link from '@material-ui/core/Link';
 // import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
-import { DataGrid } from "@material-ui/data-grid";
+import { makeStyles } from '@material-ui/core/styles';
+import { DataGrid } from '@material-ui/data-grid';
 
 // interface
-import { IDataProps } from "../../interfaces/interfaces";
+import { IDataProps } from '../../interfaces/interfaces';
 
 interface ListProps {
   data: IDataProps[];
 }
 
 const columns = [
-  { field: "id", headerName: "ID", width: 80 },
-  { field: "offender", headerName: "Offender", width: 130 },
-  { field: "victim", headerName: "Victim", width: 130 },
-  { field: "date", headerName: "Date", width: 130 },
-  { field: "country", headerName: "Country", width: 130 },
-  { field: "city", headerName: "City", width: 130 },
+  { field: 'id', headerName: 'ID', width: 80 },
+  { field: 'offender', headerName: 'Offender', width: 130 },
+  { field: 'victim', headerName: 'Victim', width: 130 },
+  { field: 'date', headerName: 'Date', width: 130 },
+  { field: 'country', headerName: 'Country', width: 130 },
+  { field: 'city', headerName: 'City', width: 130 },
   {
-    field: "evidence",
-    headerName: "Evidence",
+    field: 'evidence',
+    headerName: 'Evidence',
     width: 260,
     sortable: false,
   },
-  { field: "level", headerName: "Level(What, 언어 폭행)", width: 260 },
+  { field: 'level', headerName: 'Level(What, 언어 폭행)', width: 260 },
 ];
 
-const ItemList = function({ data }: ListProps): JSX.Element {
+const ItemList = function ({ data }: ListProps): JSX.Element {
   const handleLink = () => {
     // console.log({ data }, "onRowLick");
     // return <Link href={`/list/${dataList.id}`}></Link>;
@@ -39,12 +39,12 @@ const ItemList = function({ data }: ListProps): JSX.Element {
   return (
     <>
       <Link href="/list/1">
-        Link Test 'list/1'
+        Link Test list/1
         {/* <Button component="a">// other component ...</Button> */}
       </Link>
       {/* <p> This is {dataList} datalistid in Listitem</p> */}
       {/* <Link href={`/list/${dataList.id}`}> */}
-      <div style={{ height: 600, width: "100%" }}>
+      <div style={{ height: 600, width: '100%' }}>
         <DataGrid
           rows={data}
           columns={columns}
@@ -58,6 +58,6 @@ const ItemList = function({ data }: ListProps): JSX.Element {
       {/* </Link> */}
     </>
   );
-}
+};
 
 export default ItemList;

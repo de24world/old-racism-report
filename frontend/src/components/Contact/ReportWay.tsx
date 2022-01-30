@@ -1,10 +1,7 @@
-import React from "react";
+import React from 'react';
+import ReactPlayer from 'react-player';
 
-// Libarary
-import ReactPlayer from "react-player";
-
-// Material UI
-import { makeStyles, Typography, Grid, Paper } from "@material-ui/core/";
+import { makeStyles, Typography, Grid, Paper } from '@material-ui/core/';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -13,9 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {}
-
-const ReportWay = function(props: Props): JSX.Element {
+const ReportWay = function (): JSX.Element {
   const classes = useStyles();
 
   return (
@@ -26,34 +21,22 @@ const ReportWay = function(props: Props): JSX.Element {
 
       <Grid container spacing={3}>
         <Grid item lg={6}>
-          <ReactPlayer
-            url="https://youtu.be/iiADhChRriM"
-            width="100%"
-            height="100%"
-          />
+          <ReactPlayer url="https://youtu.be/iiADhChRriM" width="100%" height="100%" />
         </Grid>
 
         <Grid item lg={6}>
           <Paper className={classes.paper}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            consequatur facilis dolores adipisci corporis sapiente, quas quasi
-            harum magni laboriosam cumque, cum id impedit eos veritatis est
-            corrupti ut odit! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Deleniti consequatur facilis dolores adipisci corporis
-            sapiente, quas quasi harum magni laboriosam cumque, cum id impedit
-            eos veritatis est corrupti ut odit! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Deleniti consequatur facilis dolores
-            adipisci corporis sapiente, quas quasi harum magni laboriosam
-            cumque, cum id impedit eos veritatis est corrupti ut odit! Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            consequatur facilis dolores adipisci corporis sapiente, quas quasi
-            harum magni laboriosam cumque, cum id impedit eos veritatis est
-            corrupti ut odit!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti consequatur facilis dolores adipisci corporis sapiente, quas quasi harum magni
+            laboriosam cumque, cum id impedit eos veritatis est corrupti ut odit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti consequatur
+            facilis dolores adipisci corporis sapiente, quas quasi harum magni laboriosam cumque, cum id impedit eos veritatis est corrupti ut odit! Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Deleniti consequatur facilis dolores adipisci corporis sapiente, quas quasi harum magni laboriosam
+            cumque, cum id impedit eos veritatis est corrupti ut odit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti consequatur facilis
+            dolores adipisci corporis sapiente, quas quasi harum magni laboriosam cumque, cum id impedit eos veritatis est corrupti ut odit!
           </Paper>
         </Grid>
       </Grid>
     </div>
   );
-}
+};
 
 export default ReportWay;

@@ -1,18 +1,6 @@
-import React from "react";
+import React from 'react';
 
-// Material UI
-import {
-  makeStyles,
-  Theme,
-  createStyles,
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
-  Button,
-  Paper,
-  Typography,
-} from "@material-ui/core/";
+import { makeStyles, Theme, createStyles, Stepper, Step, StepLabel, StepContent, Button, Paper, Typography } from '@material-ui/core/';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,11 +15,11 @@ const useStyles = makeStyles((theme: Theme) =>
     resetContainer: {
       padding: theme.spacing(3),
     },
-  })
+  }),
 );
 
 function getSteps() {
-  return ["1단계", "2단계", "3단계"];
+  return ['1단계', '2단계', '3단계'];
 }
 
 function getStepContent(step: number) {
@@ -41,20 +29,18 @@ function getStepContent(step: number) {
               you're willing to spend on clicks and conversions, which networks
               and geographical locations you want your ads to show on, and more.`;
     case 1:
-      return "An ad group contains one or more ads which target a shared set of keywords.";
+      return 'An ad group contains one or more ads which target a shared set of keywords.';
     case 2:
       return `Try out different ad text to see what brings in the most customers,
               and learn how to enhance your ads using features like ad extensions.
               If you run into any problems with your ads, find out how to tell if
               they're running and how to resolve approval issues.`;
     default:
-      return "Unknown step";
+      return 'Unknown step';
   }
 }
 
-interface Props {}
-
-const LevelStep = function({}: Props): JSX.Element {
+const LevelStep = function (): JSX.Element {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -84,20 +70,11 @@ const LevelStep = function({}: Props): JSX.Element {
               <Typography>{getStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
-                  <Button
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                    className={classes.button}
-                  >
+                  <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                     Back
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                  <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
+                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 </div>
               </div>
@@ -115,6 +92,6 @@ const LevelStep = function({}: Props): JSX.Element {
       )}
     </div>
   );
-}
+};
 
 export default LevelStep;

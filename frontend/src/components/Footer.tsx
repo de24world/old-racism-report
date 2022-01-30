@@ -1,13 +1,8 @@
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import React from 'react';
-
-// Library
 import ReactCountryFlag from 'react-country-flag';
 
-// Next Module
-
-// Material UI
 import { makeStyles, Typography, Grid, Container, Link, Button, Tooltip } from '@material-ui/core';
 
 // Material Icons
@@ -51,66 +46,66 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Footer = function(): JSX.Element {
+const Footer = function (): JSX.Element {
   const classes = useStyles();
   const { t } = useTranslation('common');
 
   return (
     <Typography component="footer" className={classes.root}>
-        <Container className={classes.container}>
-          <Grid container>
-            <Grid item xs={6} md={2}>
-              <LanguageSwitch />
-            </Grid>
+      <Container className={classes.container}>
+        <Grid container>
+          <Grid item xs={6} md={2}>
+            <LanguageSwitch />
+          </Grid>
 
-            <Grid item xs={6} md={6}>
-              <Link href="/">
-                <Button>{t('Home')}</Button>
-              </Link>
-              <Link href="/list">
-                <Button>{t('List')}</Button>
-              </Link>
-              <Link href="/video">
-                <Button>{t('Video')}</Button>
-              </Link>
-              <Link href="/chart">
-                <Button>{t('Chart')}</Button>
-              </Link>
-              <Link href="/contact">
-                <Button>{t('Report')}</Button>
-              </Link>
-            </Grid>
+          <Grid item xs={6} md={6}>
+            <Link href="/">
+              <Button>{t('Home')}</Button>
+            </Link>
+            <Link href="/list">
+              <Button>{t('List')}</Button>
+            </Link>
+            <Link href="/video">
+              <Button>{t('Video')}</Button>
+            </Link>
+            <Link href="/chart">
+              <Button>{t('Chart')}</Button>
+            </Link>
+            <Link href="/contact">
+              <Button>{t('Report')}</Button>
+            </Link>
+          </Grid>
 
-            <Grid item xs={12} md={4}>
-              <Grid container direction="column" className={classes.iconsWrapper} spacing={2}>
-                <Grid item className={classes.icons}>
-                  <a href="https://material-ui.com/" className={classes.icon}>
-                    <FacebookIcon />
+          <Grid item xs={12} md={4}>
+            <Grid container direction="column" className={classes.iconsWrapper} spacing={2}>
+              <Grid item className={classes.icons}>
+                <a href="https://material-ui.com/" className={classes.icon}>
+                  <FacebookIcon />
+                </a>
+
+                <a href="" className={classes.icon}>
+                  <InstagramIcon />
+                </a>
+
+                <Tooltip title="de24world@gmail.com">
+                  <a href="mailto:de24world@gmail.com" className={classes.icon}>
+                    <EmailIcon />
                   </a>
-
-                  <a href="" className={classes.icon}>
-                    <InstagramIcon />
-                  </a>
-
-                  <Tooltip title="de24world@gmail.com">
-                    <a href="mailto:de24world@gmail.com" className={classes.icon}>
-                      <EmailIcon />
-                    </a>
-                  </Tooltip>
-                </Grid>
-                {/* <Grid item>
+                </Tooltip>
+              </Grid>
+              {/* <Grid item>
                   {"© "} Puscha
                   <Link color="inherit" href="https://material-ui.com/">
                     <EmailIcon />
                     de24world@gmail.com
                   </Link>{" "}
                 </Grid> */}
-              </Grid>
             </Grid>
           </Grid>
-        </Container>
-      </Typography>
+        </Grid>
+      </Container>
+    </Typography>
   );
-}
+};
 
 export default Footer;

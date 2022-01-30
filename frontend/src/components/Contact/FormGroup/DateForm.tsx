@@ -6,7 +6,7 @@ import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
 
 interface IDataForm {
   value: Date;
-  onChange: Function;
+  onChange: any;
 }
 
 const DateForm = function ({ ...field }: IDataForm) {
