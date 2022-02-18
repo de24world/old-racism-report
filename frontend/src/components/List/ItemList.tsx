@@ -25,7 +25,6 @@ const columns = [
 
 const ItemList = function ({ data }: ListProps): JSX.Element {
   const handleLink = () => {
-    // console.log({ data }, "onRowLick");
     // return <Link href={`/list/${dataList.id}`}></Link>;
   };
 

@@ -1,24 +1,23 @@
-
 // Libarary
-import Axios from "axios";
+import Axios from 'axios';
 
 // Next
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import { useState, useEffect } from 'react';
 
 // Materail UI
-import { Typography } from "@material-ui/core/";
-import ListAltIcon from "@material-ui/icons/ListAlt";
+import { Typography } from '@material-ui/core/';
+import ListAltIcon from '@material-ui/icons/ListAlt';
 
 // Source Components
-import Layout from "../src/components/Layout";
-import LevelStep from "../src/components/LevelStep";
-import ItemList from "../src/components/List/ItemList";
+import Layout from '../src/components/Layout';
+import LevelStep from '../src/components/LevelStep';
+import ItemList from '../src/components/List/ItemList';
 
-const ListPage = function({ data }): JSX.Element {
-  const { t } = useTranslation("common");
+const ListPage = function ({ data }): JSX.Element {
+  const { t } = useTranslation('common');
   const reportData = data.report;
 
   // const [dataList, setDataList] = useState([]);
@@ -26,7 +25,6 @@ const ListPage = function({ data }): JSX.Element {
 
   // const getData = () => {
   //   Axios.get(API_URL).then((res) => {
-  //     // console.log(res.data);
   //     setDataList(res.data);
   //   });
   // };
@@ -39,12 +37,9 @@ const ListPage = function({ data }): JSX.Element {
     <div className="list page">
       <Head>
         <title>
-          {t("Racism Report App")} | {t("List")}
+          {t('Racism Report App')} | {t('List')}
         </title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
 
       <Layout>
@@ -54,8 +49,7 @@ const ListPage = function({ data }): JSX.Element {
         </Typography>
         <Typography variant="body1" paragraph gutterBottom>
           This Page is List Table Page. We need your report. You can
-          <strong> search, filter, sort </strong> the table. Please click the
-          table title.
+          <strong> search, filter, sort </strong> the table. Please click the table title.
         </Typography>
 
         <ItemList data={reportData} />
@@ -63,7 +57,7 @@ const ListPage = function({ data }): JSX.Element {
       </Layout>
     </div>
   );
-}
+};
 
 export async function getStaticProps({ locale }) {
   const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
@@ -72,7 +66,7 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       data,
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 }

@@ -1,23 +1,22 @@
-
 // Next.js
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
-import React from "react";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 // Material UI
-import { makeStyles, CircularProgress } from "@material-ui/core/";
-import Alert from "@material-ui/lab/Alert";
+import { makeStyles, CircularProgress } from '@material-ui/core/';
+import Alert from '@material-ui/lab/Alert';
 
-import data from "../../db.json";
+import data from '../../db.json';
 
 // Source
-import VideoDetail from "../../src/components/Video/VideoDetail";
+import VideoDetail from '../../src/components/Video/VideoDetail';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-const VideoID = function(): JSX.Element {
+const VideoID = function (): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
   const datas = data[+router.query.id - 1];
@@ -30,15 +29,12 @@ const VideoID = function(): JSX.Element {
       </div>
     );
 
-  // console.log(datas, "datas in [id].tsx");
-  // console.log(router.query.id, "router in [id].tsx");
-
   return (
     <div className="video [id] page">
       <VideoDetail data={datas} />
     </div>
   );
-}
+};
 
 // export async function getStaticPaths() {
 //   return {
@@ -60,7 +56,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data,
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 }

@@ -1,21 +1,16 @@
-import React from "react";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 
-// Libarary
-import { Line } from "react-chartjs-2";
+import { makeStyles } from '@material-ui/core/';
 
-// Material UI
-import { makeStyles } from "@material-ui/core/";
-
-// Interface
-import { IDataProps } from "../../interfaces/interfaces";
+import { IDataProps } from '../../interfaces/interfaces';
 
 interface DateChartProps {
   items: IDataProps[];
 }
 
-const DateChart = function({ items }: DateChartProps): JSX.Element {
+const DateChart = function ({ items }: DateChartProps): JSX.Element {
   const timeData = items.map((item) => item.date).sort();
-  // console.log(items, "this is items ");
 
   const counts = {};
   timeData.forEach((x) => {
@@ -30,11 +25,11 @@ const DateChart = function({ items }: DateChartProps): JSX.Element {
     labels: timeList,
     datasets: [
       {
-        label: "Time",
+        label: 'Time',
         data: timeCount,
         fill: false,
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgba(255, 99, 132, 0.2)",
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgba(255, 99, 132, 0.2)',
       },
     ],
   };
@@ -53,9 +48,7 @@ const DateChart = function({ items }: DateChartProps): JSX.Element {
     },
   };
 
-  return (
-    <Line type="line" data={TimeData} options={options} />
-  );
-}
+  return <Line type="line" data={TimeData} options={options} />;
+};
 
 export default DateChart;
