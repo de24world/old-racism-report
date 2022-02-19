@@ -1,13 +1,6 @@
-import React, { useCallback } from 'react';
-
-// import { useHistory } from "react-router-dom";
-// import Link from "next/link";
 import Link from '@material-ui/core/Link';
-// import Button from "@material-ui/core/Button";
-import { makeStyles } from '@material-ui/core/styles';
 import { DataGrid } from '@material-ui/data-grid';
 
-// interface
 import { IDataProps } from '../../interfaces/interfaces';
 
 interface ListProps {

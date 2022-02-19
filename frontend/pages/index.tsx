@@ -1,39 +1,28 @@
-// import Head from "next/head";
-// import styles from "../styles/Home.module.css";
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-// Next Libarary
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import FaQ from '../src/components/Home/FaQ';
+import Main from '../src/components/Home/Main';
+import Recently from '../src/components/Home/Recently';
+import Total from '../src/components/Home/Total';
+import Layout from '../src/components/Layout';
 
-// Material UI
-import { CircularProgress } from "@material-ui/core/";
-
-// Source Components
-import FaQ from "../src/components/Home/FaQ";
-import Main from "../src/components/Home/Main";
-import Recently from "../src/components/Home/Recently";
-import Total from "../src/components/Home/Total";
-import Layout from "../src/components/Layout";
-
-const Home = function({ data }): JSX.Element {
+const Home = function ({ data }): JSX.Element {
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const reportData = data.report;
-  console.log(reportData, 'reportData in index.tsx')
-  const { t } = useTranslation("common");
+  console.log(reportData, 'reportData in index.tsx');
+  const { t } = useTranslation('common');
 
   return (
     <div className="index page">
       <Head>
         <title>
-          {t("Racism Report App")} | {t("Home")}
+          {t('Racism Report App')} | {t('Home')}
         </title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
 
       <Layout>
@@ -48,16 +37,16 @@ const Home = function({ data }): JSX.Element {
       </Layout>
     </div>
   );
-}
+};
 
 export async function getStaticProps({ locale }) {
-  const res = await fetch(process.env.API_URL);
+  const res = await fetch(process.env.FIREBASE_API_URL);
   const data = await res.json();
 
   return {
     props: {
       data,
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 }
