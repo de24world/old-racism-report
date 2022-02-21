@@ -1,19 +1,19 @@
-import { collection, getDocs, getDatabase } from 'firebase/firestore';
+// import { collection, getDocs, getDatabase } from 'firebase/firestore';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { firebaseApp, database } from '../firebase';
+import { firebase } from '../firebase';
 import FaQ from '../src/components/Home/FaQ';
 import Main from '../src/components/Home/Main';
 import Recently from '../src/components/Home/Recently';
 import Total from '../src/components/Home/Total';
 import Layout from '../src/components/Layout';
 
-const Home = function ({ data, firebaseDB }): JSX.Element {
-  const reportCollection = collection(database, 'database with Collection');
-  console.log(reportCollection, 'reportCollection????');
+const Home = function ({ data }): JSX.Element {
+  const db = firebase.database();
+  console.log(db, 'firebaseDB????');
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const reportData = data.report;
@@ -46,19 +46,19 @@ const Home = function ({ data, firebaseDB }): JSX.Element {
 export async function getStaticProps({ locale }) {
   const res = await fetch(process.env.OLD_API_URL);
   const data = await res.json();
-  const firebaseDB = [];
-  async function getReport(database) {
-    const reportCol = collection(database, 'reportDatabase');
-    const reportSnapshot = await getDocs(reportCol);
-    const reportList = reportSnapshot.docs.map((doc) => doc.data());
-    return reportList;
-  }
+  // const firebaseDB = [];
+  // async function getReport(database) {
+  //   const reportCol = collection(database, 'reportDatabase');
+  //   const reportSnapshot = await getDocs(reportCol);
+  //   const reportList = reportSnapshot.docs.map((doc) => doc.data());
+  //   return reportList;
+  // }
 
   return {
     props: {
       data,
       ...(await serverSideTranslations(locale, ['common'])),
-      firebaseDB,
+      // firebaseDB,
     },
   };
 }
