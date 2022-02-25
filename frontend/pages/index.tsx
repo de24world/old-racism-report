@@ -1,5 +1,5 @@
 // import { collection, getDocs, getDatabase } from 'firebase/firestore';
-import { getDatabase } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
@@ -10,15 +10,23 @@ import Main from '../src/components/Home/Main';
 import Recently from '../src/components/Home/Recently';
 import Total from '../src/components/Home/Total';
 import Layout from '../src/components/Layout';
-import { app } from '../utils/firebase';
+import { firebaseApp } from '../utils/firebase';
 
 const Home = function ({ data }): JSX.Element {
-  const database = getDatabase(app);
-  console.log(database, 'firebaseDB????');
+  // firebase
+  const db = getDatabase(firebaseApp);
+  const firebasetRef = ref(db, 'reportDB');
+  console.log(firebasetRef, 'firebasetRef????');
+
+  onValue(firebasetRef, (snapshot) => {
+    const data = snapshot.val();
+    console.log(data, 'data in OnValue');
+    // updateStarCount(postElement, data);
+  });
+
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const reportData = data.report;
-  // console.log(reportData, 'reportData in index.tsx');
   const { t } = useTranslation('common');
 
   return (
@@ -45,21 +53,14 @@ const Home = function ({ data }): JSX.Element {
 };
 
 export async function getStaticProps({ locale }) {
+  // original
   const res = await fetch(process.env.OLD_API_URL);
   const data = await res.json();
-  // const firebaseDB = [];
-  // async function getReport(database) {
-  //   const reportCol = collection(database, 'reportDatabase');
-  //   const reportSnapshot = await getDocs(reportCol);
-  //   const reportList = reportSnapshot.docs.map((doc) => doc.data());
-  //   return reportList;
-  // }
 
   return {
     props: {
       data,
       ...(await serverSideTranslations(locale, ['common'])),
-      // firebaseDB,
     },
   };
 }
