@@ -1,19 +1,20 @@
 // import { collection, getDocs, getDatabase } from 'firebase/firestore';
+import { getDatabase } from 'firebase/database';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { firebase } from '../firebase';
 import FaQ from '../src/components/Home/FaQ';
 import Main from '../src/components/Home/Main';
 import Recently from '../src/components/Home/Recently';
 import Total from '../src/components/Home/Total';
 import Layout from '../src/components/Layout';
+import { app } from '../utils/firebase';
 
 const Home = function ({ data }): JSX.Element {
-  const db = firebase.database();
-  console.log(db, 'firebaseDB????');
+  const database = getDatabase(app);
+  console.log(database, 'firebaseDB????');
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
   const reportData = data.report;
