@@ -1,5 +1,4 @@
-// import { collection, getDocs, getDatabase } from 'firebase/firestore';
-import { getDatabase, ref, onValue } from 'firebase/database';
+// import { getDatabase, ref, onValue, child, get } from 'firebase/database';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
@@ -10,23 +9,37 @@ import Main from '../src/components/Home/Main';
 import Recently from '../src/components/Home/Recently';
 import Total from '../src/components/Home/Total';
 import Layout from '../src/components/Layout';
-import { firebaseApp } from '../utils/firebase';
+// import { firebaseApp } from '../utils/firebase';
 
 const Home = function ({ data }): JSX.Element {
-  // firebase
-  const db = getDatabase(firebaseApp);
-  const firebasetRef = ref(db, 'reportDB');
-  console.log(firebasetRef, 'firebasetRef????');
+  // // firebase 1
+  // const db = getDatabase(firebaseApp);
+  // const firebasetRef = ref(db, 'reportDB');
+  // console.log(firebasetRef, 'firebasetRef????');
 
-  onValue(firebasetRef, (snapshot) => {
-    const data = snapshot.val();
-    console.log(data, 'data in OnValue');
-    // updateStarCount(postElement, data);
-  });
+  // onValue(firebasetRef, (snapshot) => {
+  //   const data = snapshot.val();
+  //   console.log(data, 'data in OnValue');
+  //   // updateStarCount(postElement, data);
+  // });
+
+  // firebase 2
+  // const dbRef = ref(getDatabase(firebaseApp));
+  // get(child(dbRef, 'reportDB'))
+  //   .then((snapshot) => {
+  //     if (snapshot.exists()) {
+  //       console.log(snapshot.val(), 'reportDB as dbRef');
+  //     } else {
+  //       console.log('No data available');
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
 
   const router = useRouter();
   const { locale, locales, defaultLocale } = router;
-  const reportData = data.report;
+  const reportData = data;
   const { t } = useTranslation('common');
 
   return (
@@ -53,8 +66,7 @@ const Home = function ({ data }): JSX.Element {
 };
 
 export async function getStaticProps({ locale }) {
-  // original
-  const res = await fetch(process.env.OLD_API_URL);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL}/reportDB.json`);
   const data = await res.json();
 
   return {
