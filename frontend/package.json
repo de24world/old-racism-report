@@ -17,7 +17,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.58",
     "@material-ui/pickers": "^3.3.10",
-    "@types/lodash": "^4.14.170",
+    "@types/lodash": "4.14.179",
     "axios": "^0.21.1",
     "chart.js": "^3.2.0",
     "concurrently": "^6.0.0",
