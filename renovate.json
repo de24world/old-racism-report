@@ -3,12 +3,11 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    },
-    {
+      "automerge": true,
       "groupName": "Lint&Prettier",
       "packageNames": ["eslint", "prettier", "stylelint"],
-      "packagePatterns": ["^eslint-", "^prettier-", "stylelint-"]
+      "packagePatterns": ["^eslint-", "^prettier-", "stylelint-"],
+      "baseBranchList": ["develop"]
     }
   ]
 }
