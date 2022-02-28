@@ -20,7 +20,7 @@
     "@types/lodash": "4.14.179",
     "axios": "0.26.0",
     "chart.js": "3.7.1",
-    "concurrently": "6.0.0",
+    "concurrently": "6.5.1",
     "firebase": "9.6.7",
     "next": "12.1.0",
     "next-i18next": "8.10.0",
