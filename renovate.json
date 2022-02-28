@@ -2,11 +2,7 @@
   "extends": ["config:base", ":label(renovate)"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
-      "groupName": "Lint&Prettier",
-      "packageNames": ["eslint", "prettier", "stylelint"],
-      "packagePatterns": ["^eslint-", "^prettier-", "stylelint-"],
       "baseBranchList": ["develop"]
     }
   ]
