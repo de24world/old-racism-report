@@ -37,7 +37,7 @@
     "react-redux": "7.2.3",
     "react-router-dom": "5.2.0",
     "react-share": "4.4.0",
-    "rxjs": "7.4.0"
+    "rxjs": "7.5.4"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "12.1.0",
