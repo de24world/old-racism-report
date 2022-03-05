@@ -2510,10 +2510,10 @@ react-chartjs-2@3.3.0:
   resolved "https://registry.npmjs.org/react-chartjs-2/-/react-chartjs-2-3.3.0.tgz"
   integrity sha512-4Mt0SR2aiUbWi/4762odRBYSnbNKSs4HWc0o3IW43py5bMfmfpeZU95w6mbvtuLZH/M3GsPJMU8DvDc+5U9blQ==
 
-react-cookie-consent@6.2.4:
-  version "6.2.4"
-  resolved "https://registry.npmjs.org/react-cookie-consent/-/react-cookie-consent-6.2.4.tgz"
-  integrity sha512-h6coYS6P1Vv/CLL6tn6mBivtERPkKNo7ilY3vLjNnRD8bsc4+XHT3t27fqceyyW5cT1nKVO5zCdO8UFCjpBnTw==
+react-cookie-consent@7.3.1:
+  version "7.3.1"
+  resolved "https://registry.npmjs.org/react-cookie-consent/-/react-cookie-consent-7.3.1.tgz"
+  integrity sha512-05usKig0YYy6OLfBlQBIQk/TTi8h3PUGvs218kPO5bAb4f7D0UTjC3N1zG2UAVWFYbiI0QWyG0s3bkh2sfiW3Q==
   dependencies:
     js-cookie "^2.2.1"
     prop-types "^15.7.2"
