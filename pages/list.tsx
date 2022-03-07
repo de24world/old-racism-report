@@ -1,24 +1,17 @@
-// Libarary
-import Axios from 'axios';
-
-// Next
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
 
-// Materail UI
 import { Typography } from '@material-ui/core/';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 
-// Source Components
 import Layout from '../src/components/Layout';
 import LevelStep from '../src/components/LevelStep';
 import ItemList from '../src/components/List/ItemList';
 
 const ListPage = function ({ data }): JSX.Element {
   const { t } = useTranslation('common');
-  const reportData = data.report;
+  const reportData = data;
 
   // const [dataList, setDataList] = useState([]);
   // const API_URL = "http://localhost:3006/api";
@@ -60,7 +53,7 @@ const ListPage = function ({ data }): JSX.Element {
 };
 
 export async function getStaticProps({ locale }) {
-  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL}/reportDB.json`);
   const data = await res.json();
 
   return {

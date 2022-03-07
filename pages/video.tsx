@@ -4,13 +4,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-// Next
-
-// Material UI
 import { makeStyles, Grid, TextField, FormControlLabel, Checkbox, CircularProgress, Typography } from '@material-ui/core/';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 
-// Source Component
 import Layout from '../src/components/Layout';
 import VideoList from '../src/components/Video/VideoList';
 
@@ -23,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 const VideoPage = function ({ data }): JSX.Element {
   const classes = useStyles();
   const router = useRouter();
-  const reportData = data.report;
+  const reportData = data;
   const { t } = useTranslation('common');
 
   // serach & filter
@@ -99,7 +95,7 @@ const VideoPage = function ({ data }): JSX.Element {
 };
 
 export async function getStaticProps({ locale }) {
-  const res = await fetch(`https://racism-report-strapi.herokuapp.com/reports`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL}/reportDB.json`);
   const data = await res.json();
 
   return {
