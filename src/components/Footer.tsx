@@ -4,13 +4,10 @@ import React from 'react';
 import ReactCountryFlag from 'react-country-flag';
 
 import { makeStyles, Typography, Grid, Container, Link, Button, Tooltip } from '@material-ui/core';
-
-// Material Icons
 import EmailIcon from '@material-ui/icons/Email';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
-// Source Component
 import LanguageSwitch from './LanguageSwitch';
 
 const useStyles = makeStyles((theme) => ({

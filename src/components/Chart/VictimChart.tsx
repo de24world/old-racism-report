@@ -1,13 +1,12 @@
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import React from 'react';
-
-// Libarary
 import { Bar } from 'react-chartjs-2';
 
-// Material UI
 import { makeStyles } from '@material-ui/core/';
 
-// Interface
 import { IDataProps } from '../../interfaces/interfaces';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -52,11 +51,19 @@ const VictimChart = function ({ items }: VictimChartProps): JSX.Element {
   };
 
   const options = {
-    indexAxis: 'x',
     responsive: true,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'Victim Chart',
+      },
+    },
   };
 
-  return <Bar type="bar" data={BarData} options={options} />;
+  return <Bar data={BarData} options={options} />;
 };
 
 export default VictimChart;

@@ -1,13 +1,9 @@
-import React from "react";
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
 
-// Libarary
-import { Bar } from "react-chartjs-2";
+import { makeStyles } from '@material-ui/core/';
 
-// Material UI
-import { makeStyles } from "@material-ui/core/";
-
-// Interface
-import { IDataProps } from "../../interfaces/interfaces";
+import { IDataProps } from '../../interfaces/interfaces';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -17,7 +13,7 @@ interface CityChartProps {
   items: IDataProps[];
 }
 
-const CityChart = function({ items }: CityChartProps): JSX.Element {
+const CityChart = function ({ items }: CityChartProps): JSX.Element {
   const classes = useStyles();
 
   const cityData = items.map((item) => item.city).sort();
@@ -35,28 +31,29 @@ const CityChart = function({ items }: CityChartProps): JSX.Element {
     labels: cityList,
     datasets: [
       {
-        label: "City Count",
+        label: 'City Count',
         data: cityCount,
-        backgroundColor: ["rgb(63,81,181,0.2)"],
-        borderColor: ["rgb(63,81,181)"],
+        backgroundColor: ['rgb(63,81,181,0.2)'],
+        borderColor: ['rgb(63,81,181)'],
         borderWidth: 1,
       },
     ],
   };
 
   const options = {
-    indexAxis: "y",
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'City Chart',
       },
     },
   };
 
-  return (
-    <Bar type="bar" data={BarData} options={options} />
-  );
-}
+  return <Bar data={BarData} options={options} />;
+};
 
 export default CityChart;

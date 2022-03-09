@@ -5,10 +5,10 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
+  // heading: {
+  //   fontSize: theme.typography.pxToRem(15),
+  //   fontWeight: theme.typography.fontWeightRegular,
+  // },
 }));
 
 const FaQ = function (): JSX.Element {
@@ -47,7 +47,7 @@ const FaQ = function (): JSX.Element {
         return (
           <Accordion key={i}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-              <Typography className={classes.heading}>{headings}</Typography>
+              <Typography>{headings}</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>{details}</Typography>

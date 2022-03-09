@@ -1,9 +1,12 @@
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
 import { makeStyles } from '@material-ui/core/';
 
 import { IDataProps } from '../../interfaces/interfaces';
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 interface DateChartProps {
   items: IDataProps[];
@@ -35,20 +38,19 @@ const DateChart = function ({ items }: DateChartProps): JSX.Element {
   };
 
   const options = {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-            min: 0,
-            max: 100,
-          },
-        },
-      ],
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'Date Chart',
+      },
     },
   };
 
-  return <Line type="line" data={TimeData} options={options} />;
+  return <Line data={TimeData} options={options} />;
 };
 
 export default DateChart;
