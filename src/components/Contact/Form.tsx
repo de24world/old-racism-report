@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 
-// Libarary
-import { useForm, Controller } from "react-hook-form";
-
-// Material UI
 import {
   Grid,
   TextField,
@@ -17,28 +14,27 @@ import {
   Typography,
   Select,
   MenuItem,
-} from "@material-ui/core/";
-import { makeStyles } from "@material-ui/core/styles";
-import Alert from "@material-ui/lab/Alert";
+} from '@material-ui/core/';
+import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/lab/Alert';
 
-// Source FormGroup Component
-import Countries from "./FormGroup/Countries";
-import DataForm from "./FormGroup/DateForm";
+import Countries from './FormGroup/Countries';
+import DataForm from './FormGroup/DateForm';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: "relative",
-    paddingBottom: "3rem",
+    position: 'relative',
+    paddingBottom: '3rem',
   },
   radioGroup: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   formControl: {
-    width: "100%",
+    width: '100%',
   },
   formButton: {
-    position: "absolute",
-    width: "100%",
+    position: 'absolute',
+    width: '100%',
   },
 }));
 
@@ -52,7 +48,7 @@ interface IUseForm {
   level: number;
 }
 
-const Form = function(): JSX.Element {
+const Form = function (): JSX.Element {
   const classes = useStyles();
 
   const {
@@ -96,9 +92,7 @@ const Form = function(): JSX.Element {
                   )}
                 />
               </FormControl>
-              {errors.offender && (
-                <Alert severity="error">This is required</Alert>
-              )}
+              {errors.offender && <Alert severity="error">This is required</Alert>}
             </Grid>
 
             {/* Victim */}
@@ -122,9 +116,7 @@ const Form = function(): JSX.Element {
                   )}
                 />
               </FormControl>
-              {errors.victim && (
-                <Alert severity="error">This is required</Alert>
-              )}
+              {errors.victim && <Alert severity="error">This is required</Alert>}
             </Grid>
 
             {/* Country */}
@@ -139,18 +131,9 @@ const Form = function(): JSX.Element {
                 control={control}
                 defaultValue=""
                 rules={{ required: true }}
-                render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="City Name"
-                    variant="outlined"
-                    fullWidth
-                  />
-                )}
+                render={({ field }) => <TextField {...field} label="City Name" variant="outlined" fullWidth />}
               />
-              {errors.city && (
-                <Alert severity="error">This is required. 대문자 구분!</Alert>
-              )}
+              {errors.city && <Alert severity="error">This is required. 대문자 구분!</Alert>}
             </Grid>
 
             {/* Evidence */}
@@ -160,18 +143,9 @@ const Form = function(): JSX.Element {
                 control={control}
                 defaultValue=""
                 rules={{ required: true }}
-                render={({ field }) => (
-                  <TextField
-                    {...field}
-                    label="Youtube URL"
-                    variant="outlined"
-                    fullWidth
-                  />
-                )}
+                render={({ field }) => <TextField {...field} label="Youtube URL" variant="outlined" fullWidth />}
               />
-              {errors.evidence && (
-                <Alert severity="error">This is required.</Alert>
-              )}
+              {errors.evidence && <Alert severity="error">This is required.</Alert>}
             </Grid>
 
             {/* Date, <DataForm /> */}
@@ -183,11 +157,7 @@ const Form = function(): JSX.Element {
                 rules={{ required: true }}
                 render={({ field: { ref, ...rest } }) => <DataForm {...rest} />}
               />
-              {errors.date && (
-                <Alert severity="error">
-                  Please select the Data(Default value is only example)
-                </Alert>
-              )}
+              {errors.date && <Alert severity="error">Please select the Data(Default value is only example)</Alert>}
             </Grid>
 
             {/* Level */}
@@ -201,21 +171,9 @@ const Form = function(): JSX.Element {
                   rules={{ required: true }}
                   render={({ field }) => (
                     <RadioGroup {...field} className={classes.radioGroup}>
-                      <FormControlLabel
-                        value="1"
-                        control={<Radio />}
-                        label="1"
-                      />
-                      <FormControlLabel
-                        value="2"
-                        control={<Radio />}
-                        label="2"
-                      />
-                      <FormControlLabel
-                        value="3"
-                        control={<Radio />}
-                        label="3"
-                      />
+                      <FormControlLabel value="1" control={<Radio />} label="1" />
+                      <FormControlLabel value="2" control={<Radio />} label="2" />
+                      <FormControlLabel value="3" control={<Radio />} label="3" />
                     </RadioGroup>
                   )}
                 />
@@ -223,13 +181,7 @@ const Form = function(): JSX.Element {
               {errors.level && <Alert severity="error">This is required</Alert>}
             </Grid>
             <Grid item>
-              <Button
-                className={classes.formButton}
-                size="large"
-                type="submit"
-                variant="contained"
-                color="primary"
-              >
+              <Button className={classes.formButton} size="large" type="submit" variant="contained" color="primary">
                 Submit
               </Button>
             </Grid>
@@ -238,6 +190,6 @@ const Form = function(): JSX.Element {
       </div>
     </div>
   );
-}
+};
 
 export default Form;

@@ -35,7 +35,7 @@ const ContactPage = function (): JSX.Element {
 
         <Process />
         <ReportWay />
-        <Form />
+        {/* <Form /> */}
         <FormExample />
       </Layout>
     </div>
