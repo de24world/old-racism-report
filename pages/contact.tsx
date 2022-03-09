@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { Typography } from '@material-ui/core/';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 
-import Form from '../src/components/Contact/Form';
 import FormExample from '../src/components/Contact/FormExample';
 import Process from '../src/components/Contact/Process';
 import ReportWay from '../src/components/Contact/ReportWay';
